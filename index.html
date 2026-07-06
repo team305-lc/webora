@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webora | Webに光を差し込む、Web開発チーム</title>
+<meta name="description" content="WeboraはWebとオーロラを掛け合わせたWeb開発チーム。ホームページ作成、LP作成、HTML・CSSコーディング、IT相談を承ります。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">🌌</span>
+      <span class="logo-text">Web<span class="accent">ora</span></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#about">Weboraとは</a>
+      <a href="#services">サービス</a>
+      <a href="#flow">ご依頼の流れ</a>
+      <a href="html/request.html" class="btn btn-nav">依頼する</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="aurora-bg">
+      <div class="aurora-layer aurora-1"></div>
+      <div class="aurora-layer aurora-2"></div>
+      <div class="aurora-layer aurora-3"></div>
+      <div class="stars" id="stars"></div>
+      <img class="hero-photo" src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1800&q=80" alt="夜空に広がるオーロラ">
+    </div>
+    <div class="container hero-inner" data-animate>
+      <p class="eyebrow">WEB DEVELOPMENT TEAM</p>
+      <h1 class="hero-title">Webに、<br class="sp-only">光を。</h1>
+      <p class="hero-text">
+        Webora（ウェボラ）は「Web」と「Aurora（オーロラ）」を組み合わせた造語。<br>
+        無機質になりがちなWebの世界に、見やすさ・わかりやすさ・美しさという光を届けます。
+      </p>
+      <div class="hero-actions">
+        <a href="html/request.html" class="btn btn-primary">お仕事を依頼する</a>
+        <a href="#services" class="btn btn-ghost">サービスを見る</a>
+      </div>
+    </div>
+    <div class="scroll-cue"><span></span></div>
+  </section>
+
+  <!-- ABOUT / 由来 -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-head" data-animate>
+        <p class="section-label">ABOUT</p>
+        <h2>Webora という名前について</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text" data-animate>
+          <p class="about-lead">「Webに光を差し込む存在」</p>
+          <p>
+            オーロラは、夜空を静かに、それでいて力強く照らす光の現象です。
+            情報量が多く、時として無機質になってしまいがちなWebの世界に対して、
+            「見やすさ」「わかりやすさ」「美しさ」という名の光を差し込む存在でありたい。
+          </p>
+          <p>
+            そんな想いを込めて、私たちは自分たちのチームを <strong>Webora</strong> と名付けました。
+          </p>
+          <div class="keyword-badges">
+            <span class="badge">見やすさ</span>
+            <span class="badge">わかりやすさ</span>
+            <span class="badge">美しさ</span>
+          </div>
+        </div>
+        <div class="about-visual" data-animate>
+          <div class="about-photo-frame">
+            <img src="https://images.unsplash.com/photo-1483347756197-71ef80e95f73?auto=format&fit=crop&w=900&q=80" alt="星空とオーロラの光">
+            <div class="glow-ring"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head" data-animate>
+        <p class="section-label">SERVICES</p>
+        <h2>できること</h2>
+        <p class="section-desc">小さなご相談から本格的な制作まで、Web周りのお困りごとに幅広く対応します。</p>
+      </div>
+      <div class="service-grid">
+
+        <div class="service-card" data-animate>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M2 16h20M8 20h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>ホームページ作成</h3>
+          <p>会社・店舗・個人のブランドを表現するコーポレートサイトを、企画から公開まで一貫してサポートします。</p>
+        </div>
+
+        <div class="service-card" data-animate>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M4 12h16M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".0"/><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>LP作成</h3>
+          <p>商品・サービスの魅力を的確に伝え、成果（申込・購入・問い合わせ）につながるランディングページを制作します。</p>
+        </div>
+
+        <div class="service-card" data-animate>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 6 2 12l6 6M16 6l6 6-6 6M14 4l-4 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>HTML・CSSコーディング</h3>
+          <p>既存サイトの修正・機能追加や、静的ページの新規実装など、表示速度と保守性を意識した高品質なコーディングを承ります。</p>
+        </div>
+
+        <div class="service-card" data-animate>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 22a10 10 0 1 0-8-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M4 22l1.6-4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12 8a2.5 2.5 0 1 1 2.8 2.5c-.9.2-1.8.9-1.8 2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="13" cy="16.5" r="1" fill="currentColor"/></svg>
+          </div>
+          <h3>IT何でも相談</h3>
+          <p>ツールの選び方、運用の悩み、ちょっとした疑問まで。ITに関することをお気軽にご相談いただけます。</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section class="flow" id="flow">
+    <div class="container">
+      <div class="section-head" data-animate>
+        <p class="section-label">FLOW</p>
+        <h2>ご依頼の流れ</h2>
+      </div>
+      <ol class="flow-list">
+        <li class="flow-item" data-animate>
+          <span class="flow-num">01</span>
+          <h3>お問い合わせ</h3>
+          <p>依頼ページのフォームより、ご相談内容をお送りください。</p>
+        </li>
+        <li class="flow-item" data-animate>
+          <span class="flow-num">02</span>
+          <h3>ヒアリング・お見積り</h3>
+          <p>内容を確認のうえ、詳細をお伺いしお見積りをご提示します。</p>
+        </li>
+        <li class="flow-item" data-animate>
+          <span class="flow-num">03</span>
+          <h3>制作・実装</h3>
+          <p>ご要望に沿って設計・デザイン・実装を進めます。</p>
+        </li>
+        <li class="flow-item" data-animate>
+          <span class="flow-num">04</span>
+          <h3>納品・公開</h3>
+          <p>ご確認いただいたのち、納品・公開まで対応します。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="aurora-bg cta-aurora">
+      <div class="aurora-layer aurora-1"></div>
+      <div class="aurora-layer aurora-2"></div>
+    </div>
+    <div class="container cta-inner" data-animate>
+      <h2>まずはお気軽にご相談ください</h2>
+      <p>小さな疑問から本格的な制作まで、Weboraが光を差し込みます。</p>
+      <a href="html/request.html" class="btn btn-primary btn-lg">依頼ページへ進む</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">🌌</span>
+      <span class="logo-text">Web<span class="accent">ora</span></span>
+    </a>
+    <nav class="footer-nav">
+      <a href="#about">Weboraとは</a>
+      <a href="#services">サービス</a>
+      <a href="html/request.html">依頼する</a>
+    </nav>
+    <p class="copyright">&copy; 2026 Webora. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

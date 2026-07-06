@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お仕事のご依頼 | Webora</title>
+<meta name="description" content="Weboraへのお仕事のご依頼はこちらから。ホームページ作成、LP作成、HTML・CSSコーディング、IT何でも相談を承ります。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-mark">🌌</span>
+      <span class="logo-text">Web<span class="accent">ora</span></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="../index.html#about">Weboraとは</a>
+      <a href="../index.html#services">サービス</a>
+      <a href="../index.html#flow">ご依頼の流れ</a>
+      <a href="request.html" class="btn btn-nav">依頼する</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="aurora-bg">
+      <div class="aurora-layer aurora-1"></div>
+      <div class="aurora-layer aurora-2"></div>
+      <div class="aurora-layer aurora-3"></div>
+      <div class="stars" id="stars"></div>
+    </div>
+    <div class="container page-hero-inner" data-animate>
+      <p class="eyebrow">REQUEST</p>
+      <h1>お仕事のご依頼</h1>
+      <p class="hero-text">下記フォームよりご依頼内容をお送りください。内容を確認のうえ、担当者よりご連絡いたします。</p>
+    </div>
+  </section>
+
+  <section class="request-section">
+    <div class="container request-grid">
+
+      <div class="request-info" data-animate>
+        <h2>ご依頼にあたって</h2>
+        <p>以下のようなお仕事を承っております。まずはお気軽にご相談ください。</p>
+        <ul class="info-list">
+          <li>ホームページ作成</li>
+          <li>LP作成</li>
+          <li>HTML・CSSコーディング</li>
+          <li>IT何でも相談</li>
+        </ul>
+        <div class="info-note">
+          <p>お見積りは無料です。内容確認後、2営業日以内を目安にご返信いたします。</p>
+        </div>
+      </div>
+
+      <div class="request-form-wrap" data-animate>
+        <form id="requestForm" class="request-form" novalidate>
+
+          <div class="form-row">
+            <label for="name">お名前・会社名 <span class="required">必須</span></label>
+            <input type="text" id="name" name="name" required placeholder="例）オーロラ商事 山田太郎">
+          </div>
+
+          <div class="form-row">
+            <label for="email">メールアドレス <span class="required">必須</span></label>
+            <input type="email" id="email" name="email" required placeholder="example@webora.jp">
+          </div>
+
+          <div class="form-row">
+            <label>ご依頼内容 <span class="required">必須</span></label>
+            <div class="checkbox-group">
+              <label class="checkbox-item"><input type="checkbox" name="service" value="ホームページ作成"><span>ホームページ作成</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="service" value="LP作成"><span>LP作成</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="service" value="HTML・CSSコーディング"><span>HTML・CSSコーディング</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="service" value="IT何でも相談"><span>IT何でも相談</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="service" value="その他"><span>その他</span></label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="budget">ご予算 <span class="required">必須</span></label>
+            <select id="budget" name="budget" required>
+              <option value="">選択してください</option>
+              <option value="～5万円">～5万円</option>
+              <option value="5～10万円">5～10万円</option>
+              <option value="10～30万円">10～30万円</option>
+              <option value="30万円～">30万円～</option>
+              <option value="未定・相談したい">未定・相談したい</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="deadline">ご希望の納期</label>
+            <input type="date" id="deadline" name="deadline">
+          </div>
+
+          <div class="form-row">
+            <label>ビデオチャット希望</label>
+            <div class="radio-group">
+              <label class="radio-item"><input type="radio" name="videoChat" value="希望する"><span>希望する</span></label>
+              <label class="radio-item"><input type="radio" name="videoChat" value="希望しない"><span>希望しない</span></label>
+            </div>
+            <p class="field-note">※ビデオチャットが可能な日程は、メールにてご返信いたします。</p>
+          </div>
+
+          <div class="form-row">
+            <label for="detail">詳細・ご要望</label>
+            <textarea id="detail" name="detail" rows="6" placeholder="現状の課題やご要望などをご記入ください"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-submit">この内容で送信する</button>
+        </form>
+
+        <div class="form-success" id="formSuccess" hidden>
+          <div class="success-icon">✨</div>
+          <h3>送信しました</h3>
+          <p>ご依頼内容を承りました。内容を確認のうえ、担当者よりご連絡いたします。</p>
+          <a href="../index.html" class="btn btn-ghost">TOPページへ戻る</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-mark">🌌</span>
+      <span class="logo-text">Web<span class="accent">ora</span></span>
+    </a>
+    <nav class="footer-nav">
+      <a href="../index.html#about">Weboraとは</a>
+      <a href="../index.html#services">サービス</a>
+      <a href="request.html">依頼する</a>
+    </nav>
+    <p class="copyright">&copy; 2026 Webora. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
