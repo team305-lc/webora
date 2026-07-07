@@ -677,6 +677,37 @@ section { position: relative; }
   box-shadow: 0 0 0 3px rgba(34,211,238,.15);
 }
 
+.form-row input.invalid,
+.form-row select.invalid,
+.form-row textarea.invalid,
+.checkbox-group.invalid .checkbox-item {
+  border-color: var(--c-pink);
+}
+.form-row input.invalid:focus,
+.form-row select.invalid:focus,
+.form-row textarea.invalid:focus {
+  box-shadow: 0 0 0 3px rgba(244,114,182,.15);
+}
+
+.field-error {
+  margin-top: 8px;
+  font-size: .8rem;
+  color: var(--c-pink);
+}
+.field-error:empty {
+  display: none;
+}
+
+.char-counter {
+  margin-top: 8px;
+  font-size: .78rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+.char-counter.at-limit {
+  color: var(--c-pink);
+}
+
 .form-row select {
   appearance: none;
   color-scheme: dark;
@@ -759,6 +790,14 @@ section { position: relative; }
 .success-icon { font-size: 2.6rem; margin-bottom: 20px; }
 .form-success h3 { font-size: 1.3rem; margin-bottom: 14px; }
 .form-success p { color: var(--text-muted); margin-bottom: 30px; }
+
+.form-error {
+  text-align: center;
+  padding: 50px 20px;
+}
+.error-icon { font-size: 2.6rem; margin-bottom: 20px; }
+.form-error h3 { font-size: 1.3rem; margin-bottom: 14px; color: var(--c-pink); }
+.form-error p { color: var(--text-muted); margin-bottom: 30px; }
 
 /* ==========================================================================
    Footer

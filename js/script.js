@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---- request form: submit straight through to the Webora Google Form ---- */
   const form = document.getElementById("requestForm");
   const successPanel = document.getElementById("formSuccess");
+  const errorPanel = document.getElementById("formError");
   if (form && successPanel) {
     const GOOGLE_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdxUFkpD2PlWuRv-FYXbDCwIAzQHo5LSJNHbzBBnc8VLKxb-A/formResponse";
     const ENTRY = {
@@ -80,17 +81,121 @@ document.addEventListener("DOMContentLoaded", () => {
       detail: "entry.2014809105",
     };
 
+    const checkboxGroup = form.querySelector(".checkbox-group");
+    const fieldErrors = {
+      name: document.getElementById("nameError"),
+      email: document.getElementById("emailError"),
+      service: document.getElementById("serviceError"),
+      budget: document.getElementById("budgetError"),
+      detail: document.getElementById("detailError"),
+    };
+
+    const MAX_LENGTH = { name: 100, email: 255, detail: 2000 };
+    const counters = {
+      name: document.getElementById("nameCounter"),
+      email: document.getElementById("emailCounter"),
+      detail: document.getElementById("detailCounter"),
+    };
+    Object.keys(counters).forEach((field) => {
+      const updateCounter = () => {
+        const length = form[field].value.length;
+        const max = MAX_LENGTH[field];
+        counters[field].textContent = `${length} / ${max}`;
+        counters[field].classList.toggle("at-limit", length >= max);
+      };
+      form[field].addEventListener("input", updateCounter);
+      updateCounter();
+    });
+
+    const clearFieldError = (field) => {
+      fieldErrors[field].textContent = "";
+      if (field === "service") {
+        checkboxGroup.classList.remove("invalid");
+      } else {
+        form[field].classList.remove("invalid");
+      }
+    };
+    const setFieldError = (field, message) => {
+      fieldErrors[field].textContent = message;
+      if (field === "service") {
+        checkboxGroup.classList.add("invalid");
+      } else {
+        form[field].classList.add("invalid");
+      }
+    };
+
+    ["name", "email", "budget", "detail"].forEach((field) => {
+      form[field].addEventListener("input", () => clearFieldError(field));
+    });
+    form.querySelectorAll('input[name="service"]').forEach((el) => {
+      el.addEventListener("change", () => clearFieldError("service"));
+    });
+
+    const validateForm = () => {
+      let valid = true;
+
+      const name = form.name.value.trim();
+      if (!name) {
+        setFieldError("name", "お名前・会社名を入力してください。");
+        valid = false;
+      } else if (name.length > MAX_LENGTH.name) {
+        setFieldError("name", `お名前・会社名は${MAX_LENGTH.name}文字以内で入力してください。`);
+        valid = false;
+      } else {
+        clearFieldError("name");
+      }
+
+      const email = form.email.value.trim();
+      if (!email) {
+        setFieldError("email", "メールアドレスを入力してください。");
+        valid = false;
+      } else if (form.email.validity.typeMismatch) {
+        setFieldError("email", "メールアドレスの形式が正しくありません。");
+        valid = false;
+      } else if (email.length > MAX_LENGTH.email) {
+        setFieldError("email", `メールアドレスは${MAX_LENGTH.email}文字以内で入力してください。`);
+        valid = false;
+      } else {
+        clearFieldError("email");
+      }
+
+      const services = Array.from(form.querySelectorAll('input[name="service"]:checked'));
+      if (services.length === 0) {
+        setFieldError("service", "ご依頼内容を1つ以上選択してください。");
+        valid = false;
+      } else {
+        clearFieldError("service");
+      }
+
+      if (!form.budget.value) {
+        setFieldError("budget", "ご予算を選択してください。");
+        valid = false;
+      } else {
+        clearFieldError("budget");
+      }
+
+      const detail = form.detail.value.trim();
+      if (detail.length > MAX_LENGTH.detail) {
+        setFieldError("detail", `詳細・ご要望は${MAX_LENGTH.detail}文字以内で入力してください。`);
+        valid = false;
+      } else {
+        clearFieldError("detail");
+      }
+
+      return valid;
+    };
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      const services = Array.from(form.querySelectorAll('input[name="service"]:checked')).map((el) => el.value);
-      let valid = form.checkValidity();
-      if (services.length === 0) valid = false;
-
-      if (!valid) {
-        form.reportValidity();
+      if (!validateForm()) {
+        const firstInvalid = form.querySelector(".invalid");
+        if (firstInvalid) firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
         return;
       }
+
+      const services = Array.from(form.querySelectorAll('input[name="service"]:checked')).map((el) => el.value);
+      errorPanel.hidden = true;
 
       const params = new URLSearchParams();
       params.append(ENTRY.name, form.name.value.trim());
@@ -113,15 +218,25 @@ document.addEventListener("DOMContentLoaded", () => {
       if (form.videoChat.value) params.append(ENTRY.videoChat, form.videoChat.value);
       params.append(ENTRY.detail, form.detail.value.trim());
 
+      const submitBtn = form.querySelector(".btn-submit");
+      submitBtn.disabled = true;
+
       fetch(GOOGLE_FORM_ACTION, {
         method: "POST",
         mode: "no-cors",
         body: params,
-      }).catch(() => {});
-
-      form.hidden = true;
-      successPanel.hidden = false;
-      successPanel.scrollIntoView({ behavior: "smooth", block: "center" });
+      })
+        .then(() => {
+          form.hidden = true;
+          errorPanel.hidden = true;
+          successPanel.hidden = false;
+          successPanel.scrollIntoView({ behavior: "smooth", block: "center" });
+        })
+        .catch(() => {
+          submitBtn.disabled = false;
+          errorPanel.hidden = false;
+          errorPanel.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
     });
   }
 });

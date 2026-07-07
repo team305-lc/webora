@@ -5,6 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>お仕事のご依頼 | Webora</title>
 <meta name="description" content="Weboraへのお仕事のご依頼はこちらから。ホームページ作成、LP作成、HTML・CSSコーディング、IT何でも相談を承ります。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://team305-lc.github.io/webora/html/request.html">
+<meta name="theme-color" content="#05061a">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Webora">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="お仕事のご依頼 | Webora">
+<meta property="og:description" content="Weboraへのお仕事のご依頼はこちらから。ホームページ作成、LP作成、HTML・CSSコーディング、IT何でも相談を承ります。">
+<meta property="og:url" content="https://team305-lc.github.io/webora/html/request.html">
+<meta property="og:image" content="https://images.unsplash.com/photo-1483347756197-71ef80e95f73?auto=format&fit=crop&w=1200&h=630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="お仕事のご依頼 | Webora">
+<meta name="twitter:description" content="Weboraへのお仕事のご依頼はこちらから。ホームページ作成、LP作成、HTML・CSSコーディング、IT何でも相談を承ります。">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1483347756197-71ef80e95f73?auto=format&fit=crop&w=1200&h=630">
+
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,12 +86,16 @@
 
           <div class="form-row">
             <label for="name">お名前・会社名 <span class="required">必須</span></label>
-            <input type="text" id="name" name="name" required placeholder="例）オーロラ商事 山田太郎">
+            <input type="text" id="name" name="name" required maxlength="100" placeholder="例）オーロラ商事 山田太郎">
+            <p class="char-counter" id="nameCounter">0 / 100</p>
+            <p class="field-error" id="nameError"></p>
           </div>
 
           <div class="form-row">
             <label for="email">メールアドレス <span class="required">必須</span></label>
-            <input type="email" id="email" name="email" required placeholder="example@webora.jp">
+            <input type="email" id="email" name="email" required maxlength="255" placeholder="example@webora.jp">
+            <p class="char-counter" id="emailCounter">0 / 255</p>
+            <p class="field-error" id="emailError"></p>
           </div>
 
           <div class="form-row">
@@ -86,6 +107,7 @@
               <label class="checkbox-item"><input type="checkbox" name="service" value="IT何でも相談"><span>IT何でも相談</span></label>
               <label class="checkbox-item"><input type="checkbox" name="service" value="その他"><span>その他</span></label>
             </div>
+            <p class="field-error" id="serviceError"></p>
           </div>
 
           <div class="form-row">
@@ -98,6 +120,7 @@
               <option value="30万円～">30万円～</option>
               <option value="未定・相談したい">未定・相談したい</option>
             </select>
+            <p class="field-error" id="budgetError"></p>
           </div>
 
           <div class="form-row">
@@ -109,14 +132,16 @@
             <label>ビデオチャット希望</label>
             <div class="radio-group">
               <label class="radio-item"><input type="radio" name="videoChat" value="希望する"><span>希望する</span></label>
-              <label class="radio-item"><input type="radio" name="videoChat" value="希望しない"><span>希望しない</span></label>
+              <label class="radio-item"><input type="radio" name="videoChat" value="希望しない" checked><span>希望しない</span></label>
             </div>
             <p class="field-note">※ビデオチャットが可能な日程は、メールにてご返信いたします。</p>
           </div>
 
           <div class="form-row">
             <label for="detail">詳細・ご要望</label>
-            <textarea id="detail" name="detail" rows="6" placeholder="現状の課題やご要望などをご記入ください"></textarea>
+            <textarea id="detail" name="detail" rows="6" maxlength="2000" placeholder="現状の課題やご要望などをご記入ください"></textarea>
+            <p class="char-counter" id="detailCounter">0 / 2000</p>
+            <p class="field-error" id="detailError"></p>
           </div>
 
           <button type="submit" class="btn btn-primary btn-lg btn-submit">この内容で送信する</button>
@@ -127,6 +152,12 @@
           <h3>送信しました</h3>
           <p>ご依頼内容を承りました。内容を確認のうえ、担当者よりご連絡いたします。</p>
           <a href="../index.html" class="btn btn-ghost">TOPページへ戻る</a>
+        </div>
+
+        <div class="form-error" id="formError" hidden>
+          <div class="error-icon">⚠️</div>
+          <h3>送信に失敗しました</h3>
+          <p>通信エラーが発生し、送信できませんでした。お手数ですが、時間をおいて再度送信ボタンを押してください。</p>
         </div>
       </div>
 
