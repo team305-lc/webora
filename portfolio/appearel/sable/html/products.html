@@ -1,0 +1,506 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SABLE Collection — 2025年秋冬コレクション。ドレス、コート、スーツ、アクセサリー。">
+  <title>Collection — SABLE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- HEADER -->
+  <header id="header" class="scrolled">
+    <div class="header-left">
+      <button class="menu-toggle" id="menuToggle" aria-label="メニュー">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+      </button>
+      <div class="header-tagline">2025 Collection</div>
+    </div>
+    <a href="../index.html" class="header-logo">SABLE</a>
+    <div class="header-right">
+      <a href="products.html" class="header-link header-link--accent">SHOP</a>
+      <a href="#models" class="header-link">BOOKING</a>
+    </div>
+  </header>
+
+  <!-- FULLSCREEN MENU -->
+  <nav class="fullscreen-nav" id="fullscreenNav">
+    <div class="fullscreen-nav-inner">
+      <div class="nav-items">
+        <a href="../index.html" class="nav-item" data-num="01">
+          <span class="nav-item-text">HOME</span>
+        </a>
+        <a href="products.html" class="nav-item" data-num="02">
+          <span class="nav-item-text">COLLECTION</span>
+        </a>
+        <a href="#models" class="nav-item" data-num="03">
+          <span class="nav-item-text">MODELS</span>
+        </a>
+        <a href="../index.html#concept" class="nav-item" data-num="04">
+          <span class="nav-item-text">CONCEPT</span>
+        </a>
+        <a href="../index.html#contact" class="nav-item" data-num="05">
+          <span class="nav-item-text">CONTACT</span>
+        </a>
+      </div>
+      <div class="nav-footer">
+        <p>SABLE © 2025</p>
+        <div class="nav-social">
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">Pinterest</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg">
+      <img src="../img/hero-03.jpg"
+        alt="Collection 2025" loading="eager">
+    </div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <div class="page-eyebrow">Autumn / Winter 2025</div>
+      <h1 class="page-title">Collection</h1>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-section">
+    <div class="filter-inner">
+      <button class="filter-btn active" data-filter="all">ALL</button>
+      <button class="filter-btn" data-filter="dress">DRESS</button>
+      <button class="filter-btn" data-filter="coat">COAT</button>
+      <button class="filter-btn" data-filter="suit">SUIT</button>
+      <button class="filter-btn" data-filter="blouse">BLOUSE</button>
+      <button class="filter-btn" data-filter="skirt">SKIRT</button>
+      <button class="filter-btn" data-filter="accessory">ACCESSORY</button>
+    </div>
+  </div>
+
+  <!-- PRODUCTS GRID -->
+  <section class="products-section">
+    <div class="products-grid">
+
+      <!-- Featured large card -->
+      <div class="product-card featured-card reveal" data-cat="dress">
+        <div class="product-img">
+          <img src="../img/vladimir-fedotov-kEUoygxtAJI-unsplash.jpg"
+            alt="Velvet Noir Dress" loading="lazy" style="object-position: 50% 30%;">
+        </div>
+        <div class="product-overlay"></div>
+        <div class="product-body">
+          <div class="product-cat">Dress</div>
+          <div class="product-name">Velvet Noir Dress</div>
+          <div class="product-price">¥ 68,000</div>
+          <a href="#" class="product-action">VIEW ITEM →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-cat="coat">
+        <div class="product-img">
+          <img src="../img/cashmere-long-coat.jpg"
+            alt="Cashmere Long Coat" loading="lazy">
+        </div>
+        <div class="product-overlay"></div>
+        <div class="product-body">
+          <div class="product-cat">Coat</div>
+          <div class="product-name">Cashmere Long Coat</div>
+          <div class="product-price">¥ 128,000</div>
+          <a href="#" class="product-action">VIEW ITEM →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-cat="suit">
+        <div class="product-img">
+          <img src="../img/anhelina-osaulenko-I-m942x9Kdk-unsplash.jpg"
+            alt="Power Suit Set" loading="lazy">
+        </div>
+        <div class="product-overlay"></div>
+        <div class="product-body">
+          <div class="product-cat">Suit</div>
+          <div class="product-name">Power Suit Set</div>
+          <div class="product-price">¥ 95,000</div>
+          <a href="#" class="product-action">VIEW ITEM →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-cat="blouse">
+        <div class="product-img">
+          <img src="../img/adolfo-felix-VZ1qh938sPU-unsplash.jpg"
+            alt="Silk Drape Blouse" loading="lazy">
+        </div>
+        <div class="product-overlay"></div>
+        <div class="product-body">
+          <div class="product-cat">Blouse</div>
+          <div class="product-name">Silk Drape Blouse</div>
+          <div class="product-price">¥ 42,000</div>
+          <a href="#" class="product-action">VIEW ITEM →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-cat="skirt">
+        <div class="product-img">
+          <img src="../img/roman-khripkov-tYjBScoVvhI-unsplash.jpg"
+            alt="Satin Midi Skirt" loading="lazy">
+        </div>
+        <div class="product-overlay"></div>
+        <div class="product-body">
+          <div class="product-cat">Skirt</div>
+          <div class="product-name">Satin Midi Skirt</div>
+          <div class="product-price">¥ 35,000</div>
+          <a href="#" class="product-action">VIEW ITEM →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-cat="coat">
+        <div class="product-img">
+          <img src="../img/ola-szkolda-lcOK0Q-72is-unsplash.jpg"
+            alt="Leather Trench Coat" loading="lazy">
+        </div>
+        <div class="product-overlay"></div>
+        <div class="product-body">
+          <div class="product-cat">Coat</div>
+          <div class="product-name">Leather Trench Coat</div>
+          <div class="product-price">¥ 158,000</div>
+          <a href="#" class="product-action">VIEW ITEM →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-cat="accessory">
+        <div class="product-img">
+          <img src="../img/onyx-chain-bag.jpg"
+            alt="Onyx Chain Bag" loading="lazy">
+        </div>
+        <div class="product-overlay"></div>
+        <div class="product-body">
+          <div class="product-cat">Accessory</div>
+          <div class="product-name">Onyx Chain Bag</div>
+          <div class="product-price">¥ 88,000</div>
+          <a href="#" class="product-action">VIEW ITEM →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-cat="dress">
+        <div class="product-img">
+          <img src="../img/concept-fashion.jpg"
+            alt="Asymmetric Hem Dress" loading="lazy">
+        </div>
+        <div class="product-overlay"></div>
+        <div class="product-body">
+          <div class="product-cat">Dress</div>
+          <div class="product-name">Asymmetric Hem Dress</div>
+          <div class="product-price">¥ 78,000</div>
+          <a href="#" class="product-action">VIEW ITEM →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal" data-cat="suit">
+        <div class="product-img">
+          <img src="../img/ali-karimiboroujeni-mXwZGUJABVI-unsplash.jpg"
+            alt="Slim Trouser Set" loading="lazy">
+        </div>
+        <div class="product-overlay"></div>
+        <div class="product-body">
+          <div class="product-cat">Suit</div>
+          <div class="product-name">Slim Trouser Set</div>
+          <div class="product-price">¥ 82,000</div>
+          <a href="#" class="product-action">VIEW ITEM →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MODELS SECTION -->
+  <section class="models-page" id="models">
+    <div class="section-label reveal">— Our Models</div>
+    <h2 class="models-page-title reveal">
+      着用モデルへの<br><em>仕事依頼</em>
+    </h2>
+    <p class="models-page-desc reveal">
+      SABLEのコレクションを纏うモデルたちへの直接ブッキングが可能です。
+      広告・雑誌・SNS撮影など、様々なシーンでご活用ください。
+      フォームよりご依頼内容をご送信いただくと、担当者よりご連絡いたします。
+    </p>
+
+    <div class="models-page-grid">
+
+      <div class="model-page-card reveal">
+        <div class="model-page-img">
+          <img src="../img/model-aoi-yamamoto.jpg"
+            alt="Aoi Yamamoto" loading="lazy">
+        </div>
+        <div class="model-page-overlay"></div>
+        <div class="model-page-num">01</div>
+        <div class="model-page-body">
+          <div class="model-page-name">Aoi Yamamoto</div>
+          <div class="model-page-spec">Fashion · Editorial</div>
+          <button class="model-page-book"
+            data-name="Aoi Yamamoto"
+            data-spec="Fashion · Editorial Model">
+            BOOK →
+          </button>
+        </div>
+      </div>
+
+      <div class="model-page-card reveal">
+        <div class="model-page-img">
+          <img src="../img/model-risa-nakamura.jpg"
+            alt="Risa Nakamura" loading="lazy">
+        </div>
+        <div class="model-page-overlay"></div>
+        <div class="model-page-num">02</div>
+        <div class="model-page-body">
+          <div class="model-page-name">Risa Nakamura</div>
+          <div class="model-page-spec">Commercial · Beauty</div>
+          <button class="model-page-book"
+            data-name="Risa Nakamura"
+            data-spec="Commercial · Beauty Model">
+            BOOK →
+          </button>
+        </div>
+      </div>
+
+      <div class="model-page-card reveal">
+        <div class="model-page-img">
+          <img src="../img/model-hana-suzuki.jpg"
+            alt="Hana Suzuki" loading="lazy">
+        </div>
+        <div class="model-page-overlay"></div>
+        <div class="model-page-num">03</div>
+        <div class="model-page-body">
+          <div class="model-page-name">Hana Suzuki</div>
+          <div class="model-page-spec">Runway · High Fashion</div>
+          <button class="model-page-book"
+            data-name="Hana Suzuki"
+            data-spec="Runway · High Fashion Model">
+            BOOK →
+          </button>
+        </div>
+      </div>
+
+      <div class="model-page-card reveal">
+        <div class="model-page-img">
+          <img src="../img/model-mei-tanaka.jpg"
+            alt="Mei Tanaka" loading="lazy">
+        </div>
+        <div class="model-page-overlay"></div>
+        <div class="model-page-num">04</div>
+        <div class="model-page-body">
+          <div class="model-page-name">Mei Tanaka</div>
+          <div class="model-page-spec">Catalog · Lifestyle</div>
+          <button class="model-page-book"
+            data-name="Mei Tanaka"
+            data-spec="Catalog · Lifestyle Model">
+            BOOK →
+          </button>
+        </div>
+      </div>
+
+      <div class="model-page-card reveal">
+        <div class="model-page-img">
+          <img src="../img/model-yuki-matsumoto.jpg"
+            alt="Yuki Matsumoto" loading="lazy">
+        </div>
+        <div class="model-page-overlay"></div>
+        <div class="model-page-num">05</div>
+        <div class="model-page-body">
+          <div class="model-page-name">Yuki Matsumoto</div>
+          <div class="model-page-spec">Editorial · Art</div>
+          <button class="model-page-book"
+            data-name="Yuki Matsumoto"
+            data-spec="Editorial · Art Model">
+            BOOK →
+          </button>
+        </div>
+      </div>
+
+      <div class="model-page-card reveal">
+        <div class="model-page-img">
+          <img src="../img/model-saki-inoue.jpg"
+            alt="Saki Inoue" loading="lazy">
+        </div>
+        <div class="model-page-overlay"></div>
+        <div class="model-page-num">06</div>
+        <div class="model-page-body">
+          <div class="model-page-name">Saki Inoue</div>
+          <div class="model-page-spec">Beauty · Campaign</div>
+          <button class="model-page-book"
+            data-name="Saki Inoue"
+            data-spec="Beauty · Campaign Model">
+            BOOK →
+          </button>
+        </div>
+      </div>
+
+      <div class="model-page-card reveal">
+        <div class="model-page-img">
+          <img src="../img/model-nana-ito.jpg"
+            alt="Nana Ito" loading="lazy">
+        </div>
+        <div class="model-page-overlay"></div>
+        <div class="model-page-num">07</div>
+        <div class="model-page-body">
+          <div class="model-page-name">Nana Ito</div>
+          <div class="model-page-spec">Commercial · SNS</div>
+          <button class="model-page-book"
+            data-name="Nana Ito"
+            data-spec="Commercial · SNS Model">
+            BOOK →
+          </button>
+        </div>
+      </div>
+
+      <div class="model-page-card reveal">
+        <div class="model-page-img">
+          <img src="../img/model-mia-kobayashi.jpg"
+            alt="Mia Kobayashi" loading="lazy">
+        </div>
+        <div class="model-page-overlay"></div>
+        <div class="model-page-num">08</div>
+        <div class="model-page-body">
+          <div class="model-page-name">Mia Kobayashi</div>
+          <div class="model-page-spec">Runway · Luxury</div>
+          <button class="model-page-book"
+            data-name="Mia Kobayashi"
+            data-spec="Runway · Luxury Model">
+            BOOK →
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo-block">
+        <div class="footer-logo">SABLE</div>
+        <p class="footer-tagline">The Art of Black</p>
+      </div>
+      <div class="footer-links-block">
+        <div class="footer-col">
+          <h5>Collection</h5>
+          <ul>
+            <li><a href="products.html">All Items</a></li>
+            <li><a href="products.html">Dress</a></li>
+            <li><a href="products.html">Coat</a></li>
+            <li><a href="products.html">Suit</a></li>
+            <li><a href="products.html">Accessories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Models</h5>
+          <ul>
+            <li><a href="#models">モデル一覧</a></li>
+            <li><a href="#models">仕事依頼</a></li>
+            <li><a href="#">モデル募集</a></li>
+            <li><a href="#">撮影依頼</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Brand</h5>
+          <ul>
+            <li><a href="#">ブランドについて</a></li>
+            <li><a href="#">サステナビリティ</a></li>
+            <li><a href="#">プレスリリース</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 SABLE. All Rights Reserved.</p>
+      <div class="footer-legal">
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">特定商取引法</a>
+        <a href="#">利用規約</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="modalClose" aria-label="閉じる">
+        <span></span><span></span>
+      </button>
+      <div class="modal-left">
+        <div class="modal-model-preview" id="modalModelPreview">
+          <img src="../img/model-aoi-yamamoto.jpg"
+            id="modalPreviewImg" alt="Model">
+        </div>
+        <div class="modal-model-meta">
+          <div class="modal-model-name" id="modalModelName">Aoi Yamamoto</div>
+          <div class="modal-model-spec" id="modalModelSpec">Fashion · Editorial</div>
+        </div>
+      </div>
+      <div class="modal-right">
+        <div class="modal-header">
+          <div class="modal-label">— Model Booking</div>
+          <h3 class="modal-title">仕事依頼フォーム</h3>
+        </div>
+        <form id="bookingForm" class="booking-form">
+          <input type="hidden" id="hiddenModelName">
+          <div class="form-row">
+            <div class="form-field">
+              <label>お名前 *</label>
+              <input type="text" placeholder="山田 花子" required>
+            </div>
+            <div class="form-field">
+              <label>会社名</label>
+              <input type="text" placeholder="株式会社〇〇">
+            </div>
+          </div>
+          <div class="form-field">
+            <label>メールアドレス *</label>
+            <input type="email" placeholder="example@company.com" required>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>撮影用途 *</label>
+              <select required>
+                <option value="">選択してください</option>
+                <option>雑誌・エディトリアル</option>
+                <option>広告・カタログ</option>
+                <option>EC・Web撮影</option>
+                <option>SNS・インフルエンサー</option>
+                <option>ランウェイ・イベント</option>
+                <option>その他</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>希望日程</label>
+              <input type="text" placeholder="例：2025年8月上旬">
+            </div>
+          </div>
+          <div class="form-field">
+            <label>依頼内容 *</label>
+            <textarea placeholder="撮影内容、使用媒体、予算感などをご記入ください" required></textarea>
+          </div>
+          <button type="submit" class="booking-submit">送信する →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCROLL TOP -->
+  <button class="scroll-top" aria-label="トップへ">↑</button>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
