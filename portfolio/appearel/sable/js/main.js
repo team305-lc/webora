@@ -168,8 +168,11 @@ if (railWrap && rail) {
     resumeSoon(0);
   });
   railWrap.addEventListener('pointerdown', e => {
-    isDragging = true;
     pause();
+    // Manual drag math is only needed for mouse (no native click-drag-to-scroll).
+    // Touch/pen already scroll natively and smoothly, so let the browser handle those.
+    if (e.pointerType !== 'mouse') return;
+    isDragging = true;
     startX = e.clientX - railWrap.offsetLeft;
     scrollLeft = railWrap.scrollLeft;
     railWrap.style.cursor = 'grabbing';
@@ -185,7 +188,7 @@ if (railWrap && rail) {
     resumeSoon();
   });
   railWrap.addEventListener('pointermove', e => {
-    if (!isDragging) return;
+    if (!isDragging || e.pointerType !== 'mouse') return;
     const x = e.clientX - railWrap.offsetLeft;
     railWrap.scrollLeft = scrollLeft - (x - startX) * 1.4;
   });
