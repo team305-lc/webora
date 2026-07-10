@@ -156,40 +156,49 @@ if (railWrap && rail) {
     resumeTimer = setTimeout(() => { autoScrollPaused = false; }, delay);
   };
 
-  // Pointer Events unify mouse/touch/pen and avoid the synthetic "ghost"
-  // mouse events browsers replay after a touch tap, which previously left
-  // autoScrollPaused stuck true with no matching resume on touch devices.
+  // Touch Events are used (rather than pointerenter/pointerleave) because
+  // touch support for those is inconsistent across mobile browsers. Real
+  // touchstart/touchend always fire reliably. Mouse handlers are guarded
+  // against the synthetic "ghost" mouse events browsers replay after a
+  // touch tap, which previously left autoScrollPaused stuck true forever.
   let isDragging = false, startX, scrollLeft;
+  let ignoreMouseUntil = 0;
 
-  railWrap.addEventListener('pointerenter', pause);
-  railWrap.addEventListener('pointerleave', () => {
+  railWrap.addEventListener('touchstart', () => {
+    ignoreMouseUntil = Date.now() + 1000;
+    pause();
+  }, { passive: true });
+  railWrap.addEventListener('touchend', () => { resumeSoon(); }, { passive: true });
+  railWrap.addEventListener('touchcancel', () => { resumeSoon(); }, { passive: true });
+
+  // Manual drag math is only needed for mouse (no native click-drag-to-scroll).
+  // Touch already scrolls natively and smoothly, so it's left to the browser.
+  railWrap.addEventListener('mouseenter', () => {
+    if (Date.now() < ignoreMouseUntil) return;
+    pause();
+  });
+  railWrap.addEventListener('mouseleave', () => {
+    if (Date.now() < ignoreMouseUntil) { resumeSoon(0); return; }
     isDragging = false;
     railWrap.style.cursor = 'grab';
     resumeSoon(0);
   });
-  railWrap.addEventListener('pointerdown', e => {
-    pause();
-    // Manual drag math is only needed for mouse (no native click-drag-to-scroll).
-    // Touch/pen already scroll natively and smoothly, so let the browser handle those.
-    if (e.pointerType !== 'mouse') return;
+  railWrap.addEventListener('mousedown', e => {
+    if (Date.now() < ignoreMouseUntil) return;
     isDragging = true;
-    startX = e.clientX - railWrap.offsetLeft;
+    pause();
+    startX = e.pageX - railWrap.offsetLeft;
     scrollLeft = railWrap.scrollLeft;
     railWrap.style.cursor = 'grabbing';
-    railWrap.setPointerCapture(e.pointerId);
   });
-  railWrap.addEventListener('pointerup', () => {
+  railWrap.addEventListener('mouseup', () => {
     isDragging = false;
     railWrap.style.cursor = 'grab';
     resumeSoon();
   });
-  railWrap.addEventListener('pointercancel', () => {
-    isDragging = false;
-    resumeSoon();
-  });
-  railWrap.addEventListener('pointermove', e => {
-    if (!isDragging || e.pointerType !== 'mouse') return;
-    const x = e.clientX - railWrap.offsetLeft;
+  railWrap.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    const x = e.pageX - railWrap.offsetLeft;
     railWrap.scrollLeft = scrollLeft - (x - startX) * 1.4;
   });
 }
