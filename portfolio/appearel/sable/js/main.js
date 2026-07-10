@@ -117,16 +117,23 @@ if (heroPrev) heroPrev.addEventListener('click', () => { goToHero(heroIndex - 1)
 if (heroNext) heroNext.addEventListener('click', () => { goToHero(heroIndex + 1); startHeroTimer(); });
 startHeroTimer();
 
-/* --- HORIZONTAL RAIL DRAG + AUTO-SCROLL --- */
+/* --- HORIZONTAL RAIL DRAG + AUTO-SCROLL ---
+   Driven entirely by CSS transform (translateX), not native scrollLeft.
+   Programmatically animating scrollLeft on a natively-scrollable element is
+   unreliable on some mobile browsers (the scroll position is owned by a
+   separate compositor/UI thread and can ignore continuous JS writes), which
+   is why auto-scroll and drag are both implemented as plain transforms here
+   instead — this works identically across desktop and mobile. */
 const rail = document.getElementById('productsRail');
 const railWrap = document.querySelector('.products-rail-wrap');
 if (railWrap && rail) {
-  // Auto-scroll
   let autoScrollPaused = false;
   let resumeTimer = null;
   const autoSpeed = 0.8; // px per frame
+  let posX = 0; // current scroll offset, always kept within [0, halfWidth)
+  let halfWidth = 0;
 
-  // Clone cards for seamless loop
+  // Clone cards for a seamless loop
   const cards = Array.from(rail.children);
   cards.forEach(card => {
     const clone = card.cloneNode(true);
@@ -134,14 +141,26 @@ if (railWrap && rail) {
     rail.appendChild(clone);
   });
 
+  function measure() {
+    halfWidth = rail.scrollWidth / 2;
+  }
+  measure();
+  window.addEventListener('resize', measure);
+  window.addEventListener('load', measure);
+
+  function applyTransform() {
+    rail.style.transform = `translate3d(${-posX}px, 0, 0)`;
+  }
+
+  function wrap(value) {
+    if (halfWidth <= 0) return value;
+    return ((value % halfWidth) + halfWidth) % halfWidth;
+  }
+
   function autoScroll() {
     if (!autoScrollPaused) {
-      railWrap.scrollLeft += autoSpeed;
-      // When we've scrolled past the original set, reset to start seamlessly
-      const halfWidth = rail.scrollWidth / 2;
-      if (railWrap.scrollLeft >= halfWidth) {
-        railWrap.scrollLeft -= halfWidth;
-      }
+      posX = wrap(posX + autoSpeed);
+      applyTransform();
     }
     requestAnimationFrame(autoScroll);
   }
@@ -156,51 +175,45 @@ if (railWrap && rail) {
     resumeTimer = setTimeout(() => { autoScrollPaused = false; }, delay);
   };
 
-  // Touch Events are used (rather than pointerenter/pointerleave) because
-  // touch support for those is inconsistent across mobile browsers. Real
-  // touchstart/touchend always fire reliably. Mouse handlers are guarded
-  // against the synthetic "ghost" mouse events browsers replay after a
-  // touch tap, which previously left autoScrollPaused stuck true forever.
-  let isDragging = false, startX, scrollLeft;
-  let ignoreMouseUntil = 0;
+  let isDragging = false, startClientX, startPosX;
 
-  railWrap.addEventListener('touchstart', () => {
-    ignoreMouseUntil = Date.now() + 1000;
-    pause();
-  }, { passive: true });
-  railWrap.addEventListener('touchend', () => { resumeSoon(); }, { passive: true });
-  railWrap.addEventListener('touchcancel', () => { resumeSoon(); }, { passive: true });
-
-  // Manual drag math is only needed for mouse (no native click-drag-to-scroll).
-  // Touch already scrolls natively and smoothly, so it's left to the browser.
-  railWrap.addEventListener('mouseenter', () => {
-    if (Date.now() < ignoreMouseUntil) return;
-    pause();
-  });
-  railWrap.addEventListener('mouseleave', () => {
-    if (Date.now() < ignoreMouseUntil) { resumeSoon(0); return; }
-    isDragging = false;
-    railWrap.style.cursor = 'grab';
-    resumeSoon(0);
-  });
-  railWrap.addEventListener('mousedown', e => {
-    if (Date.now() < ignoreMouseUntil) return;
+  function dragStart(clientX) {
     isDragging = true;
     pause();
-    startX = e.pageX - railWrap.offsetLeft;
-    scrollLeft = railWrap.scrollLeft;
+    startClientX = clientX;
+    startPosX = posX;
     railWrap.style.cursor = 'grabbing';
-  });
-  railWrap.addEventListener('mouseup', () => {
+  }
+  function dragMove(clientX) {
+    if (!isDragging) return;
+    posX = wrap(startPosX - (clientX - startClientX));
+    applyTransform();
+  }
+  function dragEnd() {
+    if (!isDragging) return;
     isDragging = false;
     railWrap.style.cursor = 'grab';
     resumeSoon();
-  });
-  railWrap.addEventListener('mousemove', e => {
-    if (!isDragging) return;
-    const x = e.pageX - railWrap.offsetLeft;
-    railWrap.scrollLeft = scrollLeft - (x - startX) * 1.4;
-  });
+  }
+
+  // Mouse (listen on window for move/up so a fast drag outside the
+  // element doesn't get stuck "grabbing").
+  railWrap.addEventListener('mousedown', e => { dragStart(e.clientX); });
+  window.addEventListener('mousemove', e => dragMove(e.clientX));
+  window.addEventListener('mouseup', dragEnd);
+  railWrap.addEventListener('mouseenter', () => { if (!isDragging) pause(); });
+  railWrap.addEventListener('mouseleave', () => { if (!isDragging) resumeSoon(0); });
+
+  // Touch — handled the same way as mouse via plain transforms, so there's
+  // no dependency on native scrollLeft behavior.
+  railWrap.addEventListener('touchstart', e => {
+    dragStart(e.touches[0].clientX);
+  }, { passive: true });
+  railWrap.addEventListener('touchmove', e => {
+    dragMove(e.touches[0].clientX);
+  }, { passive: true });
+  railWrap.addEventListener('touchend', dragEnd, { passive: true });
+  railWrap.addEventListener('touchcancel', dragEnd, { passive: true });
 }
 
 /* --- REVEAL ON SCROLL --- */

@@ -515,22 +515,19 @@ body.loaded .hero-word { transform: translateY(0); opacity: 1; }
   color: var(--mid);
 }
 .products-rail-wrap {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  overflow: hidden;
   cursor: grab;
-  /* Let touch scroll natively (smooth, no JS jank); only mouse drag is JS-driven. */
-  touch-action: pan-x pan-y;
+  /* Horizontal movement is fully JS-driven (transform), for both mouse and touch. */
+  touch-action: pan-y;
 }
 .products-rail-wrap:active { cursor: grabbing; }
-.products-rail-wrap::-webkit-scrollbar { display: none; }
 .products-rail {
   display: flex;
   gap: 2px;
   padding: 0 6rem;
   width: max-content;
   user-select: none;
+  will-change: transform;
 }
 .rail-card {
   width: 320px;
