@@ -520,6 +520,7 @@ body.loaded .hero-word { transform: translateY(0); opacity: 1; }
   scrollbar-width: none;
   -ms-overflow-style: none;
   cursor: grab;
+  touch-action: pan-y;
 }
 .products-rail-wrap:active { cursor: grabbing; }
 .products-rail-wrap::-webkit-scrollbar { display: none; }

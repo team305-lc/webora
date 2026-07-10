@@ -123,6 +123,7 @@ const railWrap = document.querySelector('.products-rail-wrap');
 if (railWrap && rail) {
   // Auto-scroll
   let autoScrollPaused = false;
+  let resumeTimer = null;
   const autoSpeed = 0.8; // px per frame
 
   // Clone cards for seamless loop
@@ -146,49 +147,47 @@ if (railWrap && rail) {
   }
   requestAnimationFrame(autoScroll);
 
-  // Pause on hover / touch
-  railWrap.addEventListener('mouseenter', () => { autoScrollPaused = true; });
-  railWrap.addEventListener('mouseleave', () => {
-    autoScrollPaused = false;
+  const pause = () => {
+    clearTimeout(resumeTimer);
+    autoScrollPaused = true;
+  };
+  const resumeSoon = (delay = 1200) => {
+    clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(() => { autoScrollPaused = false; }, delay);
+  };
+
+  // Pointer Events unify mouse/touch/pen and avoid the synthetic "ghost"
+  // mouse events browsers replay after a touch tap, which previously left
+  // autoScrollPaused stuck true with no matching resume on touch devices.
+  let isDragging = false, startX, scrollLeft;
+
+  railWrap.addEventListener('pointerenter', pause);
+  railWrap.addEventListener('pointerleave', () => {
     isDragging = false;
     railWrap.style.cursor = 'grab';
+    resumeSoon(0);
   });
-  railWrap.addEventListener('touchstart', () => { autoScrollPaused = true; }, { passive: true });
-  railWrap.addEventListener('touchend', () => { autoScrollPaused = false; });
-
-  // Manual drag
-  let isDragging = false, startX, scrollLeft;
-  railWrap.addEventListener('mousedown', e => {
+  railWrap.addEventListener('pointerdown', e => {
     isDragging = true;
-    autoScrollPaused = true;
-    startX = e.pageX - railWrap.offsetLeft;
+    pause();
+    startX = e.clientX - railWrap.offsetLeft;
     scrollLeft = railWrap.scrollLeft;
     railWrap.style.cursor = 'grabbing';
+    railWrap.setPointerCapture(e.pointerId);
   });
-  railWrap.addEventListener('mouseup', () => {
+  railWrap.addEventListener('pointerup', () => {
     isDragging = false;
     railWrap.style.cursor = 'grab';
-    // Resume after a short pause
-    setTimeout(() => { autoScrollPaused = false; }, 1500);
+    resumeSoon();
   });
-  railWrap.addEventListener('mousemove', e => {
+  railWrap.addEventListener('pointercancel', () => {
+    isDragging = false;
+    resumeSoon();
+  });
+  railWrap.addEventListener('pointermove', e => {
     if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - railWrap.offsetLeft;
+    const x = e.clientX - railWrap.offsetLeft;
     railWrap.scrollLeft = scrollLeft - (x - startX) * 1.4;
-  });
-
-  // Touch drag
-  let touchStartX, touchScrollLeft;
-  railWrap.addEventListener('touchstart', e => {
-    touchStartX = e.touches[0].pageX;
-    touchScrollLeft = railWrap.scrollLeft;
-  }, { passive: true });
-  railWrap.addEventListener('touchmove', e => {
-    railWrap.scrollLeft = touchScrollLeft - (e.touches[0].pageX - touchStartX);
-  }, { passive: true });
-  railWrap.addEventListener('touchend', () => {
-    setTimeout(() => { autoScrollPaused = false; }, 1500);
   });
 }
 
