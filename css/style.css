@@ -708,6 +708,23 @@ section { position: relative; }
   color: var(--c-pink);
 }
 
+/* Keeps the counter fixed in place instead of shifting down when the
+   error message appears next to it. */
+.field-meta {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 8px;
+}
+.field-meta .field-error,
+.field-meta .char-counter {
+  margin-top: 0;
+}
+.field-meta .char-counter {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
 .form-row select {
   appearance: none;
   color-scheme: dark;

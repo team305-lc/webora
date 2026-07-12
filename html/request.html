@@ -88,15 +88,19 @@
           <div class="form-row">
             <label for="name">お名前・会社名 <span class="required">必須</span></label>
             <input type="text" id="name" name="name" required maxlength="100" placeholder="例）オーロラ商事 山田太郎">
-            <p class="char-counter" id="nameCounter">0 / 100</p>
-            <p class="field-error" id="nameError"></p>
+            <div class="field-meta">
+              <p class="field-error" id="nameError"></p>
+              <p class="char-counter" id="nameCounter">0 / 100</p>
+            </div>
           </div>
 
           <div class="form-row">
             <label for="email">メールアドレス <span class="required">必須</span></label>
             <input type="email" id="email" name="email" required maxlength="255" placeholder="example@webora.jp">
-            <p class="char-counter" id="emailCounter">0 / 255</p>
-            <p class="field-error" id="emailError"></p>
+            <div class="field-meta">
+              <p class="field-error" id="emailError"></p>
+              <p class="char-counter" id="emailCounter">0 / 255</p>
+            </div>
           </div>
 
           <div class="form-row">
@@ -141,8 +145,10 @@
           <div class="form-row">
             <label for="detail">詳細・ご要望</label>
             <textarea id="detail" name="detail" rows="6" maxlength="2000" placeholder="現状の課題やご要望などをご記入ください"></textarea>
-            <p class="char-counter" id="detailCounter">0 / 2000</p>
-            <p class="field-error" id="detailError"></p>
+            <div class="field-meta">
+              <p class="field-error" id="detailError"></p>
+              <p class="char-counter" id="detailCounter">0 / 2000</p>
+            </div>
           </div>
 
           <button type="submit" class="btn btn-primary btn-lg btn-submit">この内容で送信する</button>
