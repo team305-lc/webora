@@ -8,22 +8,48 @@
   <link rel="icon" href="../img/logo.svg" />
   <link rel="stylesheet" href="../css/style.css" />
 </head>
-<body>
+<body class="lp-page">
 
 <!-- LP専用ヘッダー -->
 <header class="lp-hdr">
   <a href="../index.html"><img src="../img/logo.svg" alt="アオバ リフォーム" /></a>
-  <div class="lp-hdr-tel">
-    <small>電話で相談する（無料）</small>
-    <a href="tel:0000000000">000-000-0000</a>
+  <div class="lp-hdr-right">
+    <div class="lp-hdr-tel">
+      <small>電話で相談する（無料）</small>
+      <a href="tel:0000000000">000-000-0000</a>
+    </div>
+    <div class="hamburger" role="button" aria-label="メニュー"><span></span><span></span><span></span></div>
   </div>
 </header>
+<div class="sb-overlay"></div>
+
+<nav class="sidebar">
+  <div class="sb-logo">
+    <a href="../index.html"><img src="../img/logo.svg" alt="アオバ リフォーム" /></a>
+    <div class="sb-logo-sub">Reform &amp; Renovation</div>
+  </div>
+  <div class="sb-nav">
+    <div class="sb-nav-label">Menu</div>
+    <a href="../index.html">ホーム</a>
+    <div class="sb-nav-divider"></div>
+    <a href="about.html">会社紹介</a>
+    <a href="company.html">会社概要</a>
+    <div class="sb-nav-divider"></div>
+    <a href="lp.html" class="active">無料相談</a>
+    <a href="contact.html">お問い合わせ</a>
+  </div>
+  <div class="sb-cta">
+    <div class="sb-cta-label">Tel</div>
+    <a href="tel:0000000000" class="sb-tel">000-000-0000</a>
+    <div class="sb-hours">9:00〜18:00<br>日曜・祝日定休</div>
+    <a href="contact.html" class="sb-btn">お問い合わせ →</a>
+  </div>
+</nav>
 
 <!-- スティッキーCTAバー -->
 <div class="lp-sticky" id="lpSticky">
   <span class="lp-sticky-txt">まずは無料でご相談ください</span>
   <a href="#lp-form" class="btn btn-amber" style="padding:10px 24px;font-size:.82rem;">無料相談する <span class="arrow">→</span></a>
-  <a href="tel:0000000000" class="btn btn-fill" style="padding:10px 24px;font-size:.82rem;">電話する</a>
 </div>
 
 <main>
@@ -33,16 +59,16 @@
     <div class="lp-hero-bg">
       <img src="../img/hero-main.jpg" alt="リフォームのイメージ" loading="eager" />
       <div class="lp-hero-overlay"></div>
-    </div>
-    <div class="lp-copy">
-      <span class="lp-tag">茨城県全域対応 / 現地調査・見積り無料</span>
-      <h1 class="lp-h1">住まいのリフォーム、<br><em>まず話してみませんか？</em></h1>
-      <p class="lp-sub">外壁・内装・水回りから全面リノベーションまで。<br>しつこい営業一切なし。無料でご相談いただけます。</p>
-      <div class="lp-badges">
-        <span class="lp-badge">✓ 見積り無料</span>
-        <span class="lp-badge">✓ 自社施工</span>
-        <span class="lp-badge">✓ 10年保証</span>
-        <span class="lp-badge">✓ 営業なし</span>
+      <div class="lp-copy">
+        <span class="lp-tag">茨城県全域対応 / 現地調査・見積り無料</span>
+        <h1 class="lp-h1">住まいのリフォーム、<br><em>まず話してみませんか？</em></h1>
+        <p class="lp-sub">外壁・内装・水回りから全面リノベーションまで。<br>しつこい営業一切なし。無料でご相談いただけます。</p>
+        <div class="lp-badges">
+          <span class="lp-badge">✓ 見積り無料</span>
+          <span class="lp-badge">✓ 自社施工</span>
+          <span class="lp-badge">✓ 10年保証</span>
+          <span class="lp-badge">✓ 営業なし</span>
+        </div>
       </div>
     </div>
     <div class="lp-form-side" id="lp-form">
@@ -193,12 +219,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>外壁塗装（一般住宅）</td><td>60〜120万円</td><td>7〜14日</td></tr>
-          <tr><td>屋根塗装・補修</td><td>20〜60万円</td><td>3〜7日</td></tr>
-          <tr><td>キッチンリフォーム</td><td>50〜150万円</td><td>3〜7日</td></tr>
-          <tr><td>浴室リフォーム（ユニットバス）</td><td>60〜130万円</td><td>3〜5日</td></tr>
-          <tr><td>内装リフォーム（6畳）</td><td>10〜30万円</td><td>1〜3日</td></tr>
-          <tr><td>全面リノベーション</td><td>300〜1,000万円</td><td>1〜3ヶ月</td></tr>
+          <tr><td>外壁塗装（一般住宅）</td><td data-label="参考価格">60〜120万円</td><td data-label="工期目安">7〜14日</td></tr>
+          <tr><td>屋根塗装・補修</td><td data-label="参考価格">20〜60万円</td><td data-label="工期目安">3〜7日</td></tr>
+          <tr><td>キッチンリフォーム</td><td data-label="参考価格">50〜150万円</td><td data-label="工期目安">3〜7日</td></tr>
+          <tr><td>浴室リフォーム（ユニットバス）</td><td data-label="参考価格">60〜130万円</td><td data-label="工期目安">3〜5日</td></tr>
+          <tr><td>内装リフォーム（6畳）</td><td data-label="参考価格">10〜30万円</td><td data-label="工期目安">1〜3日</td></tr>
+          <tr><td>全面リノベーション</td><td data-label="参考価格">300〜1,000万円</td><td data-label="工期目安">1〜3ヶ月</td></tr>
         </tbody>
       </table>
       <p class="price-note reveal">※ 上記は参考価格です。建物の状態・仕様により異なります。詳しくは無料お見積りにてご確認ください。</p>

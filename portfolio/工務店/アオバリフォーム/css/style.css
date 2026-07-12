@@ -1084,6 +1084,7 @@ textarea { height: 160px; resize: vertical; }
   justify-content: space-between;
 }
 .lp-hdr img { height: 32px; filter: brightness(0) invert(1); opacity: .85; }
+.lp-hdr-right { display: flex; align-items: center; gap: 24px; }
 .lp-hdr-tel {
   font-family: var(--en);
   font-size: 1.3rem;
@@ -1100,10 +1101,36 @@ textarea { height: 160px; resize: vertical; }
   letter-spacing: .06em;
 }
 
+/* LP page: same sidebar menu as every other page — permanently visible
+   on desktop, off-canvas behind the hamburger on mobile. Since lp.html's
+   content isn't wrapped in .main, shift it over manually to clear the
+   sidebar, and shift the fixed LP header over too. The hamburger itself
+   only needs to exist for mobile, matching .mobile-bar elsewhere. */
+.lp-page .lp-hdr { left: 220px; }
+.lp-page main { margin-left: 220px; }
+.lp-page .lp-sticky { margin-left: 220px; }
+.lp-hdr-right .hamburger { display: none; }
+
+/* Sticky CTA bar under the LP header */
+.lp-sticky {
+  margin-top: 58px;
+  background: var(--sidebar);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 12px 20px;
+  text-align: center;
+}
+.lp-sticky-txt {
+  font-size: .8rem;
+  color: rgba(255,255,255,.75);
+}
+
 /* LP hero */
 .lp-hero {
   min-height: 100svh;
-  padding-top: 58px;
   display: grid;
   grid-template-columns: 1fr 400px;
 }
@@ -1337,6 +1364,8 @@ textarea { height: 160px; resize: vertical; }
   .promise-grid { grid-template-columns: 1fr 1fr; }
   .voice-featured { grid-template-columns: 1fr; }
   .lp-hero { grid-template-columns: 1fr; }
+  .lp-hero-bg { min-height: 78vh; }
+  .lp-copy { left: 24px; right: 24px; bottom: 40px; }
   .reason-item { grid-template-columns: 80px 1fr; }
   .r-img { display: none; }
 
@@ -1376,14 +1405,47 @@ textarea { height: 160px; resize: vertical; }
   .works-grid { grid-template-columns: 1fr 1fr; }
   .promise-grid { grid-template-columns: 1fr; }
   .lp-hdr { padding: 0 16px; }
+  .lp-page .lp-hdr { left: 0; }
+  .lp-page main { margin-left: 0; }
+  .lp-page .lp-sticky { margin-left: 0; }
+  .lp-sticky { padding: 10px 16px; gap: 12px; }
+  .lp-hdr-right { gap: 14px; }
+  .lp-hdr-right .hamburger { display: flex; }
   .lp-hdr-tel { font-size: 1rem; }
   .reason-item { grid-template-columns: 1fr; grid-template-rows: auto; }
   .r-num { border-right: none; border-bottom: 1px solid var(--warm-line); padding: 16px 24px; justify-content: flex-start; font-size: 2rem; }
   .r-img { display: block; aspect-ratio: 16/9; }
+
+  /* Reference price table -> stacked cards, so long item names don't
+     cramp 3 columns into an unreadably narrow, wrapped mess. */
+  .price-tbl thead { display: none; }
+  .price-tbl, .price-tbl tbody, .price-tbl tr, .price-tbl td { display: block; width: 100%; }
+  .price-tbl { margin-top: 32px; }
+  .price-tbl tr { margin-bottom: 14px; border: 1px solid var(--warm-line); }
+  .price-tbl tr:nth-child(even) td { background: transparent; }
+  .price-tbl td { padding: 10px 16px; border-bottom: 1px solid var(--warm-line); font-size: .8rem; background: var(--white); }
+  .price-tbl tr td:last-child { border-bottom: none; }
+  .price-tbl tr td:first-child {
+    font-family: var(--serif);
+    font-size: .92rem;
+    background: var(--sidebar);
+    color: var(--white);
+  }
+  .price-tbl td:not(:first-child) { display: flex; justify-content: space-between; gap: 12px; }
+  .price-tbl td:not(:first-child)::before { content: attr(data-label); color: var(--stone); }
 }
 
 @media (max-width: 480px) {
   .works-grid { grid-template-columns: 1fr; }
   .cta-btns, .lp-cta-btns { flex-direction: column; align-items: center; }
   .hero-h1 { font-size: 1.8rem; }
+}
+
+/* On wide screens the clamp()-scaled font can grow large enough that a
+   <br>-separated line no longer fits its max-width container, wrapping
+   an unwanted tail onto a third line. Keep each authored line intact;
+   mobile keeps its natural wrapping since these are only needed once
+   the container is wide enough for the larger desktop font sizes. */
+@media (min-width: 769px) {
+  .hero-h1, .stmt-quote { white-space: nowrap; }
 }
