@@ -1364,6 +1364,11 @@ textarea { height: 160px; resize: vertical; }
   .tl-right { display: block; }
   .tl-row:nth-child(even) .tl-left { display: block; }
   .tl-left:empty, .tl-right:empty { display: none; }
+  /* Always show dot first, then content — otherwise on odd rows the text
+     sits before the dot in the DOM and pushes it away from the fixed
+     vertical line, breaking the alignment. */
+  .tl-dot { order: 0; flex-shrink: 0; }
+  .tl-left, .tl-right { order: 1; padding: 0; }
   .hero-body { padding: 0 28px 52px; }
   .ph-text { padding: 0 28px 40px; }
   .co-table th { width: 110px; padding: 14px; font-size: .76rem; }
