@@ -1449,3 +1449,11 @@ textarea { height: 160px; resize: vertical; }
 @media (min-width: 769px) {
   .hero-h1, .stmt-quote { white-space: nowrap; }
 }
+
+/* Below the desktop breakpoint the font only shrinks to a floor value
+   (clamp min), so the authored <br> line can still be too wide for
+   narrow phones and wrap again mid-line. Drop the forced break there and
+   let the whole quote reflow naturally instead. */
+@media (max-width: 768px) {
+  .stmt-br { display: none; }
+}
