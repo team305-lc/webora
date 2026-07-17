@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="岡崎市のエステサロン。シミ改善・脱毛・エイジングケアなど、医療×美容の専門知識でお肌のお悩みを解決します。">
+<title>エステサロン岡崎 | 岡崎市のエステ・シミ改善・脱毛</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="site-logo__text">
+        <span class="site-logo__name">エステサロン岡崎</span>
+        <span class="site-logo__sub">Esthetic Salon Okazaki</span>
+      </div>
+    </a>
+    <nav class="header-nav" aria-label="メインナビ">
+      <ul>
+        <li><a href="html/cases.html">症例一覧</a></li>
+        <li><a href="html/shimi.html">シミ改善</a></li>
+        <li><a href="html/datsumo.html">脱毛</a></li>
+        <li><a href="html/menu.html">メニュー</a></li>
+        <li><a href="html/price.html">料金</a></li>
+        <li><a href="html/blog.html">ブログ</a></li>
+        <li><a href="html/shop.html">店舗情報</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="https://line.me/YOUR_LINE_ID" target="_blank" rel="noopener" class="btn btn--line btn--sm"><i class="fab fa-line"></i> LINE予約</a>
+      <a href="https://beauty.hotpepper.jp/YOUR_SALON_ID" target="_blank" rel="noopener" class="btn btn--hotpepper btn--sm"><i class="fas fa-calendar-alt"></i> HP予約</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+<nav class="mobile-nav" id="mobile-nav" aria-label="モバイルメニュー">
+  <div class="mobile-nav-head">
+    <div class="mobile-nav-logo">エステサロン岡崎<span>Esthetic Salon Okazaki</span></div>
+    <button class="mobile-nav-close" id="mobile-nav-close" aria-label="閉じる">&times;</button>
+  </div>
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i>ホーム</a></li>
+    <li><a href="html/cases.html"><i class="fas fa-images"></i>症例一覧</a></li>
+    <li><a href="html/shimi.html"><i class="fas fa-sun"></i>シミ改善</a></li>
+    <li><a href="html/datsumo.html"><i class="fas fa-feather-alt"></i>脱毛</a></li>
+    <li><a href="html/menu.html"><i class="fas fa-spa"></i>メニュー</a></li>
+    <li><a href="html/price.html"><i class="fas fa-yen-sign"></i>料金</a></li>
+    <li><a href="html/blog.html"><i class="fas fa-pen-nib"></i>ブログ</a></li>
+    <li><a href="html/shop.html"><i class="fas fa-map-marker-alt"></i>店舗情報</a></li>
+    <li><a href="html/staff.html"><i class="fas fa-user-circle"></i>スタッフ</a></li>
+    <li><a href="html/contact.html"><i class="fas fa-envelope"></i>お問い合わせ</a></li>
+  </ul>
+  <div class="mobile-nav-cta">
+    <a href="https://line.me/YOUR_LINE_ID" target="_blank" rel="noopener" class="btn btn--line"><i class="fab fa-line"></i> LINEで予約・相談</a>
+    <a href="https://beauty.hotpepper.jp/YOUR_SALON_ID" target="_blank" rel="noopener" class="btn btn--hotpepper"><i class="fas fa-calendar-alt"></i> ホットペッパーで予約</a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content fade-up">
+    <span class="hero__eyebrow">Esthetic Salon Okazaki</span>
+    <h1 class="hero__title">お肌の悩みを、<br><em>根本から解決</em>する<br>エステサロン</h1>
+    <p class="hero__desc">40代のシミも、初めての脱毛も。<br>岡崎市の専門サロンが、あなた一人ひとりの<br>お悩みに寄り添います。</p>
+    <div class="hero__cta">
+      <a href="https://line.me/YOUR_LINE_ID" target="_blank" rel="noopener" class="btn btn--line btn--lg"><i class="fab fa-line"></i> LINEで無料相談</a>
+      <a href="html/cases.html" class="btn btn--outline btn--lg"><i class="fas fa-images"></i> 症例を見る</a>
+    </div>
+    <div class="hero__badges">
+      <div class="hero__badge"><div class="hero__badge-icon">✨</div><span>シミ改善<strong>実績多数</strong></span></div>
+      <div class="hero__badge"><div class="hero__badge-icon">💎</div><span>脱毛<strong>初心者歓迎</strong></span></div>
+      <div class="hero__badge"><div class="hero__badge-icon">💬</div><span><strong>無料</strong>カウンセリング</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERTISE STRIP ===== -->
+<div class="expertise-strip">
+  <div class="expertise-strip__inner container">
+    <div class="expertise-strip__item"><i class="fas fa-check-circle"></i> 500件以上の施術実績</div>
+    <div class="expertise-strip__item"><i class="fas fa-check-circle"></i> 国家資格保有スタッフ</div>
+    <div class="expertise-strip__item"><i class="fas fa-check-circle"></i> 完全個室・プライベート空間</div>
+    <div class="expertise-strip__item"><i class="fas fa-check-circle"></i> 初回カウンセリング無料</div>
+    <div class="expertise-strip__item"><i class="fas fa-check-circle"></i> 痛みを抑えた最新機器</div>
+  </div>
+</div>
+
+<!-- ===== ターゲット分岐 ===== -->
+<section style="padding:5rem 0;background:var(--off-white)">
+  <div class="container">
+    <h2 class="section-title"><span>Which Are You?</span>あなたのお悩みはどちらですか？</h2>
+    <p class="section-lead">それぞれのお悩みに特化したページでご案内します</p>
+  </div>
+  <div class="dual-path">
+    <a href="html/shimi.html" class="dual-path__side dual-path__side--shimi" style="text-decoration:none">
+      <div class="dual-path__bg" style="background-image:url('https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800&q=80')"></div>
+      <div class="dual-path__inner">
+        <span class="dual-path__age">40代〜 のお悩み</span>
+        <span class="dual-path__icon">🌟</span>
+        <h2 class="dual-path__title">そのシミ、<em>あきらめないで</em><br>ください</h2>
+        <p class="dual-path__desc">40代になって増えてきたシミ・くすみ。<br>実は種類によって最適な施術が異なります。<br>専門家が丁寧に診断します。</p>
+        <ul class="dual-path__checklist">
+          <li>肝斑・老人性色素斑・くすみ対応</li>
+          <li>痛みを抑えた光エネルギー施術</li>
+          <li>シミ改善500件以上の実績</li>
+          <li>医療×美容の専門知識でアプローチ</li>
+        </ul>
+        <span class="btn btn--gold">シミ改善ページへ <i class="fas fa-arrow-right"></i></span>
+      </div>
+    </a>
+    <a href="html/datsumo.html" class="dual-path__side dual-path__side--datsumo" style="text-decoration:none">
+      <div class="dual-path__bg" style="background-image:url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80')"></div>
+      <div class="dual-path__inner">
+        <span class="dual-path__age">20〜30代 初めての方</span>
+        <span class="dual-path__icon">💎</span>
+        <h2 class="dual-path__title">脱毛、<em>はじめて</em>でも<br>安心してください</h2>
+        <p class="dual-path__desc">「痛そう」「恥ずかしい」「どこがいいか分からない」<br>そんな不安をすべて解消。<br>女性スタッフが丁寧にサポートします。</p>
+        <ul class="dual-path__checklist">
+          <li>VIO・顔・全身など幅広く対応</li>
+          <li>冷却機能付きで痛みを最小限に</li>
+          <li>完全個室・女性スタッフのみ</li>
+          <li>初回カウンセリング無料</li>
+        </ul>
+        <span class="btn btn--tiffany">脱毛ページへ <i class="fas fa-arrow-right"></i></span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ===== その他お悩み ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <h2 class="section-title"><span>Other Concerns</span>その他のお悩みにも対応</h2>
+    <div class="concerns-grid" style="margin-top:2rem">
+      <a href="html/menu.html" class="concern-card fade-up">
+        <div class="concern-card__icon">🌸</div>
+        <div class="concern-card__title">エイジングケア</div>
+        <div class="concern-card__desc">シワ・たるみ・ほうれい線など年齢サインに</div>
+      </a>
+      <a href="html/menu.html" class="concern-card fade-up fade-up-delay-1">
+        <div class="concern-card__icon">✨</div>
+        <div class="concern-card__title">ニキビ・毛穴</div>
+        <div class="concern-card__desc">ニキビ跡・毛穴の黒ずみ・開き毛穴のケア</div>
+      </a>
+      <a href="html/menu.html" class="concern-card fade-up fade-up-delay-2">
+        <div class="concern-card__icon">💫</div>
+        <div class="concern-card__title">美白・透明感</div>
+        <div class="concern-card__desc">くすみのない、透き通るような白い肌へ</div>
+      </a>
+      <a href="html/menu.html" class="concern-card fade-up fade-up-delay-3">
+        <div class="concern-card__icon">🌿</div>
+        <div class="concern-card__title">ボディケア</div>
+        <div class="concern-card__desc">痩身・セルライト・むくみ・小顔など全身のケア</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 数字で見る実績 ===== -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title"><span>Our Results</span>数字で見るサロンの実績</h2>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-num">500<sup>+</sup></div><div class="stat-label">累計施術件数</div></div>
+      <div class="stat-item"><div class="stat-num">98<sup>%</sup></div><div class="stat-label">お客様満足度</div></div>
+      <div class="stat-item"><div class="stat-num">10<sup>年</sup></div><div class="stat-label">サロン運営実績</div></div>
+      <div class="stat-item"><div class="stat-num">5<sup>名</sup></div><div class="stat-label">専門スタッフ在籍</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 最新症例 ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <h2 class="section-title"><span>Case Studies</span>最新の症例</h2>
+    <p class="section-lead">実際の施術ビフォーアフターをご覧ください</p>
+    <div class="case-grid">
+      <!-- 症例サンプル 1 -->
+      <div class="case-card">
+        <div class="case-card__imgs">
+          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80" alt="ビフォー" class="case-card__img">
+          <img src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=400&q=80" alt="アフター" class="case-card__img">
+          <div class="case-card__ba"><span class="ba-left">BEFORE</span><span class="ba-right">AFTER</span></div>
+          <div class="case-card__label"><span class="tag tag--category">シミ改善</span><span class="tag tag--age">40代</span></div>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__tags"><span class="tag tag--concern">肝斑</span></div>
+          <h3 class="case-card__title">頬の肝斑が気になっていた40代女性の改善例</h3>
+          <div class="case-card__meta"><span><i class="fas fa-magic"></i> フォトフェイシャル</span><span><i class="fas fa-redo"></i> 5回</span><span><i class="fas fa-clock"></i> 3ヶ月</span></div>
+        </div>
+      </div>
+      <!-- 症例サンプル 2 -->
+      <div class="case-card">
+        <div class="case-card__imgs">
+          <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=400&q=80" alt="ビフォー" class="case-card__img">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&q=80" alt="アフター" class="case-card__img">
+          <div class="case-card__ba"><span class="ba-left">BEFORE</span><span class="ba-right">AFTER</span></div>
+          <div class="case-card__label"><span class="tag tag--category">脱毛</span><span class="tag tag--age">20代</span></div>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__tags"><span class="tag tag--concern">VIO脱毛</span></div>
+          <h3 class="case-card__title">初めての脱毛で不安だった20代女性の体験記</h3>
+          <div class="case-card__meta"><span><i class="fas fa-magic"></i> 光脱毛</span><span><i class="fas fa-redo"></i> 6回</span><span><i class="fas fa-clock"></i> 6ヶ月</span></div>
+        </div>
+      </div>
+      <!-- 症例サンプル 3 -->
+      <div class="case-card">
+        <div class="case-card__imgs">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80" alt="ビフォー" class="case-card__img">
+          <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=400&q=80" alt="アフター" class="case-card__img">
+          <div class="case-card__ba"><span class="ba-left">BEFORE</span><span class="ba-right">AFTER</span></div>
+          <div class="case-card__label"><span class="tag tag--category">美白</span><span class="tag tag--age">50代</span></div>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__tags"><span class="tag tag--concern">くすみ</span><span class="tag tag--concern">老人性色素斑</span></div>
+          <h3 class="case-card__title">顔全体のくすみと色素斑が気になっていた50代女性</h3>
+          <div class="case-card__meta"><span><i class="fas fa-magic"></i> 美白トリートメント</span><span><i class="fas fa-redo"></i> 8回</span><span><i class="fas fa-clock"></i> 5ヶ月</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem">
+      <a href="html/cases.html" class="btn btn--outline btn--lg">症例一覧をすべて見る <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 施術の流れ ===== -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title"><span>How It Works</span>施術の流れ</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:3rem">
+      <div style="text-align:center;padding:2rem 1rem;background:var(--white);border-radius:16px;box-shadow:0 4px 20px var(--shadow)">
+        <div style="font-size:0.7rem;letter-spacing:0.2em;color:var(--gold);font-weight:700;margin-bottom:0.8rem">STEP 01</div>
+        <div style="font-size:2.5rem;margin-bottom:0.8rem">💬</div>
+        <h3 style="font-size:1rem;margin-bottom:0.6rem">無料カウンセリング</h3>
+        <p style="font-size:0.83rem;color:var(--text-mid);line-height:1.8">お肌の状態や気になるお悩みをじっくりヒアリング。最適なプランをご提案します。</p>
+      </div>
+      <div style="text-align:center;padding:2rem 1rem;background:var(--white);border-radius:16px;box-shadow:0 4px 20px var(--shadow)">
+        <div style="font-size:0.7rem;letter-spacing:0.2em;color:var(--gold);font-weight:700;margin-bottom:0.8rem">STEP 02</div>
+        <div style="font-size:2.5rem;margin-bottom:0.8rem">📋</div>
+        <h3 style="font-size:1rem;margin-bottom:0.6rem">施術プラン提案</h3>
+        <p style="font-size:0.83rem;color:var(--text-mid);line-height:1.8">お客様のライフスタイルや予算に合わせたオーダーメイドのプランを作成します。</p>
+      </div>
+      <div style="text-align:center;padding:2rem 1rem;background:var(--white);border-radius:16px;box-shadow:0 4px 20px var(--shadow)">
+        <div style="font-size:0.7rem;letter-spacing:0.2em;color:var(--gold);font-weight:700;margin-bottom:0.8rem">STEP 03</div>
+        <div style="font-size:2.5rem;margin-bottom:0.8rem">✨</div>
+        <h3 style="font-size:1rem;margin-bottom:0.6rem">施術</h3>
+        <p style="font-size:0.83rem;color:var(--text-mid);line-height:1.8">最新機器と豊富な経験をもつスタッフが丁寧に施術を行います。</p>
+      </div>
+      <div style="text-align:center;padding:2rem 1rem;background:var(--white);border-radius:16px;box-shadow:0 4px 20px var(--shadow)">
+        <div style="font-size:0.7rem;letter-spacing:0.2em;color:var(--gold);font-weight:700;margin-bottom:0.8rem">STEP 04</div>
+        <div style="font-size:2.5rem;margin-bottom:0.8rem">📊</div>
+        <h3 style="font-size:1rem;margin-bottom:0.6rem">アフターケア</h3>
+        <p style="font-size:0.83rem;color:var(--text-mid);line-height:1.8">施術後のケア方法をご説明。次回のご予約まで安心のアフターフォローを提供します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 選ばれる理由 ===== -->
+<section class="section section--tiffany">
+  <div class="container">
+    <h2 class="section-title"><span>Why Choose Us</span>選ばれる5つの理由</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:3rem">
+      <div style="background:white;border-radius:12px;padding:1.8rem;display:flex;gap:1.2rem;align-items:flex-start;box-shadow:0 4px 20px var(--shadow)">
+        <div style="font-size:2rem;flex-shrink:0">🔬</div>
+        <div><h3 style="font-size:1rem;margin-bottom:0.5rem">医療×美容の専門知識</h3><p style="font-size:0.85rem;color:var(--text-mid);line-height:1.8">医療的な知識と美容技術を融合。科学的なアプローチでお肌の悩みを解決します。</p></div>
+      </div>
+      <div style="background:white;border-radius:12px;padding:1.8rem;display:flex;gap:1.2rem;align-items:flex-start;box-shadow:0 4px 20px var(--shadow)">
+        <div style="font-size:2rem;flex-shrink:0">📸</div>
+        <div><h3 style="font-size:1rem;margin-bottom:0.5rem">豊富な症例実績</h3><p style="font-size:0.85rem;color:var(--text-mid);line-height:1.8">500件以上の施術実績。ビフォーアフター写真で効果を透明に公開しています。</p></div>
+      </div>
+      <div style="background:white;border-radius:12px;padding:1.8rem;display:flex;gap:1.2rem;align-items:flex-start;box-shadow:0 4px 20px var(--shadow)">
+        <div style="font-size:2rem;flex-shrink:0">👩‍⚕️</div>
+        <div><h3 style="font-size:1rem;margin-bottom:0.5rem">国家資格保有スタッフ</h3><p style="font-size:0.85rem;color:var(--text-mid);line-height:1.8">エステティシャン・美容師など国家資格を持つ専門スタッフが担当します。</p></div>
+      </div>
+      <div style="background:white;border-radius:12px;padding:1.8rem;display:flex;gap:1.2rem;align-items:flex-start;box-shadow:0 4px 20px var(--shadow)">
+        <div style="font-size:2rem;flex-shrink:0">🌿</div>
+        <div><h3 style="font-size:1rem;margin-bottom:0.5rem">安全・安心の施術</h3><p style="font-size:0.85rem;color:var(--text-mid);line-height:1.8">肌に優しい成分・機器のみ使用。お肌の状態に合わせた安全な施術を提供。</p></div>
+      </div>
+      <div style="background:white;border-radius:12px;padding:1.8rem;display:flex;gap:1.2rem;align-items:flex-start;box-shadow:0 4px 20px var(--shadow)">
+        <div style="font-size:2rem;flex-shrink:0">💝</div>
+        <div><h3 style="font-size:1rem;margin-bottom:0.5rem">完全個室のプライベート空間</h3><p style="font-size:0.85rem;color:var(--text-mid);line-height:1.8">周りの目を気にせずリラックスして施術が受けられる完全個室を完備。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 40代お客様の声 ===== -->
+<section class="section" style="background:linear-gradient(180deg,var(--off-white) 0%,white 100%)">
+  <div class="container">
+    <h2 class="section-title"><span>Voice — 40s Blemish Care</span>40代以上のお客様の声</h2>
+    <div class="section-divider--gold"><span>Blemish &amp; Anti-Aging</span></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem">
+      <div class="voice-card--40s">
+        <div class="voice-card--40s__text">40代に入ってから急にシミが増えて、厚塗りメイクが習慣になっていました。こちらでカウンセリングを受け、肝斑に合った施術を提案してもらいました。5回終えた今はほとんど気にならないレベルに。素肌に自信が持てるようになりました。</div>
+        <div class="voice-card--40s__meta">44歳女性 ／ お悩み：頬の肝斑・くすみ<br><span style="font-weight:400;color:var(--text-light)">フォトフェイシャル 5回</span></div>
+      </div>
+      <div class="voice-card--40s">
+        <div class="voice-card--40s__text">お医者さんに診てもらっても「加齢だから仕方ない」と言われ続けていたシミが、こちらの施術で明らかに薄くなりました。娘から「なんか若くなった？」と言われた時は本当に嬉しかったです。</div>
+        <div class="voice-card--40s__meta">51歳女性 ／ お悩み：老人性色素斑・くすみ<br><span style="font-weight:400;color:var(--text-light)">美白導入 + ピーリング 8回</span></div>
+      </div>
+      <div class="voice-card--40s">
+        <div class="voice-card--40s__text">自分でもどのシミか分からず困っていたところ、カウンセリングで丁寧に種類を診断してもらいました。種類によってケアを変えてくれるのがプロだなと感じました。もっと早く来ればよかったです。</div>
+        <div class="voice-card--40s__meta">46歳女性 ／ お悩み：混合型シミ（肝斑＋色素斑）<br><span style="font-weight:400;color:var(--text-light)">複合ケア 10回</span></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="html/shimi.html" class="btn btn--gold">シミ改善の詳細を見る <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 20〜30代 脱毛の声 ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <h2 class="section-title"><span>Voice — Hair Removal</span>20〜30代 脱毛初心者のお客様の声</h2>
+    <div class="section-divider--tiffany"><span>Hair Removal Beginners</span></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
+      <div class="voice-card--young">
+        <div class="voice-card--young__rating">★★★★★</div>
+        <p class="voice-card--young__text">脱毛初めてで、VIOは特に恥ずかしくて不安でした。カウンセリングの段階から「どんな質問でも大丈夫ですよ」と言ってもらえて、緊張がほぐれました。思ったより全然痛くなかったです！</p>
+        <div class="voice-card--young__meta">24歳女性 ／ VIO脱毛</div>
+      </div>
+      <div class="voice-card--young">
+        <div class="voice-card--young__rating">★★★★★</div>
+        <p class="voice-card--young__text">仕事や旅行でムダ毛処理の時間が取れなくてストレスでした。全身コースを始めて半年、自己処理の回数が激減して本当に楽になりました。個室なのでリラックスできます。</p>
+        <div class="voice-card--young__meta">29歳女性 ／ 全身脱毛</div>
+      </div>
+      <div class="voice-card--young">
+        <div class="voice-card--young__rating">★★★★★</div>
+        <p class="voice-card--young__text">顔の脱毛って痛そうで怖かったんですが、最初の説明がわかりやすくて安心できました。肌のトーンも上がってファンデの乗りが全然違います！</p>
+        <div class="voice-card--young__meta">22歳女性 ／ 顔脱毛（産毛）</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="html/datsumo.html" class="btn btn--tiffany">脱毛初心者ガイドを見る <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 最新ブログ ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <h2 class="section-title"><span>Blog</span>最新のブログ</h2>
+    <div class="blog-grid" style="margin-top:3rem">
+      <article class="blog-card">
+        <a href="html/blog.html"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80" alt="" class="blog-card__img"></a>
+        <div class="blog-card__body">
+          <div class="blog-card__date">2026.06.15</div>
+          <h3 class="blog-card__title"><a href="html/blog.html">40代からのシミケア、何が正解？種類別に解説</a></h3>
+          <p class="blog-card__excerpt">シミには肝斑・老人性色素斑・そばかすなどさまざまな種類があります。それぞれに合ったケアを知ることが改善への第一歩…</p>
+          <a href="html/blog.html" class="blog-card__more">続きを読む →</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <a href="html/blog.html"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="" class="blog-card__img"></a>
+        <div class="blog-card__body">
+          <div class="blog-card__date">2026.06.01</div>
+          <h3 class="blog-card__title"><a href="html/blog.html">脱毛初心者が必ず聞く5つの質問にお答えします</a></h3>
+          <p class="blog-card__excerpt">「痛い？」「何回必要？」「お風呂は入れる？」など、初めての脱毛で皆さんが気になる疑問を徹底解説…</p>
+          <a href="html/blog.html" class="blog-card__more">続きを読む →</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <a href="html/blog.html"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80" alt="" class="blog-card__img"></a>
+        <div class="blog-card__body">
+          <div class="blog-card__date">2026.05.20</div>
+          <h3 class="blog-card__title"><a href="html/blog.html">紫外線が強くなる夏前に始めたい美白ケアとは</a></h3>
+          <p class="blog-card__excerpt">夏に向けて紫外線が強まるこの季節。シミを作らないための予防と、既存のシミへのアプローチを解説…</p>
+          <a href="html/blog.html" class="blog-card__more">続きを読む →</a>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="html/blog.html" class="btn btn--outline">ブログ一覧を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== アクセス ===== -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title"><span>Access</span>アクセス</h2>
+    <div class="shop-layout" style="margin-top:3rem">
+      <div>
+        <table class="shop-info-table">
+          <tr><th>サロン名</th><td>エステサロン岡崎</td></tr>
+          <tr><th>住所</th><td>〒444-0000<br>愛知県岡崎市〇〇町〇〇番地</td></tr>
+          <tr><th>TEL</th><td><a href="tel:000-0000-0000">000-0000-0000</a></td></tr>
+          <tr><th>営業時間</th><td>10:00〜20:00（最終受付 19:00）</td></tr>
+          <tr><th>定休日</th><td>火曜日</td></tr>
+          <tr><th>アクセス</th><td>名鉄〇〇駅 徒歩5分</td></tr>
+          <tr><th>駐車場</th><td>有（3台）</td></tr>
+        </table>
+        <div style="display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap">
+          <a href="html/shop.html" class="btn btn--outline">詳細を見る</a>
+          <a href="https://line.me/YOUR_LINE_ID" target="_blank" rel="noopener" class="btn btn--line"><i class="fab fa-line"></i> 予約する</a>
+        </div>
+      </div>
+      <div class="shop-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52019.64!2d137.1635!3d34.9577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6004b3de3f49c975%3A0xb4be81e1ec33b08a!2z5bKh5bCE5biC!5e0!3m2!1sja!2sjp!4v1688000000000" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="サロンの場所"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>まずは無料カウンセリングから</h2>
+    <p>お肌のお悩みをプロが丁寧にヒアリング。あなたに最適な施術をご提案します。</p>
+    <div class="cta-banner__btns">
+      <a href="https://line.me/YOUR_LINE_ID" target="_blank" rel="noopener" class="btn btn--line btn--lg"><i class="fab fa-line"></i> LINEで予約・相談</a>
+      <a href="https://beauty.hotpepper.jp/YOUR_SALON_ID" target="_blank" rel="noopener" class="btn btn--hotpepper btn--lg"><i class="fas fa-calendar-alt"></i> ホットペッパーで予約</a>
+      <a href="html/contact.html" class="btn btn--outline btn--lg" style="border-color:#fff;color:#fff"><i class="fas fa-envelope"></i> お問い合わせフォーム</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-about">
+        <div class="footer-logo">エステサロン岡崎</div>
+        <div class="footer-logo-sub">Esthetic Salon Okazaki</div>
+        <p class="footer-desc">岡崎市のエステサロン。医療×美容の専門知識をもとに、シミ・シワ・脱毛など様々なお肌のお悩みにアプローチ。豊富な症例実績で安心の施術をご提供します。</p>
+        <div class="footer-social" style="margin-top:1.2rem">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LINE"><i class="fab fa-line"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-col-title">症例</h3>
+        <ul>
+          <li><a href="html/cases.html">症例一覧</a></li>
+          <li><a href="html/shimi.html">シミ改善</a></li>
+          <li><a href="html/datsumo.html">脱毛</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-col-title">サービス</h3>
+        <ul>
+          <li><a href="html/menu.html">メニュー一覧</a></li>
+          <li><a href="html/price.html">料金表</a></li>
+          <li><a href="html/staff.html">スタッフ紹介</a></li>
+          <li><a href="html/shop.html">店舗情報</a></li>
+          <li><a href="html/blog.html">ブログ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-col-title">予約・お問い合わせ</h3>
+        <ul>
+          <li><a href="https://line.me/YOUR_LINE_ID" target="_blank" rel="noopener">LINE予約</a></li>
+          <li><a href="https://beauty.hotpepper.jp/YOUR_SALON_ID" target="_blank" rel="noopener">ホットペッパービューティー</a></li>
+          <li><a href="html/contact.html">お問い合わせフォーム</a></li>
+          <li><a href="html/privacy.html">プライバシーポリシー</a></li>
+        </ul>
+        <div style="margin-top:1.2rem;font-size:0.82rem;color:rgba(255,255,255,0.6)">
+          <p>〒444-0000<br>愛知県岡崎市〇〇町〇〇番地</p>
+          <p style="margin-top:0.4rem">TEL: 000-0000-0000</p>
+          <p>営業時間: 10:00〜20:00（火曜定休）</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>&copy; 2026 エステサロン岡崎 All Rights Reserved.</small>
+      <a href="html/privacy.html" style="color:rgba(255,255,255,0.4);font-size:0.78rem">プライバシーポリシー</a>
+    </div>
+  </div>
+</footer>
+
+<div class="float-reserve">
+  <a href="https://line.me/YOUR_LINE_ID" target="_blank" rel="noopener" class="line-btn"><i class="fab fa-line"></i> LINE予約</a>
+  <a href="https://beauty.hotpepper.jp/YOUR_SALON_ID" target="_blank" rel="noopener" class="hotpepper-btn"><i class="fas fa-calendar-alt"></i> HP予約</a>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
