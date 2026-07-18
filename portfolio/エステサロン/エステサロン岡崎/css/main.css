@@ -26,13 +26,14 @@
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 body {
   font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
   color: var(--text-dark);
   background: var(--white);
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
@@ -983,6 +984,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.4; font-weight: 600; }
 }
 .staff-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px var(--shadow-md); }
 .staff-card__img { height: 280px; object-fit: cover; object-position: top; width: 100%; }
+.staff-card__img--eri { object-position: center 15%; }
 .staff-card__body { padding: 1.5rem; }
 .staff-card__role { font-size: 0.72rem; color: var(--tiffany-dark); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4rem; }
 .staff-card__name { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.6rem; }
@@ -1231,13 +1233,14 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.4; font-weight: 600; }
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .footer-top { grid-template-columns: 1fr 1fr; }
-  .case-layout { grid-template-columns: 1fr; }
+  .case-layout { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 768px) {
   .header-nav, .header-cta { display: none; }
   .hamburger { display: flex; }
-  .hero { min-height: 70vh; }
+  .hero { min-height: 70vh; padding: 3.5rem 0; }
   .hero__content { margin-left: 0; }
+  .expertise-strip .expertise-strip__inner { flex-direction: column; align-items: flex-start; gap: 0.9rem; }
   .shop-layout { grid-template-columns: 1fr; }
   .contact-alts { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; gap: 2rem; }
@@ -1245,13 +1248,37 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.4; font-weight: 600; }
   .float-reserve { bottom: 1rem; right: 1rem; }
   .float-reserve a { font-size: 0.75rem; padding: 0.65rem 1rem; }
   .case-ba { grid-template-columns: 1fr; }
+  .case-ba__arrow i { transform: rotate(90deg); }
   .stats-row { gap: 1.5rem; }
+  .case-info-table { table-layout: fixed; }
+  .case-info-table th { width: 84px; padding: 0.7rem 0.6rem; font-size: 0.78rem; }
+  .case-info-table td { padding: 0.7rem 0.8rem; font-size: 0.82rem; word-break: break-word; }
+  .breadcrumb { flex-wrap: nowrap; }
+  .breadcrumb a, .breadcrumb__sep { flex-shrink: 0; }
+  .breadcrumb__current {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+  }
+  /* The clamp()-scaled title can no longer fit "そのシミ、あきらめないで"
+     on one line at some mobile widths, wrapping a lone trailing character
+     onto its own line. Drop the forced break and reflow naturally. */
+  .symptom-br { display: none; }
+  /* width:100% forces the auto table layout to wrap cell text instead of
+     letting the existing overflow-x:auto wrapper scroll horizontally. */
+  .price-table { width: max-content; min-width: 100%; }
+  .price-table th, .price-table td { white-space: nowrap; }
 }
 @media (max-width: 480px) {
   .hero__cta { flex-direction: column; }
   .filter-row { flex-direction: column; }
   .filter-group { min-width: unset; }
-  .cta-banner__btns { flex-direction: column; align-items: center; }
+  .cta-banner__btns { flex-direction: column; align-items: stretch; }
+  .cta-banner__btns .btn { width: 100%; }
+}
+@media (min-width: 769px) {
+  .symptom-hero__title { white-space: nowrap; }
 }
 
 /* ============================================================
@@ -1503,6 +1530,9 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.4; font-weight: 600; }
   line-height: 1;
   font-family: Georgia, serif;
 }
+.voice-card--40s__badges {
+  margin-top: 2.2rem;
+}
 .voice-card--40s__text {
   font-size: 0.88rem;
   line-height: 2;
@@ -1564,7 +1594,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.4; font-weight: 600; }
   padding: 1.2rem 1.5rem;
   display: flex;
   gap: 0.8rem;
-  align-items: flex-start;
+  align-items: center;
 }
 .fear-card__q-icon {
   font-size: 1.4rem;
