@@ -875,6 +875,66 @@ section { position: relative; }
 }
 
 /* ==========================================================================
+   Pricing
+   ========================================================================== */
+
+.pricing { padding: 40px 0 140px; }
+
+.pricing-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 34px 36px;
+}
+.pricing-block + .pricing-block { margin-top: 28px; }
+
+.pricing-block__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.pricing-block__head h3 { font-size: 1.15rem; }
+
+.pricing-diff-badge {
+  font-size: .78rem;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(74,222,128,.1);
+  border: 1px solid rgba(74,222,128,.3);
+  color: var(--c-green);
+}
+
+.table-scroll { overflow-x: auto; margin-top: 18px; }
+
+.pricing-table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+}
+.pricing-table th,
+.pricing-table td {
+  padding: 14px 20px 14px 0;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: .92rem;
+  white-space: nowrap;
+}
+.pricing-table thead th {
+  color: var(--c-teal);
+  font-weight: 600;
+  font-size: .78rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.pricing-table tbody tr:last-child td { border-bottom: none; }
+.pricing-table tbody td:nth-child(2) { color: var(--c-teal); font-weight: 600; }
+
+.pricing-note { margin-top: 16px; color: var(--text-muted); font-size: .88rem; }
+
+/* ==========================================================================
    Footer
    ========================================================================== */
 
@@ -891,7 +951,7 @@ section { position: relative; }
   gap: 20px;
 }
 .footer-nav { display: flex; gap: 26px; }
-.footer-nav a { color: var(--text-muted); font-size: .88rem; transition: color .3s; }
+.footer-nav a { color: var(--text-muted); font-size: .88rem; white-space: nowrap; transition: color .3s; }
 .footer-nav a:hover { color: var(--c-teal); }
 .copyright { color: #5f6690; font-size: .82rem; width: 100%; text-align: center; order: 3; }
 
@@ -939,10 +999,12 @@ section { position: relative; }
   .request-grid { grid-template-columns: minmax(0, 1fr); }
   .request-form-wrap { padding: 28px; }
 
+  .pricing-block { padding: 26px 24px; }
+
   .checkbox-group { grid-template-columns: 1fr; }
 
   .footer-inner { flex-direction: column; text-align: center; }
-  .footer-nav { order: 2; }
+  .footer-nav { order: 2; flex-wrap: wrap; justify-content: center; }
 }
 
 @media (max-width: 520px) {
