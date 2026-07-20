@@ -122,16 +122,17 @@
           if (entry.isIntersecting) {
             const section = entry.target;
             section.classList.add('is-bg-visible');
-            /* 背景スイープ(0.75s)が進んだ 550ms 後にコンテンツをフェードイン */
+            /* 背景スイープ(0.75s)が進んだ 350ms 後にコンテンツをフェードイン */
             setTimeout(function () {
               section.querySelectorAll('.js-fade, .js-fade-left, .js-fade-right')
                 .forEach(function (el) { el.classList.add('is-visible'); });
-            }, 550);
+            }, 350);
             bgIO.unobserve(section);
           }
         });
-      /* rootMargin で画面下端 400px を除外し、セクションが十分見えてから発火 */
-      }, { threshold: 0.15, rootMargin: '0px 0px -400px 0px' });
+      /* rootMargin は viewport 高さに対する割合で指定し、画面の低いモバイルでも
+         デスクトップと同じタイミング感で発火するようにする（固定pxだと低い画面ほど遅れる） */
+      }, { threshold: 0.15, rootMargin: '0px 0px -20% 0px' });
       sectionBgEls.forEach(function (el) { bgIO.observe(el); });
     } else {
       /* IntersectionObserver 非対応: 即座に全表示 */
