@@ -43,9 +43,14 @@
       { "@type": "Offer", "name": "ホームページ作成（下層ページ）", "price": "10000", "priceCurrency": "JPY" },
       { "@type": "Offer", "name": "LP作成（メインページ）", "price": "50000", "priceCurrency": "JPY" },
       { "@type": "Offer", "name": "LP作成（追加ページ）", "price": "10000", "priceCurrency": "JPY" },
+      { "@type": "Offer", "name": "HTML・CSSコーディング（軽微な修正）", "price": "3000", "priceCurrency": "JPY" },
       { "@type": "Offer", "name": "HTML・CSSコーディング（小規模）", "price": "10000", "priceCurrency": "JPY" },
       { "@type": "Offer", "name": "HTML・CSSコーディング（中規模）", "price": "50000", "priceCurrency": "JPY" },
-      { "@type": "Offer", "name": "HTML・CSSコーディング（大規模）", "price": "100000", "priceCurrency": "JPY" }
+      { "@type": "Offer", "name": "HTML・CSSコーディング（大規模）", "price": "100000", "priceCurrency": "JPY" },
+      { "@type": "Offer", "name": "システム開発（軽微な修正）", "price": "3000", "priceCurrency": "JPY" },
+      { "@type": "Offer", "name": "システム開発（小規模）", "price": "10000", "priceCurrency": "JPY" },
+      { "@type": "Offer", "name": "システム開発（中規模）", "price": "50000", "priceCurrency": "JPY" },
+      { "@type": "Offer", "name": "システム開発（大規模）", "price": "100000", "priceCurrency": "JPY" }
     ]
   }
 }
@@ -123,6 +128,14 @@
 
         <div class="service-card" data-animate>
           <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="5" rx="8" ry="3" stroke="currentColor" stroke-width="1.6"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5" stroke="currentColor" stroke-width="1.6"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <h3>システム開発</h3>
+          <p>ログイン機能や業務効率化ツールの新規開発から、複数システムの連携、チーム開発まで幅広く対応します。</p>
+        </div>
+
+        <div class="service-card" data-animate>
+          <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none"><path d="M12 22a10 10 0 1 0-8-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M4 22l1.6-4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12 8a2.5 2.5 0 1 1 2.8 2.5c-.9.2-1.8.9-1.8 2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="13" cy="16.5" r="1" fill="currentColor"/></svg>
           </div>
           <h3>IT何でも相談</h3>
@@ -144,14 +157,14 @@
       <div class="pricing-block" data-animate>
         <div class="pricing-block__head">
           <h3>ホームページ作成 ／ LP作成</h3>
-          <span class="pricing-diff-badge">他社との違い：修正回数無制限（構成・レイアウト変更も含む）</span>
+          <span class="pricing-diff-badge">他のフリーランスとの違い：<br class="mobile-break">修正回数無制限（構成・レイアウト変更も含む）</span>
         </div>
         <div class="table-scroll">
           <table class="pricing-table">
             <thead><tr><th>項目</th><th>料金</th></tr></thead>
             <tbody>
-              <tr><td>トップページ<br class="price-item__sub-break">（LPはメインページ）</td><td>¥50,000〜</td></tr>
-              <tr><td>その他ページ<br class="price-item__sub-break">（1ページにつき）</td><td>¥10,000〜</td></tr>
+              <tr><td>トップページ<br class="mobile-break">（LPはメインページ）</td><td>¥50,000〜</td></tr>
+              <tr><td>その他ページ<br class="mobile-break">（1ページにつき）</td><td>¥10,000〜</td></tr>
             </tbody>
           </table>
         </div>
@@ -161,12 +174,14 @@
       <div class="pricing-block" data-animate>
         <div class="pricing-block__head">
           <h3>HTML・CSSコーディング</h3>
+          <span class="pricing-diff-badge">他のフリーランスとの違い：<br class="mobile-break">要件定義・設計から対応可能です</span>
         </div>
         <div class="table-scroll">
           <table class="pricing-table">
             <thead><tr><th>規模</th><th>料金</th><th>内容例</th></tr></thead>
             <tbody>
-              <tr><td>小規模</td><td>¥10,000〜</td><td>軽微な修正、機能追加、API連携など</td></tr>
+              <tr><td>軽微な修正</td><td>¥3,000〜</td><td>文言の変更・画像の差し替え・リンク修正など</td></tr>
+              <tr><td>小規模</td><td>¥10,000〜</td><td>機能追加・API連携など</td></tr>
               <tr><td>中規模</td><td>¥50,000〜</td><td>Webツールの作成</td></tr>
               <tr><td>大規模</td><td>¥100,000〜</td><td>複数のツールを作成・連携させる機能開発、チーム開発など</td></tr>
             </tbody>
@@ -176,9 +191,28 @@
 
       <div class="pricing-block" data-animate>
         <div class="pricing-block__head">
-          <h3>IT何でも相談</h3>
+          <h3>システム開発</h3>
+          <span class="pricing-diff-badge">他のフリーランスとの違い：<br class="mobile-break">要件定義・設計から対応可能です</span>
         </div>
-        <p class="pricing-note">ツールの選び方や運用の悩みなど、ご相談内容に応じてお見積りいたします。まずはお気軽にご相談ください。</p>
+        <div class="table-scroll">
+          <table class="pricing-table">
+            <thead><tr><th>規模</th><th>料金</th><th>内容例</th></tr></thead>
+            <tbody>
+              <tr><td>軽微な修正</td><td>¥3,000〜</td><td>文言修正・軽微なバグ修正・設定変更など</td></tr>
+              <tr><td>小規模</td><td>¥10,000〜</td><td>ログイン機能・CSV入出力・画面/機能追加など</td></tr>
+              <tr><td>中規模</td><td>¥50,000〜</td><td>業務効率化ツールなど</td></tr>
+              <tr><td>大規模</td><td>¥100,000〜</td><td>複数システム連携・チーム開発など</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="pricing-block" data-animate>
+        <div class="pricing-block__head">
+          <h3>IT何でも相談</h3>
+          <span class="pricing-price-tag">無料</span>
+        </div>
+        <p class="pricing-note">ツールの選び方や運用の悩みなど、どんなご相談も無料です。まずはお気軽にご相談ください。</p>
       </div>
 
     </div>
