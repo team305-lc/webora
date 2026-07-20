@@ -1,0 +1,932 @@
+/* ============================================================
+   top.css — トップページ専用スタイル（パターン３ GIG Inc. 風）
+   ============================================================ */
+
+/* ── HERO ─────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+  background: var(--c-bg);
+}
+
+/* ─ 左：白地テキストエリア（絶対配置、ヒーロー全体を白で塗り白側として機能） ─ */
+.hero__left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 52%;          /* 斜め分の余裕を含めた幅 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: calc(var(--header-h) + 2rem) 4rem 4rem 6%;
+  z-index: 1; /* 黒パネルの後ろ */
+}
+
+.hero__label {
+  display: inline-flex;
+  align-items: center;
+  gap: .625rem;
+  font-size: .625rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  margin-bottom: 2rem;
+}
+.hero__label::before {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.hero__title {
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 900;
+  line-height: .9;
+  letter-spacing: -.04em;
+  color: var(--c-text);
+  margin-bottom: 1.75rem;
+}
+
+.hero__tagline {
+  font-size: clamp(.9375rem, 1.4vw, 1.125rem);
+  font-weight: 700;
+  color: var(--c-text);
+  line-height: 1.65;
+  margin-bottom: .875rem;
+}
+
+.hero__desc {
+  font-size: .875rem;
+  color: var(--c-text-sub);
+  line-height: 1.8;
+  max-width: 30rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.75rem;
+}
+
+/* Stats strip at bottom of left panel */
+.hero__stats {
+  display: flex;
+  align-items: center;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--c-border);
+}
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  padding: 0 1.75rem;
+}
+.hero__stat:first-child { padding-left: 0; }
+
+.hero__stat-num {
+  font-size: 1.125rem;
+  font-weight: 900;
+  letter-spacing: -.02em;
+  color: var(--c-text);
+  line-height: 1;
+}
+
+.hero__stat-label {
+  font-size: .5625rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+}
+
+.hero__stat-sep {
+  width: 1px;
+  height: 2rem;
+  background: var(--c-border);
+  flex-shrink: 0;
+}
+
+/* ── ヒーロー左テキスト：右から左へスライドイン ─────── */
+.hero__label,
+.hero__title,
+.hero__tagline,
+.hero__desc,
+.hero__actions,
+.hero__stats {
+  opacity: 0;
+  animation: hero-text-slidein .65s cubic-bezier(.22, .61, .36, 1) forwards;
+}
+
+@keyframes hero-text-slidein {
+  from {
+    opacity: 0;
+    /* 42vw ≈ 画面の中央付近（ダークパネルとの境界あたり）から開始 */
+    transform: translateX(42vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ダークパネル展開完了（delay 0.2s + duration 0.8s = ~1.0s）後にスタッガーで出現 */
+.hero__label   { animation-delay: 1.0s; }
+.hero__title   { animation-delay: 1.08s; }
+.hero__tagline { animation-delay: 1.18s; }
+.hero__desc    { animation-delay: 1.28s; }
+.hero__actions { animation-delay: 1.38s; }
+.hero__stats   { animation-delay: 1.48s; }
+
+/* ─ 右：ダークビジュアルパネル（上から下へ影が伸びるアニメーション付き） ─ */
+.hero__right {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 2; /* テキストの前面 */
+  /* 初期状態：上端に折り畳まれた1本線（高さゼロ） */
+  clip-path: polygon(
+    calc(50% - 80px) 0,
+    100% 0,
+    100% 0,
+    calc(50% - 80px) 0
+  );
+  /* 上から下へ影が伸びるアニメーション */
+  animation: hero-right-extend .8s cubic-bezier(.22, .61, .36, 1) .2s forwards;
+}
+
+@keyframes hero-right-extend {
+  to {
+    clip-path: polygon(
+      calc(50% - 80px) 0,
+      100% 0,
+      100% 100%,
+      calc(50% + 80px) 100%
+    );
+  }
+}
+
+/* グリッドテクスチャ */
+.hero__right::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+/* 背景スライド */
+.hero__slides {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.hero__slide--1 {
+  background: var(--c-text);
+  animation: hero-slide 18s infinite 0s;
+}
+.hero__slide--2 {
+  background: linear-gradient(160deg, var(--c-accent) 0%, #0d3eb8 100%);
+  animation: hero-slide 18s infinite 6s;
+}
+.hero__slide--3 {
+  background: linear-gradient(160deg, #1a1a2e 0%, #2a2a4e 100%);
+  animation: hero-slide 18s infinite 12s;
+}
+
+@keyframes hero-slide {
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }
+  30%  { opacity: 1; }
+  35%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* 右パネル テキストコンテンツ */
+.hero__right-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* デスクトップ：clip-path可視域は calc(50%+80px) 以右なので
+     padding-left を右半分以降に設定してテキストを表示 */
+  padding: 4rem 4rem 4rem calc(50% + 6rem);
+}
+
+.hero__right-en {
+  font-size: clamp(.875rem, 1.5vw, 1.0625rem);
+  font-weight: 400;
+  color: rgba(255,255,255,.5);
+  line-height: 1.7;
+  margin-bottom: .75rem;
+  letter-spacing: .02em;
+}
+
+.hero__right-ja {
+  font-size: clamp(.75rem, 1.1vw, .9375rem);
+  font-weight: 700;
+  color: rgba(255,255,255,.8);
+  line-height: 1.7;
+}
+
+/* スクロールインジケーター（右パネル内） */
+.hero__scroll {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  font-size: .5625rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+}
+.hero__scroll-line {
+  width: 1px;
+  height: 3rem;
+  background: linear-gradient(to bottom, rgba(255,255,255,.4), transparent);
+  animation: scroll-line 1.8s ease-in-out infinite;
+}
+@keyframes scroll-line {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  50%  { transform: scaleY(1); transform-origin: top; }
+  50.1%{ transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ── MARQUEE (ticker) ─────────────────────────────── */
+.marquee-section {
+  display: flex;
+  overflow: hidden;
+  border-top: 1px solid var(--c-border);
+  border-bottom: 1px solid var(--c-border);
+  padding: .875rem 0;
+  background: var(--c-bg);
+}
+
+.marquee__track {
+  display: flex;
+  flex-shrink: 0;
+  gap: 3rem;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.marquee__track:hover { animation-play-state: paused; }
+
+.marquee__item {
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+  font-size: .875rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  color: var(--c-text-sub);
+}
+.marquee__item i {
+  color: var(--c-accent);
+  font-size: .75rem;
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+/* ── SERVICE GRID ─────────────────────────────────── */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--c-border);
+  border: 1px solid var(--c-border);
+  margin-top: 3rem;
+}
+
+.service-card {
+  background: var(--c-bg);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .875rem;
+  transition: background .25s;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--c-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s var(--ease-out-expo);
+}
+.service-card:hover {
+  background: var(--c-surface);
+}
+.service-card:hover::after {
+  transform: scaleX(1);
+}
+.service-card:hover .service-card__arrow {
+  transform: translateX(4px);
+}
+
+.service-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .375rem;
+  font-size: .6875rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--c-white);
+  background: var(--c-accent);
+  padding: .25rem .625rem;
+  align-self: flex-start;
+}
+
+.service-card__icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  background: var(--c-bg-2);
+  border: 1px solid var(--c-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  color: var(--c-accent);
+  flex-shrink: 0;
+}
+
+.service-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c-text);
+  line-height: 1.4;
+}
+
+.service-card__desc {
+  font-size: .8125rem;
+  color: var(--c-text-sub);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.service-card__arrow {
+  font-size: .75rem;
+  color: var(--c-accent);
+  transition: transform .25s;
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* Service label row */
+.service-label-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: .5rem;
+}
+.service-label-row__line {
+  flex: 1;
+  height: 1px;
+  background: var(--c-border);
+}
+.service-label-row__text {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  white-space: nowrap;
+}
+
+/* ── CLIENT LOGOS ─────────────────────────────────── */
+.clients {
+  text-align: center;
+}
+
+.clients__label {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  margin-bottom: 2rem;
+}
+
+.clients__grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem 3rem;
+}
+
+.clients__item {
+  font-size: .875rem;
+  font-weight: 700;
+  color: var(--c-text-muted);
+  letter-spacing: .06em;
+  filter: grayscale(1) opacity(.5);
+  transition: filter .25s;
+}
+.clients__item:hover {
+  filter: grayscale(0) opacity(1);
+}
+
+/* ── STATS ROW ────────────────────────────────────── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--c-border);
+  border: 1px solid var(--c-border);
+}
+
+.stat-item {
+  background: var(--c-bg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.stat-item__num {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -.04em;
+  line-height: 1;
+  color: var(--c-text);
+  margin-bottom: .5rem;
+}
+.stat-item__num span {
+  font-size: 1.5rem;
+  color: var(--c-accent);
+}
+
+.stat-item__label {
+  font-size: .8125rem;
+  color: var(--c-text-sub);
+  line-height: 1.6;
+}
+
+/* ── WHY MENTL (about features) ──────────────────── */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.why-card {
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow .25s, transform .25s;
+}
+.why-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,.08);
+  transform: translateY(-2px);
+}
+
+.why-card__num {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--c-bg-2);
+  letter-spacing: -.04em;
+}
+
+.why-card__icon {
+  width: 3rem;
+  height: 3rem;
+  background: var(--c-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--c-white);
+  margin-bottom: 1.25rem;
+}
+
+.why-card__title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--c-text);
+  margin-bottom: .75rem;
+  line-height: 1.4;
+}
+
+.why-card__desc {
+  font-size: .875rem;
+  color: var(--c-text-sub);
+  line-height: 1.8;
+}
+
+/* ── SKILLMATE PROMO ──────────────────────────────── */
+.skillmate-promo {
+  background: var(--c-bg-dark);
+  color: var(--c-white);
+  padding: 5rem 0;
+}
+
+.skillmate-promo__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.skillmate-promo__label {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin-bottom: 1.25rem;
+}
+.skillmate-promo__label::before {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background: var(--c-accent);
+}
+
+.skillmate-promo__title {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+  margin-bottom: 1.25rem;
+}
+
+.skillmate-promo__desc {
+  font-size: .9375rem;
+  color: rgba(255,255,255,.65);
+  line-height: 1.9;
+  margin-bottom: 2rem;
+}
+
+.skillmate-promo__features {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  margin-bottom: 2.5rem;
+}
+.skillmate-promo__feature {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: .9375rem;
+  color: rgba(255,255,255,.8);
+}
+.skillmate-promo__feature i {
+  color: var(--c-accent);
+  font-size: .875rem;
+  flex-shrink: 0;
+}
+
+.skillmate-promo__visual {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sm-dash {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 1.25rem 1.5rem;
+}
+.sm-dash__label {
+  font-size: .6875rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  margin-bottom: .5rem;
+}
+.sm-dash__value {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -.02em;
+  color: var(--c-white);
+}
+
+.sm-bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.sm-bar {
+  display: grid;
+  grid-template-columns: 6rem 1fr 2.5rem;
+  align-items: center;
+  gap: .75rem;
+  font-size: .75rem;
+}
+.sm-bar__name { color: rgba(255,255,255,.5); }
+.sm-bar__track {
+  height: 4px;
+  background: rgba(255,255,255,.1);
+  overflow: hidden;
+}
+.sm-bar__fill {
+  height: 100%;
+  background: var(--c-accent);
+}
+.sm-bar__pct { color: rgba(255,255,255,.6); text-align: right; }
+
+/* ── PROCESS ──────────────────────────────────────── */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--c-border);
+  border: 1px solid var(--c-border);
+  margin-top: 3rem;
+}
+
+.process-step {
+  background: var(--c-bg);
+  padding: 2.5rem 2rem;
+  position: relative;
+}
+.process-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 2.5rem;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 10px solid var(--c-border);
+  z-index: 1;
+}
+
+.process-step__num {
+  font-size: .6875rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: var(--c-accent);
+  margin-bottom: 1rem;
+}
+
+.process-step__icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  background: var(--c-bg-2);
+  border: 1px solid var(--c-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  color: var(--c-text);
+  margin-bottom: 1rem;
+}
+
+.process-step__title {
+  font-size: .9375rem;
+  font-weight: 700;
+  color: var(--c-text);
+  margin-bottom: .5rem;
+  line-height: 1.4;
+}
+
+.process-step__desc {
+  font-size: .8125rem;
+  color: var(--c-text-sub);
+  line-height: 1.7;
+}
+
+/* ── FAQ ──────────────────────────────────────────── */
+.faq-list {
+  max-width: 800px;
+  margin: 3rem auto 0;
+  border-top: 1px solid var(--c-border);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--c-border);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.5rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.faq-question__q {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  font-size: .9375rem;
+  font-weight: 600;
+  color: var(--c-text);
+  line-height: 1.6;
+}
+.faq-question__q::before {
+  content: 'Q';
+  font-size: .875rem;
+  font-weight: 900;
+  color: var(--c-accent);
+  flex-shrink: 0;
+  margin-top: .1em;
+  letter-spacing: .02em;
+}
+
+.faq-question__icon {
+  width: 2rem;
+  height: 2rem;
+  background: var(--c-bg-2);
+  border: 1px solid var(--c-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .75rem;
+  color: var(--c-text);
+  flex-shrink: 0;
+  transition: background .25s, color .25s;
+}
+.faq-item.is-open .faq-question__icon {
+  background: var(--c-text);
+  color: var(--c-white);
+  border-color: var(--c-text);
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .45s var(--ease-out-expo);
+}
+.faq-item.is-open .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer__inner {
+  overflow: hidden;
+}
+
+.faq-answer__body {
+  display: flex;
+  gap: .75rem;
+  padding-bottom: 1.5rem;
+  font-size: .9375rem;
+  color: var(--c-text-sub);
+  line-height: 1.8;
+}
+.faq-answer__body::before {
+  content: 'A';
+  font-size: .875rem;
+  font-weight: 900;
+  color: var(--c-text-muted);
+  flex-shrink: 0;
+  letter-spacing: .02em;
+}
+
+/* ── CTA BANNER ───────────────────────────────────── */
+.cta-banner {
+  background: var(--c-text);
+  color: var(--c-white);
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(22,82,240,.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cta-banner__label {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin-bottom: 1.25rem;
+}
+
+.cta-banner__title {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+  margin-bottom: 1.25rem;
+}
+
+.cta-banner__desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,.65);
+  max-width: 36rem;
+  margin: 0 auto 2.5rem;
+  line-height: 1.8;
+}
+
+.cta-banner__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 1024px) {
+  /* タブレット以下：縦積みレイアウトに戻す（斜め線なし） */
+  .hero { display: flex; flex-direction: column; height: auto; min-height: 100svh; }
+  .hero__left {
+    position: relative;
+    top: auto; left: auto; bottom: auto;
+    width: 100%;
+    order: 2;
+    justify-content: flex-start;
+    padding: 3rem 6% 4rem;
+  }
+  .hero__right {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 260px;
+    min-height: 220px;
+    order: 1;
+    clip-path: none;      /* タブレット以下では斜め線なし */
+    animation: none;      /* タブレット以下ではアニメーションなし */
+  }
+  /* タブレット：ヘッダー固定分を上padding、テキストを左寄せで表示 */
+  .hero__right-content {
+    justify-content: flex-start;
+    padding: calc(var(--header-h) + 1rem) 2.5rem 1.5rem;
+  }
+  .hero__scroll { bottom: 1.5rem; right: 1.5rem; }
+  .service-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-steps { grid-template-columns: repeat(2, 1fr); }
+  .skillmate-promo__inner { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .hero__right { height: 240px; min-height: 200px; }
+  .hero__stats { flex-wrap: wrap; row-gap: .75rem; }
+  .hero__stat-sep { display: none; }
+  .hero__stat { padding: 0 .75rem; }
+  .service-grid { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .process-step:not(:last-child)::after { display: none; }
+  .clients__grid { gap: 1rem 2rem; }
+}

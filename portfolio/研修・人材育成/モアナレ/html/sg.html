@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>情報セキュリティマネジメント試験 対策研修 | 株式会社モアナレ</title>
+  <meta name="description" content="情報セキュリティマネジメント試験に特化した企業向け研修。情報セキュリティの管理・運用スキルを体系的に強化。">
+  <style>
+    :root {
+      --service-color:       #7C3AED;
+      --service-color-light: #EDE9FE;
+      --service-glow:        rgba(124,58,237,.12);
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/service.css">
+</head>
+<body>
+
+<!-- PAGE OVERLAY -->
+<div class="page-overlay"><div class="page-overlay__panel"></div><div class="page-overlay__panel"></div><div class="page-overlay__panel"></div></div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="../index.html" class="header__logo">
+      <div class="header__logo-mark">M</div>
+      <div class="header__logo-text">
+        <span class="header__logo-ja">株式会社モアナレ</span>
+        <span class="header__logo-en">Moanare Inc.</span>
+      </div>
+    </a>
+    <nav class="header__nav" aria-label="グローバルナビゲーション">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#" class="nav__link">研修サービス <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="dropdown">
+            <a href="ip.html" class="dropdown__item"><i class="fa-solid fa-id-card"></i>ITパスポート試験</a>
+            <a href="fe.html" class="dropdown__item"><i class="fa-solid fa-laptop-code"></i>基本情報技術者試験</a>
+            <a href="sg.html" class="dropdown__item"><i class="fa-solid fa-shield-halved"></i>情報セキュリティマネジメント試験</a>
+            <a href="sc.html" class="dropdown__item"><i class="fa-solid fa-user-shield"></i>情報処理安全確保支援士試験</a>
+            <div class="dropdown__divider"></div>
+            <a href="dm.html" class="dropdown__item"><i class="fa-solid fa-database"></i>データマネジメント試験<span class="dropdown__badge">2027新設</span></a>
+            <a href="pd-management.html" class="dropdown__item"><i class="fa-solid fa-chart-line"></i>PDスキル マネジメント<span class="dropdown__badge">2027新設</span></a>
+            <a href="pd-data.html" class="dropdown__item"><i class="fa-solid fa-brain"></i>PDスキル データ・AI<span class="dropdown__badge">2027新設</span></a>
+            <a href="pd-system.html" class="dropdown__item"><i class="fa-solid fa-server"></i>PDスキル システム<span class="dropdown__badge">2027新設</span></a>
+          </div>
+        </li>
+        <li class="nav__item"><a href="skillmate.html" class="nav__link">SkillMate</a></li>
+        <li class="nav__item"><a href="about.html" class="nav__link">会社概要</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <a href="contact.html" class="btn btn--primary btn--sm">お問い合わせ</a>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span class="hamburger__bar"></span><span class="hamburger__bar"></span><span class="hamburger__bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+  <p class="mobile-nav__heading">研修サービス</p>
+  <ul class="mobile-nav__list">
+    <li><a href="ip.html" class="mobile-nav__link mobile-nav__sub">ITパスポート試験</a></li>
+    <li><a href="fe.html" class="mobile-nav__link mobile-nav__sub">基本情報技術者試験</a></li>
+    <li><a href="sg.html" class="mobile-nav__link mobile-nav__sub">情報セキュリティマネジメント試験</a></li>
+    <li><a href="sc.html" class="mobile-nav__link mobile-nav__sub">情報処理安全確保支援士試験</a></li>
+    <li><a href="dm.html" class="mobile-nav__link mobile-nav__sub">データマネジメント試験（2027新設）</a></li>
+    <li><a href="pd-management.html" class="mobile-nav__link mobile-nav__sub">PDスキル マネジメント（2027新設）</a></li>
+    <li><a href="pd-data.html" class="mobile-nav__link mobile-nav__sub">PDスキル データ・AI（2027新設）</a></li>
+    <li><a href="pd-system.html" class="mobile-nav__link mobile-nav__sub">PDスキル システム（2027新設）</a></li>
+  </ul>
+  <p class="mobile-nav__heading">その他</p>
+  <ul class="mobile-nav__list">
+    <li><a href="skillmate.html" class="mobile-nav__link">SkillMate</a></li>
+    <li><a href="about.html" class="mobile-nav__link">会社概要</a></li>
+  </ul>
+  <div class="mobile-nav__actions"><a href="contact.html" class="btn btn--primary">お問い合わせ</a></div>
+</nav>
+
+<!-- SERVICE HERO -->
+<section class="service-hero">
+  <div class="service-hero__en-bg" aria-hidden="true">SECURITY MGMT</div>
+  <div class="container">
+    <div class="service-hero__inner js-fade">
+      <div class="service-hero__breadcrumb">
+        <a href="../index.html">ホーム</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>情報セキュリティマネジメント試験</span>
+      </div>
+      <p class="service-hero__label">Information Security Management</p>
+      <h1 class="service-hero__title">情報セキュリティ<br>マネジメント試験<br>対策研修</h1>
+      <p class="service-hero__desc">情報セキュリティを管理・運用するための知識とスキルを習得。IT部門だけでなく、非IT部門の情報セキュリティ担当者にも対応した研修です。</p>
+      <div class="service-hero__badges">
+        <span class="badge badge--accent"><i class="fa-solid fa-circle-check"></i> 合格率85%以上</span>
+        <span class="badge badge--muted"><i class="fa-solid fa-calendar"></i> 2〜4ヶ月</span>
+        <span class="badge badge--muted"><i class="fa-solid fa-users"></i> 1名〜対応</span>
+      </div>
+      <div class="service-hero__actions">
+        <a href="contact.html" class="btn btn--service btn--lg"><i class="fa-solid fa-paper-plane"></i>この研修を相談する</a>
+        <a href="#curriculum" class="btn btn--outline-white btn--lg"><i class="fa-solid fa-book-open"></i>カリキュラムを見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE INFOBAR -->
+<div class="service-infobar js-fade">
+  <div class="container">
+    <div class="service-infobar__grid">
+      <div class="service-infobar__item service-infobar__item--accent">
+        <span class="service-infobar__label">対応試験</span>
+        <span class="service-infobar__value">情報セキュリティマネジメント試験（SG）</span>
+        <span class="service-infobar__sub">IPA 国家試験 / CBT方式・随時実施</span>
+      </div>
+      <div class="service-infobar__item">
+        <span class="service-infobar__label">標準研修期間</span>
+        <span class="service-infobar__value">2〜4ヶ月</span>
+        <span class="service-infobar__sub">受講者のレベルに合わせて調整可能</span>
+      </div>
+      <div class="service-infobar__item">
+        <span class="service-infobar__label">対象者</span>
+        <span class="service-infobar__value">IT・非IT問わず対応</span>
+        <span class="service-infobar__sub">情報セキュリティ担当者・管理職に最適</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 試験概要 -->
+<section class="section">
+  <div class="container">
+    <div class="section__header js-fade">
+      <p class="section__label">Exam Overview</p>
+      <h2 class="section__title">試験概要</h2>
+    </div>
+    <div class="exam-overview">
+      <div class="exam-overview__body js-fade">
+        <!-- ここを編集してください：試験概要テキスト -->
+        <p>情報セキュリティマネジメント試験は、情報セキュリティマネジメントの計画・運用・評価・改善を通じ、組織の情報セキュリティ確保に貢献し、脅威から継続的に組織を守るための基本的なスキルを認定する国家試験です。</p>
+        <p>CBT方式で通年実施されており、IT部門以外の総務・人事・経営企画部門のセキュリティ担当者にも広く受験が推奨されています。</p>
+      </div>
+      <table class="exam-table js-fade-right">
+        <!-- ここを編集してください：試験情報 -->
+        <tr><th>試験形式</th><td>CBT（随時実施）</td></tr>
+        <tr><th>試験時間</th><td>科目A：40分 / 科目B：60分</td></tr>
+        <tr><th>問題数</th><td>科目A：48問 / 科目B：24問</td></tr>
+        <tr><th>合格基準</th><td>各科目600点以上（1000点満点）</td></tr>
+        <tr><th>受験料</th><td>7,500円（税込）</td></tr>
+        <tr><th>受験資格</th><td>なし（誰でも受験可）</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 研修の特徴 -->
+<section class="section section--alt js-section-bg">
+  <div class="container">
+    <div class="section__header js-fade">
+      <p class="section__label">Features</p>
+      <h2 class="section__title">研修の特徴</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card js-fade">
+        <div class="feature-card__num">01</div>
+        <div class="feature-card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3 class="feature-card__title">非ITでも安心の設計</h3>
+        <p class="feature-card__desc">IT知識がなくても理解できるよう、セキュリティの概念から実務的な管理手法まで平易に解説します。</p>
+      </div>
+      <div class="feature-card js-fade delay-1">
+        <div class="feature-card__num">02</div>
+        <div class="feature-card__icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <h3 class="feature-card__title">事例・演習で実践力強化</h3>
+        <p class="feature-card__desc">実際のインシデント事例を用いた演習で、試験対策だけでなく実務で使えるセキュリティ対応力を養います。</p>
+      </div>
+      <div class="feature-card js-fade delay-2">
+        <div class="feature-card__num">03</div>
+        <div class="feature-card__icon"><i class="fa-solid fa-file-shield"></i></div>
+        <h3 class="feature-card__title">最新のセキュリティ動向</h3>
+        <p class="feature-card__desc">ランサムウェア・フィッシング・ゼロデイ攻撃など最新の脅威動向を盛り込んだ教材で時代に即した対策を学習。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- カリキュラム -->
+<section class="section" id="curriculum">
+  <div class="container">
+    <div class="section__header js-fade">
+      <p class="section__label">Curriculum</p>
+      <h2 class="section__title">カリキュラム</h2>
+    </div>
+    <div class="curriculum-list js-fade">
+      <!-- ここを編集してください：カリキュラム内容 -->
+      <div class="curriculum-item">
+        <button class="curriculum-header">
+          <div class="curriculum-header__left">
+            <span class="curriculum-header__tag">第1章</span>
+            <span class="curriculum-header__title">情報セキュリティの基礎概念</span>
+          </div>
+          <span class="curriculum-header__icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="curriculum-body"><div class="curriculum-body__inner">
+          <div class="curriculum-body__content">
+            <ul class="curriculum-topics">
+              <li>情報セキュリティの3要素（CIA）</li><li>脅威・リスク・脆弱性</li>
+              <li>攻撃手法の分類と対策</li><li>マルウェアの種類と対策</li>
+              <li>暗号化技術の基礎</li><li>認証・アクセス制御</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+      <div class="curriculum-item">
+        <button class="curriculum-header">
+          <div class="curriculum-header__left">
+            <span class="curriculum-header__tag">第2章</span>
+            <span class="curriculum-header__title">情報セキュリティ管理</span>
+          </div>
+          <span class="curriculum-header__icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="curriculum-body"><div class="curriculum-body__inner">
+          <div class="curriculum-body__content">
+            <ul class="curriculum-topics">
+              <li>情報セキュリティポリシー</li><li>ISMS（ISO/IEC 27001）</li>
+              <li>リスクマネジメント手法</li><li>インシデント対応プロセス</li>
+              <li>セキュリティ組織・体制</li><li>教育・訓練</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+      <div class="curriculum-item">
+        <button class="curriculum-header">
+          <div class="curriculum-header__left">
+            <span class="curriculum-header__tag">第3章</span>
+            <span class="curriculum-header__title">情報セキュリティ対策技術</span>
+          </div>
+          <span class="curriculum-header__icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="curriculum-body"><div class="curriculum-body__inner">
+          <div class="curriculum-body__content">
+            <ul class="curriculum-topics">
+              <li>ネットワークセキュリティ</li><li>Webセキュリティ</li>
+              <li>クラウドセキュリティ</li><li>物理的セキュリティ</li>
+              <li>ファイアウォール・IDS/IPS</li><li>ログ管理・監視</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+      <div class="curriculum-item">
+        <button class="curriculum-header">
+          <div class="curriculum-header__left">
+            <span class="curriculum-header__tag">第4章</span>
+            <span class="curriculum-header__title">法律・規格・模擬試験</span>
+          </div>
+          <span class="curriculum-header__icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="curriculum-body"><div class="curriculum-body__inner">
+          <div class="curriculum-body__content">
+            <ul class="curriculum-topics">
+              <li>個人情報保護法</li><li>サイバーセキュリティ基本法</li>
+              <li>不正競争防止法・著作権法</li><li>模擬試験（本番形式）</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 料金プラン -->
+<section class="section section--alt js-section-bg">
+  <div class="container">
+    <div class="section__header js-fade">
+      <p class="section__label">Pricing</p>
+      <h2 class="section__title">料金プラン</h2>
+    </div>
+    <div class="pricing-grid js-fade">
+      <div class="pricing-card">
+        <div class="pricing-card__name">ライト</div>
+        <div class="pricing-card__price">要<span>お見積もり</span></div>
+        <p class="pricing-card__desc">基礎知識習得の短期集中プラン</p>
+        <ul class="pricing-card__features">
+          <li><i class="fa-solid fa-check"></i>オンライン講義（全8回）</li>
+          <li><i class="fa-solid fa-check"></i>教材・問題集付き</li>
+          <li><i class="fa-solid fa-check"></i>SkillMate利用（3ヶ月）</li>
+        </ul>
+        <a href="contact.html" class="btn btn--outline" style="width:100%;justify-content:center">見積もりを依頼</a>
+      </div>
+      <div class="pricing-card pricing-card--recommended">
+        <div class="pricing-card__name">スタンダード</div>
+        <div class="pricing-card__price">要<span>お見積もり</span></div>
+        <p class="pricing-card__desc">最も選ばれる定番プラン</p>
+        <ul class="pricing-card__features">
+          <li><i class="fa-solid fa-check"></i>講義（全12回）</li>
+          <li><i class="fa-solid fa-check"></i>個別フォロー面談</li>
+          <li><i class="fa-solid fa-check"></i>SkillMate利用（6ヶ月）</li>
+          <li><i class="fa-solid fa-check"></i>模擬試験2回</li>
+        </ul>
+        <a href="contact.html" class="btn btn--accent" style="width:100%;justify-content:center">見積もりを依頼</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-card__name">プレミアム</div>
+        <div class="pricing-card__price">要<span>お見積もり</span></div>
+        <p class="pricing-card__desc">確実な合格・実務力強化プラン</p>
+        <ul class="pricing-card__features">
+          <li><i class="fa-solid fa-check"></i>講義（全16回）</li>
+          <li><i class="fa-solid fa-check"></i>専任トレーナー対応</li>
+          <li><i class="fa-solid fa-check"></i>SkillMate利用（無制限）</li>
+          <li><i class="fa-solid fa-check"></i>模擬試験 回数無制限</li>
+        </ul>
+        <a href="contact.html" class="btn btn--outline" style="width:100%;justify-content:center">見積もりを依頼</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <p class="cta-banner__label js-fade">Get Started</p>
+    <h2 class="cta-banner__title js-fade">情報セキュリティマネジメント<br>研修の無料相談はこちら</h2>
+    <p class="cta-banner__desc js-fade">受講人数・期間・ご予算に合わせてご提案します。お気軽にご相談ください。</p>
+    <div class="cta-banner__actions js-fade">
+      <a href="contact.html" class="btn btn--accent btn--lg"><i class="fa-solid fa-paper-plane"></i>無料相談・お問い合わせ</a>
+      <a href="../index.html#services" class="btn btn--outline-white btn--lg"><i class="fa-solid fa-arrow-left"></i>他の研修を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <a href="../index.html" class="footer__logo">
+          <div class="footer__logo-mark">M</div>
+          <span class="footer__logo-text">株式会社モアナレ</span>
+        </a>
+        <p class="footer__tagline">IT国家試験対策に特化した企業向け研修会社。</p>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">研修サービス</p>
+        <ul class="footer__links">
+          <li><a href="ip.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>ITパスポート試験</a></li>
+          <li><a href="fe.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>基本情報技術者試験</a></li>
+          <li><a href="sg.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>情報セキュリティマネジメント</a></li>
+          <li><a href="sc.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>情報処理安全確保支援士</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">2027年度新設</p>
+        <ul class="footer__links">
+          <li><a href="dm.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>データマネジメント試験</a></li>
+          <li><a href="pd-management.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>PDスキル マネジメント</a></li>
+          <li><a href="pd-data.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>PDスキル データ・AI</a></li>
+          <li><a href="pd-system.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>PDスキル システム</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">会社情報</p>
+        <ul class="footer__links">
+          <li><a href="skillmate.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>SkillMate</a></li>
+          <li><a href="about.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>会社概要</a></li>
+          <li><a href="contact.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2025 株式会社モアナレ. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="#" class="footer__bottom-link">プライバシーポリシー</a>
+        <a href="#" class="footer__bottom-link">利用規約</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../js/common.js"></script>
+</body>
+</html>

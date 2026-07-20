@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillMate — 学習進捗管理システム | 株式会社モアナレ</title>
+  <meta name="description" content="モアナレ独自のラーニングマネジメントシステム「SkillMate」。受講者の学習進捗をリアルタイムで可視化し、合格率向上を支援します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/skillmate.css">
+</head>
+<body>
+
+<!-- PAGE OVERLAY -->
+<div class="page-overlay"><div class="page-overlay__panel"></div><div class="page-overlay__panel"></div><div class="page-overlay__panel"></div></div>
+
+<!-- HEADER -->
+<header class="header is-dark" id="header">
+  <div class="container header__inner">
+    <a href="../index.html" class="header__logo">
+      <div class="header__logo-mark">M</div>
+      <div class="header__logo-text">
+        <span class="header__logo-ja">株式会社モアナレ</span>
+        <span class="header__logo-en">Moanare Inc.</span>
+      </div>
+    </a>
+    <nav class="header__nav" aria-label="グローバルナビゲーション">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#" class="nav__link">研修サービス <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="dropdown">
+            <a href="ip.html" class="dropdown__item"><i class="fa-solid fa-id-card"></i>ITパスポート試験</a>
+            <a href="fe.html" class="dropdown__item"><i class="fa-solid fa-laptop-code"></i>基本情報技術者試験</a>
+            <a href="sg.html" class="dropdown__item"><i class="fa-solid fa-shield-halved"></i>情報セキュリティマネジメント試験</a>
+            <a href="sc.html" class="dropdown__item"><i class="fa-solid fa-user-shield"></i>情報処理安全確保支援士試験</a>
+            <div class="dropdown__divider"></div>
+            <a href="dm.html" class="dropdown__item"><i class="fa-solid fa-database"></i>データマネジメント試験<span class="dropdown__badge">2027新設</span></a>
+            <a href="pd-management.html" class="dropdown__item"><i class="fa-solid fa-chart-line"></i>PDスキル マネジメント<span class="dropdown__badge">2027新設</span></a>
+            <a href="pd-data.html" class="dropdown__item"><i class="fa-solid fa-brain"></i>PDスキル データ・AI<span class="dropdown__badge">2027新設</span></a>
+            <a href="pd-system.html" class="dropdown__item"><i class="fa-solid fa-server"></i>PDスキル システム<span class="dropdown__badge">2027新設</span></a>
+          </div>
+        </li>
+        <li class="nav__item"><a href="skillmate.html" class="nav__link">SkillMate</a></li>
+        <li class="nav__item"><a href="about.html" class="nav__link">会社概要</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <a href="contact.html" class="btn btn--primary btn--sm">お問い合わせ</a>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span class="hamburger__bar"></span><span class="hamburger__bar"></span><span class="hamburger__bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+  <p class="mobile-nav__heading">研修サービス</p>
+  <ul class="mobile-nav__list">
+    <li><a href="ip.html" class="mobile-nav__link mobile-nav__sub">ITパスポート試験</a></li>
+    <li><a href="fe.html" class="mobile-nav__link mobile-nav__sub">基本情報技術者試験</a></li>
+    <li><a href="sg.html" class="mobile-nav__link mobile-nav__sub">情報セキュリティマネジメント試験</a></li>
+    <li><a href="sc.html" class="mobile-nav__link mobile-nav__sub">情報処理安全確保支援士試験</a></li>
+    <li><a href="dm.html" class="mobile-nav__link mobile-nav__sub">データマネジメント試験（2027新設）</a></li>
+    <li><a href="pd-management.html" class="mobile-nav__link mobile-nav__sub">PDスキル マネジメント（2027新設）</a></li>
+    <li><a href="pd-data.html" class="mobile-nav__link mobile-nav__sub">PDスキル データ・AI（2027新設）</a></li>
+    <li><a href="pd-system.html" class="mobile-nav__link mobile-nav__sub">PDスキル システム（2027新設）</a></li>
+  </ul>
+  <p class="mobile-nav__heading">その他</p>
+  <ul class="mobile-nav__list">
+    <li><a href="skillmate.html" class="mobile-nav__link">SkillMate</a></li>
+    <li><a href="about.html" class="mobile-nav__link">会社概要</a></li>
+  </ul>
+  <div class="mobile-nav__actions"><a href="contact.html" class="btn btn--primary">お問い合わせ</a></div>
+</nav>
+
+<!-- HERO -->
+<section class="sm-hero">
+  <div class="container sm-hero__inner">
+    <div>
+      <!-- ここを編集してください：SkillMateのキャッチコピー -->
+      <div class="sm-hero__badge js-fade"><i class="fa-solid fa-bolt"></i> 独自開発 LMS</div>
+      <h1 class="sm-hero__title js-fade"><em>SkillMate</em><br>学習進捗を<br>見える化する</h1>
+      <p class="sm-hero__desc js-fade">受講者一人ひとりの学習状況をリアルタイムで管理。企業の担当者はチーム全体の進捗をダッシュボードで把握し、合格まで的確にサポートできます。</p>
+      <div class="sm-hero__actions js-fade">
+        <a href="contact.html" class="btn btn--accent btn--lg"><i class="fa-solid fa-paper-plane"></i>導入を相談する</a>
+        <a href="#features" class="btn btn--outline-white btn--lg"><i class="fa-solid fa-arrow-down"></i>機能を見る</a>
+      </div>
+    </div>
+    <div class="sm-hero__dashboard js-fade-right">
+      <div class="sm-hero__dashboard-header">
+        <span class="sm-hero__dashboard-dot"></span>
+        <span class="sm-hero__dashboard-dot"></span>
+        <span class="sm-hero__dashboard-dot"></span>
+        <span class="sm-hero__dashboard-title">SkillMate Dashboard</span>
+      </div>
+      <div class="sm-metric">
+        <span class="sm-metric__label">チーム合格予測スコア</span>
+        <!-- ここを編集してください：ダッシュボードの数値 -->
+        <span class="sm-metric__value">92<span>点</span></span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.5rem">
+        <div class="sm-progress-item">
+          <span class="sm-progress-item__name">山田 太郎</span>
+          <div class="sm-progress-item__track"><div class="sm-progress-item__fill" style="width:88%"></div></div>
+          <span class="sm-progress-item__pct">88%</span>
+        </div>
+        <div class="sm-progress-item">
+          <span class="sm-progress-item__name">佐藤 花子</span>
+          <div class="sm-progress-item__track"><div class="sm-progress-item__fill" style="width:74%"></div></div>
+          <span class="sm-progress-item__pct">74%</span>
+        </div>
+        <div class="sm-progress-item">
+          <span class="sm-progress-item__name">鈴木 次郎</span>
+          <div class="sm-progress-item__track"><div class="sm-progress-item__fill" style="width:61%"></div></div>
+          <span class="sm-progress-item__pct">61%</span>
+        </div>
+        <div class="sm-progress-item">
+          <span class="sm-progress-item__name">田中 美咲</span>
+          <div class="sm-progress-item__track"><div class="sm-progress-item__fill" style="width:95%"></div></div>
+          <span class="sm-progress-item__pct">95%</span>
+        </div>
+      </div>
+      <div class="sm-metric">
+        <span class="sm-metric__label">今月の学習時間</span>
+        <span class="sm-metric__value">142<span>h</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section__header js-fade">
+      <p class="section__label">Features</p>
+      <h2 class="section__title">SkillMateの主な機能</h2>
+      <p class="section__desc">研修の担当者・受講者・トレーナーそれぞれが最大限に活用できる機能を搭載しています。</p>
+    </div>
+    <div class="sm-feature-grid">
+      <!-- ここを編集してください：機能の説明 -->
+      <div class="sm-feature-card js-fade">
+        <div class="sm-feature-card__num">01</div>
+        <div class="sm-feature-card__icon"><i class="fa-solid fa-gauge-high"></i></div>
+        <h3 class="sm-feature-card__title">リアルタイム進捗ダッシュボード</h3>
+        <p class="sm-feature-card__desc">受講者一人ひとりの学習進捗・模擬試験スコア・学習時間をリアルタイムで可視化。担当者はチーム全体の状況を一目で把握できます。</p>
+      </div>
+      <div class="sm-feature-card js-fade delay-1">
+        <div class="sm-feature-card__num">02</div>
+        <div class="sm-feature-card__icon"><i class="fa-solid fa-brain"></i></div>
+        <h3 class="sm-feature-card__title">AI弱点分析・学習提案</h3>
+        <p class="sm-feature-card__desc">AIが受講者の解答パターンを分析し、弱点分野を特定。個人に最適化された学習プランを自動提案します。</p>
+      </div>
+      <div class="sm-feature-card js-fade delay-2">
+        <div class="sm-feature-card__num">03</div>
+        <div class="sm-feature-card__icon"><i class="fa-solid fa-file-pen"></i></div>
+        <h3 class="sm-feature-card__title">模擬試験・問題バンク</h3>
+        <p class="sm-feature-card__desc">過去問データベースをもとにした模擬試験を本番形式で受験可能。解説付きで弱点を効率的に克服できます。</p>
+      </div>
+      <div class="sm-feature-card js-fade">
+        <div class="sm-feature-card__num">04</div>
+        <div class="sm-feature-card__icon"><i class="fa-solid fa-mobile-screen"></i></div>
+        <h3 class="sm-feature-card__title">マルチデバイス対応</h3>
+        <p class="sm-feature-card__desc">PC・スマートフォン・タブレットに対応。通勤中や休憩時間などスキマ時間を有効活用した学習が可能です。</p>
+      </div>
+      <div class="sm-feature-card js-fade delay-1">
+        <div class="sm-feature-card__num">05</div>
+        <div class="sm-feature-card__icon"><i class="fa-solid fa-bell"></i></div>
+        <h3 class="sm-feature-card__title">アラート・通知機能</h3>
+        <p class="sm-feature-card__desc">学習が停滞している受講者を自動検知し、担当者とトレーナーにアラートを通知。早期フォローが可能です。</p>
+      </div>
+      <div class="sm-feature-card js-fade delay-2">
+        <div class="sm-feature-card__num">06</div>
+        <div class="sm-feature-card__icon"><i class="fa-solid fa-chart-bar"></i></div>
+        <h3 class="sm-feature-card__title">詳細レポート出力</h3>
+        <p class="sm-feature-card__desc">チーム・個人別の学習レポートをCSV/PDFで出力可能。上長への報告・研修効果の可視化に活用できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__header js-fade">
+      <p class="section__label">How It Works</p>
+      <h2 class="section__title">ご利用の流れ</h2>
+    </div>
+    <div class="sm-flow">
+      <!-- ここを編集してください：利用フローの説明 -->
+      <div class="sm-flow-step js-fade">
+        <div class="sm-flow-step__num">01</div>
+        <div class="sm-flow-step__icon"><i class="fa-solid fa-building"></i></div>
+        <h3 class="sm-flow-step__title">導入設定</h3>
+        <p class="sm-flow-step__desc">研修契約後、貴社専用の管理画面を設定。受講者アカウントを発行します。</p>
+      </div>
+      <div class="sm-flow-step js-fade delay-1">
+        <div class="sm-flow-step__num">02</div>
+        <div class="sm-flow-step__icon"><i class="fa-solid fa-user-plus"></i></div>
+        <h3 class="sm-flow-step__title">受講者登録</h3>
+        <p class="sm-flow-step__desc">受講者がアカウントを受け取り、スマホ・PCからすぐに学習を開始できます。</p>
+      </div>
+      <div class="sm-flow-step js-fade delay-2">
+        <div class="sm-flow-step__num">03</div>
+        <div class="sm-flow-step__icon"><i class="fa-solid fa-book-open"></i></div>
+        <h3 class="sm-flow-step__title">学習・模擬試験</h3>
+        <p class="sm-flow-step__desc">教材・動画・問題バンクを活用して学習。模擬試験で実力を確認します。</p>
+      </div>
+      <div class="sm-flow-step js-fade delay-3">
+        <div class="sm-flow-step__num">04</div>
+        <div class="sm-flow-step__icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3 class="sm-flow-step__title">進捗管理・合格</h3>
+        <p class="sm-flow-step__desc">ダッシュボードで進捗を確認しながら、担当者・トレーナーが合格まで伴走します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section class="section">
+  <div class="container">
+    <div class="section__header js-fade">
+      <p class="section__label">Plans</p>
+      <h2 class="section__title">料金プラン</h2>
+      <p class="section__desc">研修プランにSkillMateが含まれています。単体でのご利用もご相談ください。</p>
+    </div>
+    <div class="sm-plan-grid js-fade">
+      <!-- ここを編集してください：料金プラン -->
+      <div class="sm-plan-card">
+        <div class="sm-plan-card__name">ライト</div>
+        <div class="sm-plan-card__price">研修込み<small>（別途お見積もり）</small></div>
+        <p class="sm-plan-card__desc">小規模チーム向けの基本プラン</p>
+        <ul class="sm-plan-card__features">
+          <li><i class="fa-solid fa-check"></i>受講者 10名まで</li>
+          <li><i class="fa-solid fa-check"></i>進捗ダッシュボード</li>
+          <li><i class="fa-solid fa-check"></i>模擬試験（標準）</li>
+          <li><i class="fa-solid fa-check"></i>利用期間3ヶ月</li>
+        </ul>
+        <a href="contact.html" class="btn btn--outline" style="width:100%;justify-content:center">相談する</a>
+      </div>
+      <div class="sm-plan-card sm-plan-card--recommend">
+        <div class="sm-plan-card__name">スタンダード</div>
+        <div class="sm-plan-card__price">研修込み<small>（別途お見積もり）</small></div>
+        <p class="sm-plan-card__desc">最も選ばれる定番プラン</p>
+        <ul class="sm-plan-card__features">
+          <li><i class="fa-solid fa-check"></i>受講者 50名まで</li>
+          <li><i class="fa-solid fa-check"></i>AI弱点分析</li>
+          <li><i class="fa-solid fa-check"></i>模擬試験（無制限）</li>
+          <li><i class="fa-solid fa-check"></i>アラート通知</li>
+          <li><i class="fa-solid fa-check"></i>利用期間6ヶ月</li>
+        </ul>
+        <a href="contact.html" class="btn btn--accent" style="width:100%;justify-content:center">相談する</a>
+      </div>
+      <div class="sm-plan-card">
+        <div class="sm-plan-card__name">エンタープライズ</div>
+        <div class="sm-plan-card__price">研修込み<small>（別途お見積もり）</small></div>
+        <p class="sm-plan-card__desc">大規模・複数部門向けプラン</p>
+        <ul class="sm-plan-card__features">
+          <li><i class="fa-solid fa-check"></i>受講者 無制限</li>
+          <li><i class="fa-solid fa-check"></i>全機能利用可能</li>
+          <li><i class="fa-solid fa-check"></i>レポート出力</li>
+          <li><i class="fa-solid fa-check"></i>専任サポート</li>
+          <li><i class="fa-solid fa-check"></i>利用期間 カスタム</li>
+        </ul>
+        <a href="contact.html" class="btn btn--outline" style="width:100%;justify-content:center">相談する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <p class="cta-banner__label js-fade">Get Started</p>
+    <h2 class="cta-banner__title js-fade">SkillMateの導入について<br>まずはご相談ください</h2>
+    <p class="cta-banner__desc js-fade">研修プランとセットでのご提供が基本です。貴社の規模・ニーズに合わせた最適なプランをご提案します。</p>
+    <div class="cta-banner__actions js-fade">
+      <a href="contact.html" class="btn btn--accent btn--lg"><i class="fa-solid fa-paper-plane"></i>無料相談・お問い合わせ</a>
+      <a href="../index.html#services" class="btn btn--outline-white btn--lg"><i class="fa-solid fa-arrow-left"></i>研修サービスを見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <a href="../index.html" class="footer__logo">
+          <div class="footer__logo-mark">M</div>
+          <span class="footer__logo-text">株式会社モアナレ</span>
+        </a>
+        <p class="footer__tagline">IT国家試験対策に特化した企業向け研修会社。</p>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">研修サービス</p>
+        <ul class="footer__links">
+          <li><a href="ip.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>ITパスポート試験</a></li>
+          <li><a href="fe.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>基本情報技術者試験</a></li>
+          <li><a href="sg.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>情報セキュリティマネジメント</a></li>
+          <li><a href="sc.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>情報処理安全確保支援士</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">2027年度新設</p>
+        <ul class="footer__links">
+          <li><a href="dm.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>データマネジメント試験</a></li>
+          <li><a href="pd-management.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>PDスキル マネジメント</a></li>
+          <li><a href="pd-data.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>PDスキル データ・AI</a></li>
+          <li><a href="pd-system.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>PDスキル システム</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">会社情報</p>
+        <ul class="footer__links">
+          <li><a href="skillmate.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>SkillMate</a></li>
+          <li><a href="about.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>会社概要</a></li>
+          <li><a href="contact.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2025 株式会社モアナレ. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="#" class="footer__bottom-link">プライバシーポリシー</a>
+        <a href="#" class="footer__bottom-link">利用規約</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../js/common.js"></script>
+</body>
+</html>

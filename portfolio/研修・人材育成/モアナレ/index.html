@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>株式会社モアナレ | IT国家試験対策 企業向け研修</title>
+  <meta name="description" content="IT国家試験対策に特化した企業向け研修会社。ITパスポート・基本情報・情報セキュリティ・情報処理安全確保支援士など幅広く対応。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/top.css">
+</head>
+<body>
+
+<!-- PAGE OVERLAY (ページ遷移アニメーション) -->
+<div class="page-overlay"><div class="page-overlay__panel"></div><div class="page-overlay__panel"></div><div class="page-overlay__panel"></div></div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="header__logo">
+      <div class="header__logo-mark">M</div>
+      <div class="header__logo-text">
+        <span class="header__logo-ja">株式会社モアナレ</span>
+        <span class="header__logo-en">Moanare Inc.</span>
+      </div>
+    </a>
+    <nav class="header__nav" aria-label="グローバルナビゲーション">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#" class="nav__link">研修サービス <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="dropdown">
+            <a href="html/ip.html" class="dropdown__item"><i class="fa-solid fa-id-card"></i>ITパスポート試験</a>
+            <a href="html/fe.html" class="dropdown__item"><i class="fa-solid fa-laptop-code"></i>基本情報技術者試験</a>
+            <a href="html/sg.html" class="dropdown__item"><i class="fa-solid fa-shield-halved"></i>情報セキュリティマネジメント試験</a>
+            <a href="html/sc.html" class="dropdown__item"><i class="fa-solid fa-user-shield"></i>情報処理安全確保支援士試験</a>
+            <div class="dropdown__divider"></div>
+            <a href="html/dm.html" class="dropdown__item"><i class="fa-solid fa-database"></i>データマネジメント試験<span class="dropdown__badge">2027新設</span></a>
+            <a href="html/pd-management.html" class="dropdown__item"><i class="fa-solid fa-chart-line"></i>PDスキル マネジメント<span class="dropdown__badge">2027新設</span></a>
+            <a href="html/pd-data.html" class="dropdown__item"><i class="fa-solid fa-brain"></i>PDスキル データ・AI<span class="dropdown__badge">2027新設</span></a>
+            <a href="html/pd-system.html" class="dropdown__item"><i class="fa-solid fa-server"></i>PDスキル システム<span class="dropdown__badge">2027新設</span></a>
+          </div>
+        </li>
+        <li class="nav__item"><a href="html/skillmate.html" class="nav__link">SkillMate</a></li>
+        <li class="nav__item"><a href="html/about.html" class="nav__link">会社概要</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <a href="html/contact.html" class="btn btn--primary btn--sm">お問い合わせ</a>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span class="hamburger__bar"></span><span class="hamburger__bar"></span><span class="hamburger__bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav">
+  <p class="mobile-nav__heading">研修サービス</p>
+  <ul class="mobile-nav__list">
+    <li><a href="html/ip.html" class="mobile-nav__link mobile-nav__sub">ITパスポート試験</a></li>
+    <li><a href="html/fe.html" class="mobile-nav__link mobile-nav__sub">基本情報技術者試験</a></li>
+    <li><a href="html/sg.html" class="mobile-nav__link mobile-nav__sub">情報セキュリティマネジメント試験</a></li>
+    <li><a href="html/sc.html" class="mobile-nav__link mobile-nav__sub">情報処理安全確保支援士試験</a></li>
+    <li><a href="html/dm.html" class="mobile-nav__link mobile-nav__sub">データマネジメント試験（2027新設）</a></li>
+    <li><a href="html/pd-management.html" class="mobile-nav__link mobile-nav__sub">PDスキル マネジメント（2027新設）</a></li>
+    <li><a href="html/pd-data.html" class="mobile-nav__link mobile-nav__sub">PDスキル データ・AI（2027新設）</a></li>
+    <li><a href="html/pd-system.html" class="mobile-nav__link mobile-nav__sub">PDスキル システム（2027新設）</a></li>
+  </ul>
+  <p class="mobile-nav__heading">その他</p>
+  <ul class="mobile-nav__list">
+    <li><a href="html/skillmate.html" class="mobile-nav__link">SkillMate</a></li>
+    <li><a href="html/about.html" class="mobile-nav__link">会社概要</a></li>
+  </ul>
+  <div class="mobile-nav__actions"><a href="html/contact.html" class="btn btn--primary">お問い合わせ</a></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- 左：テキストエリア（白） -->
+  <div class="hero__left">
+    <p class="hero__label">IT National Exam Training</p>
+    <h1 class="hero__title">PASS<br>THE<br>EXAM.</h1>
+    <p class="hero__tagline">IT国家試験対策で、<br>企業の人材を確実に合格へ</p>
+    <p class="hero__desc">IT国家試験対策に特化した企業向け研修。専任トレーナーと独自教材で合格率85%以上を実現します。</p>
+    <div class="hero__actions">
+      <a href="html/contact.html" class="btn btn--primary btn--lg">無料相談はこちら</a>
+      <a href="#services" class="btn btn--outline btn--lg">研修を見る</a>
+    </div>
+    <div class="hero__stats">
+      <div class="hero__stat">
+        <span class="hero__stat-num">85%+</span>
+        <span class="hero__stat-label">合格率</span>
+      </div>
+      <div class="hero__stat-sep"></div>
+      <div class="hero__stat">
+        <span class="hero__stat-num">500社+</span>
+        <span class="hero__stat-label">導入実績</span>
+      </div>
+      <div class="hero__stat-sep"></div>
+      <div class="hero__stat">
+        <span class="hero__stat-num">8試験</span>
+        <span class="hero__stat-label">対応試験区分</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 右：ビジュアルパネル（ダーク、背景スライド） -->
+  <div class="hero__right">
+    <div class="hero__slides" aria-hidden="true">
+      <div class="hero__slide hero__slide--1"></div>
+      <div class="hero__slide hero__slide--2"></div>
+      <div class="hero__slide hero__slide--3"></div>
+    </div>
+    <div class="hero__right-content">
+      <p class="hero__right-en">We train your people<br>to pass with confidence</p>
+      <p class="hero__right-ja">IT国家試験合格率85%以上<br>業界最高水準の合格実績</p>
+    </div>
+    <div class="hero__scroll">
+      <div class="hero__scroll-line"></div>
+      SCROLL
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee__track">
+    <span class="marquee__item"><i class="fa-solid fa-circle-check"></i>ITパスポート試験</span>
+    <span class="marquee__item"><i class="fa-solid fa-circle-check"></i>基本情報技術者試験</span>
+    <span class="marquee__item"><i class="fa-solid fa-circle-check"></i>情報セキュリティマネジメント試験</span>
+    <span class="marquee__item"><i class="fa-solid fa-circle-check"></i>情報処理安全確保支援士試験</span>
+    <span class="marquee__item"><i class="fa-solid fa-circle-check"></i>データマネジメント試験</span>
+    <span class="marquee__item"><i class="fa-solid fa-circle-check"></i>PDスキル マネジメント</span>
+    <span class="marquee__item"><i class="fa-solid fa-circle-check"></i>PDスキル データ・AI</span>
+    <span class="marquee__item"><i class="fa-solid fa-circle-check"></i>PDスキル システム</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section__header js-fade">
+      <p class="section__label">Services</p>
+      <h2 class="section__title">研修サービス一覧</h2>
+      <p class="section__desc">IT国家試験の各区分に特化した企業向け研修プログラムをご提供しています。</p>
+    </div>
+
+    <div class="service-label-row js-fade">
+      <div class="service-label-row__line"></div>
+      <span class="service-label-row__text">現行試験区分</span>
+      <div class="service-label-row__line"></div>
+    </div>
+    <div class="service-grid">
+      <a href="html/ip.html" class="service-card js-fade">
+        <div class="service-card__icon"><i class="fa-solid fa-id-card"></i></div>
+        <!-- ここを編集してください：サービスカード内容 -->
+        <div class="service-card__title">ITパスポート試験</div>
+        <p class="service-card__desc">IT基礎知識を体系的に習得。全社員のITリテラシー向上に最適な入門研修です。</p>
+        <span class="service-card__arrow"><i class="fa-solid fa-arrow-right"></i> 詳細を見る</span>
+      </a>
+      <a href="html/fe.html" class="service-card js-fade delay-1">
+        <div class="service-card__icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="service-card__title">基本情報技術者試験</div>
+        <p class="service-card__desc">IT人材の登竜門。プログラミング・アルゴリズム・ネットワーク等を網羅的に学習。</p>
+        <span class="service-card__arrow"><i class="fa-solid fa-arrow-right"></i> 詳細を見る</span>
+      </a>
+      <a href="html/sg.html" class="service-card js-fade delay-2">
+        <div class="service-card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="service-card__title">情報セキュリティ<br>マネジメント試験</div>
+        <p class="service-card__desc">情報セキュリティの管理・運用スキルを強化。非IT部門のセキュリティ担当者にも対応。</p>
+        <span class="service-card__arrow"><i class="fa-solid fa-arrow-right"></i> 詳細を見る</span>
+      </a>
+      <a href="html/sc.html" class="service-card js-fade">
+        <div class="service-card__icon"><i class="fa-solid fa-user-shield"></i></div>
+        <div class="service-card__title">情報処理安全確保<br>支援士試験</div>
+        <p class="service-card__desc">国家資格「登録セキスペ」取得を目指す高度研修。セキュリティ専門人材の育成に。</p>
+        <span class="service-card__arrow"><i class="fa-solid fa-arrow-right"></i> 詳細を見る</span>
+      </a>
+    </div>
+
+    <div class="service-label-row js-fade" style="margin-top:2.5rem">
+      <div class="service-label-row__line"></div>
+      <span class="service-label-row__text">2027年度 新設予定</span>
+      <div class="service-label-row__line"></div>
+    </div>
+    <div class="service-grid">
+      <a href="html/dm.html" class="service-card js-fade">
+        <div class="service-card__badge"><i class="fa-solid fa-clock"></i> 2027新設</div>
+        <div class="service-card__icon"><i class="fa-solid fa-database"></i></div>
+        <div class="service-card__title">データマネジメント試験</div>
+        <p class="service-card__desc">データ活用・管理の専門資格。DX推進に必要なデータ人材育成のための研修。</p>
+        <span class="service-card__arrow"><i class="fa-solid fa-arrow-right"></i> 詳細を見る</span>
+      </a>
+      <a href="html/pd-management.html" class="service-card js-fade delay-1">
+        <div class="service-card__badge"><i class="fa-solid fa-clock"></i> 2027新設</div>
+        <div class="service-card__icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="service-card__title">PDスキル マネジメント</div>
+        <p class="service-card__desc">ITプロジェクトのマネジメントスキルを高度化する2027年新設の試験区分。</p>
+        <span class="service-card__arrow"><i class="fa-solid fa-arrow-right"></i> 詳細を見る</span>
+      </a>
+      <a href="html/pd-data.html" class="service-card js-fade delay-2">
+        <div class="service-card__badge"><i class="fa-solid fa-clock"></i> 2027新設</div>
+        <div class="service-card__icon"><i class="fa-solid fa-brain"></i></div>
+        <div class="service-card__title">PDスキル データ・AI</div>
+        <p class="service-card__desc">データサイエンス・AI技術の高度専門家を育成する最先端の研修プログラム。</p>
+        <span class="service-card__arrow"><i class="fa-solid fa-arrow-right"></i> 詳細を見る</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="clients js-fade">
+      <!-- ここを編集してください：導入企業名 -->
+      <p class="clients__label">導入企業（一部）</p>
+      <div class="clients__grid">
+        <span class="clients__item">○○株式会社</span>
+        <span class="clients__item">△△テクノロジー</span>
+        <span class="clients__item">□□システムズ</span>
+        <span class="clients__item">◇◇コーポレーション</span>
+        <span class="clients__item">××ホールディングス</span>
+        <span class="clients__item">◎◎ソリューションズ</span>
+        <span class="clients__item">▲▲インフォメーション</span>
+        <span class="clients__item">★★エンタープライズ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section">
+  <div class="container">
+    <div class="section__header js-fade">
+      <p class="section__label">Results</p>
+      <h2 class="section__title">実績・数字で見るモアナレ</h2>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item js-fade">
+        <!-- ここを編集してください：実績数値 -->
+        <div class="stat-item__num"><span data-counter="85">85</span><span>%+</span></div>
+        <div class="stat-item__label">平均合格率<br>業界平均の約2倍</div>
+      </div>
+      <div class="stat-item js-fade delay-1">
+        <div class="stat-item__num"><span data-counter="500">500</span><span>社+</span></div>
+        <div class="stat-item__label">導入企業数<br>大手〜中小まで</div>
+      </div>
+      <div class="stat-item js-fade delay-2">
+        <div class="stat-item__num"><span data-counter="12000">12000</span><span>名+</span></div>
+        <div class="stat-item__label">累計受講者数</div>
+      </div>
+      <div class="stat-item js-fade delay-3">
+        <div class="stat-item__num"><span data-counter="10">10</span><span>年+</span></div>
+        <div class="stat-item__label">研修提供実績</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY MENTL -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__header js-fade">
+      <p class="section__label">Why Moanare</p>
+      <h2 class="section__title">モアナレが選ばれる理由</h2>
+      <p class="section__desc">企業の人材育成課題を解決するための独自のアプローチが、高い合格率と顧客満足度を実現しています。</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card js-fade">
+        <!-- ここを編集してください：選ばれる理由の内容 -->
+        <div class="why-card__num">01</div>
+        <div class="why-card__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h3 class="why-card__title">試験特化の専任トレーナー</h3>
+        <p class="why-card__desc">各試験区分に精通した専任トレーナーが、合格に直結するポイントを厳選して指導します。一般的な資格スクールとは異なり、企業研修に特化したアプローチで効率的に学習を進めます。</p>
+      </div>
+      <div class="why-card js-fade delay-1">
+        <div class="why-card__num">02</div>
+        <div class="why-card__icon"><i class="fa-solid fa-layer-group"></i></div>
+        <h3 class="why-card__title">独自の合格特化カリキュラム</h3>
+        <p class="why-card__desc">膨大な過去問データの分析から生まれた独自教材。出題傾向を徹底分析し、最短距離で合格レベルに到達するカリキュラムを提供します。</p>
+      </div>
+      <div class="why-card js-fade delay-2">
+        <div class="why-card__num">03</div>
+        <div class="why-card__icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3 class="why-card__title">SkillMate進捗管理システム</h3>
+        <p class="why-card__desc">独自開発のラーニングマネジメントシステム「SkillMate」で受講者の学習進捗をリアルタイムに可視化。担当者と受講者が一体となって合格を目指せる環境を提供します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLMATE PROMO -->
+<div class="skillmate-promo">
+  <div class="container skillmate-promo__inner">
+    <div>
+      <p class="skillmate-promo__label js-fade">SkillMate</p>
+      <h2 class="skillmate-promo__title js-fade">学習進捗を<br>見える化する<br>独自システム</h2>
+      <p class="skillmate-promo__desc js-fade">受講者一人ひとりの学習状況をリアルタイムで管理。企業の担当者は進捗ダッシュボードからチーム全体の状況を把握し、最適なサポートができます。</p>
+      <ul class="skillmate-promo__features js-fade">
+        <li class="skillmate-promo__feature"><i class="fa-solid fa-check"></i>リアルタイム進捗ダッシュボード</li>
+        <li class="skillmate-promo__feature"><i class="fa-solid fa-check"></i>AI による弱点分析・学習提案</li>
+        <li class="skillmate-promo__feature"><i class="fa-solid fa-check"></i>模擬試験・問題バンク搭載</li>
+        <li class="skillmate-promo__feature"><i class="fa-solid fa-check"></i>スマートフォン・タブレット対応</li>
+      </ul>
+      <a href="html/skillmate.html" class="btn btn--primary btn--lg js-fade"><i class="fa-solid fa-arrow-right"></i>SkillMateの詳細</a>
+    </div>
+    <div class="skillmate-promo__visual js-fade-right">
+      <div class="sm-dash">
+        <div class="sm-dash__label">チーム合格予測スコア</div>
+        <div class="sm-dash__value">92<span style="font-size:1rem;font-weight:400;opacity:.6">点</span></div>
+      </div>
+      <div class="sm-bar-row">
+        <!-- ここを編集してください：チームメンバー名 -->
+        <div class="sm-bar">
+          <span class="sm-bar__name">山田 太郎</span>
+          <div class="sm-bar__track"><div class="sm-bar__fill" data-width="88%" style="width:88%"></div></div>
+          <span class="sm-bar__pct">88%</span>
+        </div>
+        <div class="sm-bar">
+          <span class="sm-bar__name">佐藤 花子</span>
+          <div class="sm-bar__track"><div class="sm-bar__fill" data-width="74%" style="width:74%"></div></div>
+          <span class="sm-bar__pct">74%</span>
+        </div>
+        <div class="sm-bar">
+          <span class="sm-bar__name">鈴木 次郎</span>
+          <div class="sm-bar__track"><div class="sm-bar__fill" data-width="61%" style="width:61%"></div></div>
+          <span class="sm-bar__pct">61%</span>
+        </div>
+        <div class="sm-bar">
+          <span class="sm-bar__name">田中 美咲</span>
+          <div class="sm-bar__track"><div class="sm-bar__fill" data-width="95%" style="width:95%"></div></div>
+          <span class="sm-bar__pct">95%</span>
+        </div>
+      </div>
+      <div class="sm-dash">
+        <div class="sm-dash__label">今月の学習時間</div>
+        <div class="sm-dash__value">142<span style="font-size:1rem;font-weight:400;opacity:.6">h</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section__header js-fade">
+      <p class="section__label">Process</p>
+      <h2 class="section__title">導入から研修完了まで</h2>
+      <p class="section__desc">お問い合わせから研修終了まで、専任担当者が丁寧にサポートします。</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step js-fade">
+        <!-- ここを編集してください：プロセスの説明 -->
+        <div class="process-step__num">STEP 01</div>
+        <div class="process-step__icon"><i class="fa-solid fa-comments"></i></div>
+        <h3 class="process-step__title">ヒアリング・<br>無料相談</h3>
+        <p class="process-step__desc">現在の課題や目標をお聞きし、最適な研修プランをご提案します。</p>
+      </div>
+      <div class="process-step js-fade delay-1">
+        <div class="process-step__num">STEP 02</div>
+        <div class="process-step__icon"><i class="fa-solid fa-file-lines"></i></div>
+        <h3 class="process-step__title">カリキュラム・<br>見積提案</h3>
+        <p class="process-step__desc">貴社のニーズに合わせたオーダーメイドのカリキュラムと費用をご提示。</p>
+      </div>
+      <div class="process-step js-fade delay-2">
+        <div class="process-step__num">STEP 03</div>
+        <div class="process-step__icon"><i class="fa-solid fa-handshake"></i></div>
+        <h3 class="process-step__title">ご契約・<br>研修準備</h3>
+        <p class="process-step__desc">契約後、スケジュール・教材・SkillMate環境を準備いたします。</p>
+      </div>
+      <div class="process-step js-fade delay-3">
+        <div class="process-step__num">STEP 04</div>
+        <div class="process-step__icon"><i class="fa-solid fa-rocket"></i></div>
+        <h3 class="process-step__title">研修実施・<br>合格まで伴走</h3>
+        <p class="process-step__desc">研修開始後も進捗管理・個別フォローで合格まで徹底サポートします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--alt" id="faq">
+  <div class="container">
+    <div class="section__header js-fade">
+      <p class="section__label">FAQ</p>
+      <h2 class="section__title">よくあるご質問</h2>
+    </div>
+    <div class="faq-list js-fade">
+      <!-- ここを編集してください：FAQ内容 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question__q">研修は何名から依頼できますか？</span>
+          <span class="faq-question__icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer__inner">
+          <p class="faq-answer__body">1名様から対応可能です。ただし、5名以上でのご依頼の場合、グループ割引が適用されます。また、人数に応じた最適な研修形式（個別指導・グループ研修）をご提案します。</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question__q">研修は対面・オンラインどちらに対応していますか？</span>
+          <span class="faq-question__icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer__inner">
+          <p class="faq-answer__body">対面・オンライン・ハイブリッドいずれにも対応しています。貴社のご要望や受講者の勤務形態に合わせて柔軟に対応いたします。</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question__q">料金はどのくらいかかりますか？</span>
+          <span class="faq-question__icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer__inner">
+          <p class="faq-answer__body">研修の種類・人数・期間によって異なります。お問い合わせフォームよりご連絡いただければ、無料でお見積もりをご提示します。</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question__q">研修期間はどのくらいですか？</span>
+          <span class="faq-question__icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer__inner">
+          <p class="faq-answer__body">試験区分や受講者のレベルによって異なりますが、ITパスポートは2〜3ヶ月、基本情報技術者試験は3〜6ヶ月を標準としています。貴社のスケジュールに合わせてカスタマイズも可能です。</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question__q">合格できなかった場合はどうなりますか？</span>
+          <span class="faq-question__icon"><i class="fa-solid fa-plus"></i></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer__inner">
+          <p class="faq-answer__body">万一不合格となった場合も、リカバリープランをご提案し、次回試験に向けたサポートを継続いたします。詳細はご契約内容によって異なりますので、お問い合わせください。</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <p class="cta-banner__label js-fade">Contact Us</p>
+    <!-- ここを編集してください：CTAテキスト -->
+    <h2 class="cta-banner__title js-fade">まずは無料相談から<br>はじめましょう</h2>
+    <p class="cta-banner__desc js-fade">貴社のIT人材育成の課題をお聞かせください。最適な研修プランをご提案します。</p>
+    <div class="cta-banner__actions js-fade">
+      <a href="html/contact.html" class="btn btn--accent btn--lg"><i class="fa-solid fa-paper-plane"></i>無料相談・お問い合わせ</a>
+      <a href="html/about.html" class="btn btn--outline-white btn--lg"><i class="fa-solid fa-building"></i>会社概要を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+          <div class="footer__logo-mark">M</div>
+          <span class="footer__logo-text">株式会社モアナレ</span>
+        </a>
+        <p class="footer__tagline">IT国家試験対策に特化した企業向け研修会社。</p>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">研修サービス</p>
+        <ul class="footer__links">
+          <li><a href="html/ip.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>ITパスポート試験</a></li>
+          <li><a href="html/fe.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>基本情報技術者試験</a></li>
+          <li><a href="html/sg.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>情報セキュリティマネジメント</a></li>
+          <li><a href="html/sc.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>情報処理安全確保支援士</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">2027年度新設</p>
+        <ul class="footer__links">
+          <li><a href="html/dm.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>データマネジメント試験</a></li>
+          <li><a href="html/pd-management.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>PDスキル マネジメント</a></li>
+          <li><a href="html/pd-data.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>PDスキル データ・AI</a></li>
+          <li><a href="html/pd-system.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>PDスキル システム</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <p class="footer__col-title">会社情報</p>
+        <ul class="footer__links">
+          <li><a href="html/skillmate.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>SkillMate</a></li>
+          <li><a href="html/about.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>会社概要</a></li>
+          <li><a href="html/contact.html" class="footer__link"><i class="fa-solid fa-angle-right"></i>お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <!-- ここを編集してください：コピーライト -->
+      <p class="footer__copy">&copy; 2025 株式会社モアナレ. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="#" class="footer__bottom-link">プライバシーポリシー</a>
+        <a href="#" class="footer__bottom-link">利用規約</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/common.js"></script>
+<script src="js/top.js"></script>
+</body>
+</html>
