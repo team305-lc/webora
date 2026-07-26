@@ -1,0 +1,16 @@
+<svg viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ラベンダーの小枝の装飾モチーフ">
+  <path d="M60 200 C58 150 62 110 60 70" stroke="#5C7A57" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M60 150 C48 142 40 130 38 118" stroke="#5C7A57" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M60 130 C72 122 80 110 82 98" stroke="#5C7A57" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <g fill="#8B72B3">
+    <ellipse cx="60" cy="20" rx="12" ry="24"/>
+    <ellipse cx="42" cy="34" rx="11" ry="21"/>
+    <ellipse cx="78" cy="34" rx="11" ry="21"/>
+    <ellipse cx="60" cy="50" rx="10" ry="19"/>
+  </g>
+  <g fill="#6E5D8C" opacity="0.85">
+    <ellipse cx="60" cy="24" rx="7" ry="16"/>
+    <ellipse cx="44" cy="36" rx="6" ry="13"/>
+    <ellipse cx="76" cy="36" rx="6" ry="13"/>
+  </g>
+</svg>

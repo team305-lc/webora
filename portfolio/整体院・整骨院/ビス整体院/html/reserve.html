@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ご予約｜ビス整体院</title>
+<meta name="description" content="ビス整体院のご予約ページ。WEBフォームまたはお電話でご予約いただけます。当日のご予約もお気軽にどうぞ。">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <a href="../index.html" class="logo">ビス<span>整体院</span></a>
+
+    <nav class="nav-desktop">
+      <ul>
+        <li><a href="about.html">院について</a></li>
+        <li><a href="../index.html#reasons">選ばれる理由</a></li>
+        <li><a href="../index.html#concerns">お悩み</a></li>
+        <li><a href="../index.html#flow">施術の流れ</a></li>
+        <li><a href="price.html">料金</a></li>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="access.html">アクセス</a></li>
+      </ul>
+      <div class="header-cta">
+        <div class="header-tel">
+          <span>お電話でのご相談</span>
+          <strong><a href="tel:0110000000" class="tel-link">011-000-0000</a></strong>
+        </div>
+        <a href="reserve.html" class="btn btn--primary btn--sm">WEB予約</a>
+      </div>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMobile" aria-label="メニューを開く">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="nav-mobile" id="navMobile">
+  <ul>
+    <li><a href="about.html">院について</a></li>
+    <li><a href="../index.html#reasons">選ばれる理由</a></li>
+    <li><a href="../index.html#concerns">お悩み</a></li>
+    <li><a href="../index.html#flow">施術の流れ</a></li>
+    <li><a href="price.html">料金</a></li>
+    <li><a href="faq.html">よくある質問</a></li>
+    <li><a href="access.html">アクセス</a></li>
+  </ul>
+  <a href="reserve.html" class="btn btn--primary">WEBで予約する</a>
+  <a href="tel:0110000000" class="btn btn--outline">011-000-0000</a>
+</nav>
+
+<main>
+
+  <section class="page-banner">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">TOP</a><span>›</span><span>ご予約</span></div>
+      <span class="eyebrow">RESERVE</span>
+      <h1>ご予約</h1>
+      <p>WEBフォームまたはお電話でご予約いただけます。当日のご予約もお気軽にどうぞ。カウンセリングのみのご相談も歓迎しています。</p>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <div class="reserve-layout">
+        <div class="reveal">
+          <div class="form-card">
+            <h2 style="font-size:1.3rem;">WEB予約フォーム</h2>
+            <p style="margin-top:10px;color:var(--ink-soft);font-size:0.9rem;">
+              必要事項をご入力のうえ送信してください。送信するとメールアプリが起動しますので、内容をご確認のうえお送りください。折り返し当院よりご連絡し、予約を確定いたします。
+            </p>
+
+            <form action="mailto:info@bis-seitai.example?subject=WEB予約フォームからのお申し込み" method="post" enctype="text/plain" style="margin-top:28px;">
+              <div class="form-grid two-col">
+                <div class="field">
+                  <label for="r-name">お名前<span class="required">必須</span></label>
+                  <input type="text" id="r-name" name="お名前" placeholder="例）大通 花子" required>
+                </div>
+                <div class="field">
+                  <label for="r-kana">フリガナ<span class="required">必須</span></label>
+                  <input type="text" id="r-kana" name="フリガナ" placeholder="例）オオドオリ ハナコ" required>
+                </div>
+                <div class="field">
+                  <label for="r-tel">電話番号<span class="required">必須</span></label>
+                  <input type="tel" id="r-tel" name="電話番号" placeholder="例）090-0000-0000" required>
+                </div>
+                <div class="field">
+                  <label for="r-email">メールアドレス<span class="required">必須</span></label>
+                  <input type="email" id="r-email" name="メールアドレス" placeholder="例）example@mail.com" required>
+                </div>
+              </div>
+
+              <div class="form-grid two-col" style="margin-top:22px;">
+                <div class="field">
+                  <label for="r-menu">ご希望メニュー<span class="required">必須</span></label>
+                  <select id="r-menu" name="ご希望メニュー" required>
+                    <option value="">選択してください</option>
+                    <option>初めての方限定コース（60分）</option>
+                    <option>全身整体コース（40分）</option>
+                    <option>全身整体コース（60分）</option>
+                    <option>全身整体コース（90分）</option>
+                    <option>肩こり・首こり集中コース（40分）</option>
+                    <option>骨盤矯正コース（50分）</option>
+                    <option>相談しながら決めたい</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="r-visit">ご来院回数</label>
+                  <select id="r-visit" name="ご来院回数">
+                    <option>はじめて</option>
+                    <option>2回目以降</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-grid two-col" style="margin-top:22px;">
+                <div class="field">
+                  <label for="r-date">ご希望日<span class="required">必須</span></label>
+                  <input type="date" id="r-date" name="ご希望日" required>
+                </div>
+                <div class="field">
+                  <label for="r-time">ご希望時間帯<span class="required">必須</span></label>
+                  <select id="r-time" name="ご希望時間帯" required>
+                    <option value="">選択してください</option>
+                    <option>10:00〜12:00</option>
+                    <option>12:00〜14:00</option>
+                    <option>14:00〜16:00</option>
+                    <option>16:00〜18:00</option>
+                    <option>18:00〜20:00</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field" style="margin-top:22px;">
+                <label for="r-note">ご要望・気になる症状など</label>
+                <textarea id="r-note" name="ご要望・気になる症状など" placeholder="例）2週間前から右肩がこっています。強い施術が苦手です。"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary" style="margin-top:28px;width:100%;">確認画面へ進む（メールが起動します）</button>
+              <p class="form-note">※ お使いの端末にメールアプリが設定されていない場合は、送信ができません。その場合はお手数ですがお電話にてご予約ください。</p>
+            </form>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="contact-alt">
+            <span class="eyebrow" style="justify-content:center;">TEL</span>
+            <span class="big-tel"><a href="tel:0110000000" class="tel-link">011-000-0000</a></span>
+            <p>受付時間 10:00〜20:00（不定休）<br>お電話でのご予約もお気軽にどうぞ。</p>
+          </div>
+          <div class="info-card reveal" style="margin-top:20px;">
+            <h4>ご予約の流れ</h4>
+            <p>WEBフォーム送信後、当院より折り返しご連絡し、日時を確定いたします。お急ぎの場合はお電話をご利用ください。</p>
+          </div>
+          <div class="info-card reveal" style="margin-top:20px;">
+            <h4>初めての方へ</h4>
+            <p>ご来院10分前を目安にお越しください。当日は動きやすい服装がおすすめです。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">ビス整体院</div>
+        <p>札幌市中央区・大通公園より徒歩5分。はじめての方も安心して通える、女性のための整体院です。</p>
+      </div>
+      <div class="footer-col">
+        <h4>MENU</h4>
+        <ul>
+          <li><a href="about.html">院について</a></li>
+          <li><a href="../index.html#reasons">選ばれる理由</a></li>
+          <li><a href="../index.html#concerns">お悩み</a></li>
+          <li><a href="../index.html#flow">施術の流れ</a></li>
+          <li><a href="price.html">料金</a></li>
+          <li><a href="faq.html">よくある質問</a></li>
+          <li><a href="access.html">アクセス</a></li>
+          <li><a href="reserve.html">ご予約</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>CONTACT</h4>
+        <ul>
+          <li>011-000-0000</li>
+          <li>10:00〜20:00（不定休）</li>
+          <li>大通西5丁目1-1（仮）</li>
+        </ul>
+      </div>
+    </div>
+    <img src="../img/motif-odori-skyline.svg" alt="" class="footer-skyline" aria-hidden="true">
+    <div class="footer-bottom">
+      <span>&copy; 2026 ビス整体院</span>
+      <span>本サイトはサンプルデザインです</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-cta-bar">
+  <a href="tel:0110000000" class="btn btn--outline">電話で相談</a>
+  <a href="#r-name" class="btn btn--primary">フォームへ</a>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

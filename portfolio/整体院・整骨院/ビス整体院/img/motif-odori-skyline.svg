@@ -1,0 +1,25 @@
+<svg viewBox="0 0 1200 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="大通公園のテレビ塔と並木のシルエット">
+  <g fill="currentColor" opacity="0.9">
+    <ellipse cx="90" cy="128" rx="52" ry="30"/>
+    <ellipse cx="150" cy="120" rx="40" ry="24"/>
+    <rect x="86" y="128" width="8" height="26"/>
+    <rect x="146" y="120" width="8" height="34"/>
+
+    <path d="M580 154 L580 30 L560 60 L604 60 Z"/>
+    <path d="M573 60 L546 96 L614 96 Z"/>
+    <rect x="574" y="10" width="12" height="24"/>
+    <circle cx="580" cy="8" r="7"/>
+    <line x1="566" y1="70" x2="594" y2="70" stroke-width="4" stroke="currentColor"/>
+    <line x1="560" y1="84" x2="600" y2="84" stroke-width="4" stroke="currentColor"/>
+
+    <ellipse cx="1020" cy="126" rx="56" ry="32"/>
+    <ellipse cx="1090" cy="118" rx="42" ry="26"/>
+    <rect x="1015" y="126" width="8" height="28"/>
+    <rect x="1086" y="118" width="8" height="36"/>
+
+    <ellipse cx="330" cy="132" rx="34" ry="20"/>
+    <rect x="326" y="132" width="7" height="22"/>
+    <ellipse cx="880" cy="134" rx="36" ry="21"/>
+    <rect x="876" y="134" width="7" height="20"/>
+  </g>
+</svg>
