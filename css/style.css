@@ -389,7 +389,8 @@ ul, ol { list-style: none; }
 
 section { position: relative; }
 
-.about, .services, .flow { padding: 130px 0; }
+.about, .services, .flow, .compare-block { padding: 130px 0; }
+.compare-block--alt { background: var(--bg-soft); }
 
 .section-head { text-align: center; max-width: 640px; margin: 0 auto 64px; }
 
@@ -482,6 +483,7 @@ section { position: relative; }
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
+.service-grid--2col { grid-template-columns: repeat(2, 1fr); }
 
 .service-card {
   background: var(--bg-card);
@@ -939,6 +941,57 @@ section { position: relative; }
 .pricing-table tbody tr:last-child td { border-bottom: none; }
 .pricing-table tbody td:nth-child(2) { color: var(--c-teal); font-weight: 600; }
 
+.compare-toggle { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+.compare-toggle__btn {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: .88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .3s, color .3s, background .3s;
+}
+.compare-toggle__btn:hover { border-color: rgba(34,211,238,.4); color: var(--text); }
+.compare-toggle__btn.is-active {
+  background: rgba(34,211,238,.1);
+  border-color: var(--c-teal);
+  color: var(--c-teal);
+}
+
+.compare-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.compare-table th,
+.compare-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: .92rem;
+}
+.compare-table th:first-child, .compare-table td:first-child { width: 40%; }
+.compare-table th:nth-child(2), .compare-table td:nth-child(2),
+.compare-table th:nth-child(3), .compare-table td:nth-child(3) { width: 30%; }
+.compare-table thead th {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: .78rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.compare-table tbody tr:last-child td { border-bottom: none; }
+.compare-table td:first-child { color: var(--text-muted); }
+.compare-table th:last-child,
+.compare-table td:last-child {
+  color: var(--c-teal);
+  font-weight: 700;
+  background: rgba(34,211,238,.06);
+}
+
 .mobile-break { display: none; }
 
 .pricing-note { margin-top: 16px; color: var(--text-muted); font-size: .88rem; }
@@ -1010,6 +1063,47 @@ section { position: relative; }
 
   .pricing-block { padding: 26px 24px; }
   .mobile-break { display: inline; }
+  /* Stack the comparison table into labeled blocks instead of scrolling
+     narrow columns — a fixed-width table has no room to breathe below
+     ~480px regardless of font size, so row/column layout is dropped entirely. */
+  .compare-table, .compare-table thead, .compare-table tbody,
+  .compare-table tr, .compare-table th, .compare-table td {
+    display: block;
+    width: auto;
+  }
+  .compare-table th:nth-child(1), .compare-table td:nth-child(1),
+  .compare-table th:nth-child(2), .compare-table td:nth-child(2),
+  .compare-table th:nth-child(3), .compare-table td:nth-child(3) {
+    width: auto;
+  }
+  .compare-table thead { display: none; }
+  .compare-table tr {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .compare-table tbody tr:last-child { border-bottom: none; }
+  .compare-table td {
+    padding: 4px 0;
+    border-bottom: none;
+    white-space: normal;
+  }
+  .compare-table td:first-child {
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .compare-table td:not(:first-child) { background: none; }
+  .compare-table td:nth-child(2)::before {
+    content: attr(data-label) "：";
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+  .compare-table td:last-child::before {
+    content: "Webora：";
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+  .compare-table td:last-child { color: var(--c-teal); }
 
   .checkbox-group { grid-template-columns: 1fr; }
 

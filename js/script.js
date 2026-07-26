@@ -62,6 +62,32 @@ document.addEventListener("DOMContentLoaded", () => {
     animatedEls.forEach((el) => el.classList.add("in-view"));
   }
 
+  /* ---- strengths page: toggle each comparison table between company/freelancer ---- */
+  const compareToggles = document.querySelectorAll(".compare-toggle");
+  if (compareToggles.length) {
+    const labels = { company: "制作会社", freelance: "他のフリーランス" };
+    compareToggles.forEach((toggle) => {
+      const table = toggle.parentElement.querySelector(".compare-table");
+      if (!table) return;
+      toggle.querySelectorAll(".compare-toggle__btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const target = btn.dataset.target;
+          toggle.querySelectorAll(".compare-toggle__btn").forEach((b) => {
+            b.classList.toggle("is-active", b === btn);
+            b.setAttribute("aria-selected", String(b === btn));
+          });
+          table.querySelectorAll(".compare-col-head").forEach((th) => {
+            th.textContent = labels[target];
+          });
+          table.querySelectorAll("tbody td[data-company]").forEach((td) => {
+            td.textContent = td.dataset[target];
+            td.dataset.label = labels[target];
+          });
+        });
+      });
+    });
+  }
+
   /* ---- request form: submit straight through to the Webora Google Form ---- */
   const form = document.getElementById("requestForm");
   const successPanel = document.getElementById("formSuccess");
