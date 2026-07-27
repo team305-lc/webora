@@ -376,6 +376,8 @@ h1, h2, h3, h4 {
 .hero-inner {
   position: relative;
   z-index: 2;
+  width: 100%;
+  min-width: 0;
   padding-top: clamp(64px, 11vh, 100px);
   padding-bottom: clamp(28px, 6vh, 48px);
 }
@@ -500,6 +502,8 @@ h1, h2, h3, h4 {
   .trust-row {
     margin-top: 18px;
     flex-wrap: nowrap;
+    min-width: 0;
+    max-width: 100%;
     overflow-x: auto;
     padding-bottom: 4px;
     scrollbar-width: none;
