@@ -1801,6 +1801,19 @@ section {
     display: inline;
   }
 
+  .page-hero {
+    padding: 3.5rem 1.5rem 1.8rem;
+  }
+
+  .voice-stats {
+    padding: 1.5rem 1.2rem !important;
+  }
+
+  .voice-stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem 1rem !important;
+  }
+
   .nav-menu {
     display: none;
   }
