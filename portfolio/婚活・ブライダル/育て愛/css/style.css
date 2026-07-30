@@ -1080,6 +1080,10 @@ section {
   z-index: 1;
 }
 
+.mobile-break {
+  display: none;
+}
+
 .breadcrumb {
   font-size: 0.8rem;
   color: rgba(255,255,255,0.6);
@@ -1377,20 +1381,29 @@ section {
 }
 
 .faq-icon {
+  position: relative;
   width: 24px;
   height: 24px;
   border-radius: 50%;
   border: 2px solid var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: var(--color-primary);
-  font-weight: 700;
   flex-shrink: 0;
   transition: all 0.3s ease;
-  font-size: 1.1rem;
-  line-height: 1;
 }
+
+/* Built from two centered bars instead of a "+" glyph so it stays
+   pixel-perfectly centered regardless of font metrics. */
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: currentColor;
+  transform: translate(-50%, -50%);
+}
+.faq-icon::before { width: 10px; height: 2px; }
+.faq-icon::after { width: 2px; height: 10px; }
 
 .faq-item.open .faq-icon {
   background-color: var(--color-primary);
@@ -1678,6 +1691,10 @@ section {
     grid-template-columns: 1fr;
   }
 
+  .transformation-grid {
+    grid-template-columns: 1fr !important;
+  }
+
   .vs-circle {
     margin: 0 auto;
     transform: rotate(90deg);
@@ -1763,6 +1780,13 @@ section {
     flex-shrink: 0;
   }
 
+  .voice-interview-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+  }
+
   .voice-interview-card > div:last-child {
     padding: 1.5rem !important;
   }
@@ -1771,6 +1795,10 @@ section {
 @media (max-width: 640px) {
   :root {
     --section-padding: 3.5rem 1.2rem;
+  }
+
+  .mobile-break {
+    display: inline;
   }
 
   .nav-menu {
@@ -1824,6 +1852,10 @@ section {
 
   .pricing-card.popular {
     transform: none;
+  }
+
+  .pricing-card .btn {
+    padding: 0.9rem 1.4rem;
   }
 }
 
