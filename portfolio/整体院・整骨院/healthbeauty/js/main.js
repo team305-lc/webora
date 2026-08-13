@@ -196,6 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var menuTouchStartX = 0;
       var menuTouchStartY = 0;
       var menuTouchTracking = false;
+      var menuTouchIsHorizontal = null;
 
       menuFrame.addEventListener(
         "touchstart",
@@ -204,8 +205,29 @@ document.addEventListener("DOMContentLoaded", function () {
           menuTouchStartX = e.touches[0].clientX;
           menuTouchStartY = e.touches[0].clientY;
           menuTouchTracking = true;
+          menuTouchIsHorizontal = null;
         },
         { passive: true }
+      );
+
+      /* Once a drag reads as mostly horizontal, block the browser's own
+         pan/scroll so swiping the photo doesn't drag the whole page
+         sideways. Vertical drags are left alone so page scrolling still
+         works normally when it starts over the image. */
+      menuFrame.addEventListener(
+        "touchmove",
+        function (e) {
+          if (!menuTouchTracking || e.touches.length !== 1) return;
+          var deltaX = e.touches[0].clientX - menuTouchStartX;
+          var deltaY = e.touches[0].clientY - menuTouchStartY;
+          if (menuTouchIsHorizontal === null && (Math.abs(deltaX) > 6 || Math.abs(deltaY) > 6)) {
+            menuTouchIsHorizontal = Math.abs(deltaX) > Math.abs(deltaY);
+          }
+          if (menuTouchIsHorizontal) {
+            e.preventDefault();
+          }
+        },
+        { passive: false }
       );
 
       menuFrame.addEventListener(

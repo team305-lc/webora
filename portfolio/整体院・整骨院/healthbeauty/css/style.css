@@ -1888,7 +1888,7 @@ ul {
   overflow: hidden;
   flex: none;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
 }
 
 .menu-full-card .body h4 {
