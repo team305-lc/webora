@@ -803,6 +803,46 @@ ul {
   transition: opacity 0.3s ease;
 }
 
+/* Swipe affordance for the mobile menu image (desktop uses
+   scroll-linked swaps instead, so these stay hidden there). */
+.menu-scroll-arrow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  font-family: var(--ff-serif);
+  font-size: 2rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+.menu-scroll-arrow-prev {
+  left: 14px;
+}
+.menu-scroll-arrow-next {
+  right: 14px;
+}
+
+.menu-scroll-dots {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.menu-scroll-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--line);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.menu-scroll-dot.is-active {
+  background: var(--gold);
+  transform: scale(1.3);
+}
+
 .menu-scroll-media-cta {
   text-align: center;
 }
@@ -874,6 +914,12 @@ ul {
     height: 38vh;
     flex: none;
     border-radius: 18px;
+  }
+  .menu-scroll-arrow {
+    display: block;
+  }
+  .menu-scroll-dots {
+    display: flex;
   }
   .menu-scroll-media-cta {
     margin-top: 4px;
@@ -2098,6 +2144,7 @@ ul {
   gap: 14px;
   margin-top: 28px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* ---------- Recommend entries (direct-on-background, circular photo) ---------- */

@@ -130,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var menuImg = document.querySelector(".menu-scroll-img");
   var menuBadgeCap = document.querySelector(".menu-scroll-badge .cap");
   var menuAllTags = document.querySelectorAll(".menu-scroll-block .tag");
+  var menuDots = document.querySelectorAll(".menu-scroll-dot");
   if (menuAllTags.length && menuImg) {
     var menuAllBlocks = document.querySelectorAll(".menu-scroll-block");
     var lastBlock = menuAllBlocks[menuAllBlocks.length - 1];
@@ -148,6 +149,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       if (menuBadgeCap) {
         menuBadgeCap.textContent = block.dataset.badge;
+      }
+      if (menuDots.length) {
+        var blockIndex = Array.prototype.indexOf.call(menuAllBlocks, block);
+        menuDots.forEach(function (dot, i) {
+          dot.classList.toggle("is-active", i === blockIndex);
+        });
       }
     }
 
