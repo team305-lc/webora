@@ -32,6 +32,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -1643,8 +1644,8 @@ ul {
 
 @media (max-width: 767px) {
   .page-hero {
-    height: 42vh;
-    min-height: 280px;
+    height: 420px;
+    min-height: 420px;
   }
 }
 
