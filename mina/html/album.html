@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アルバム | mina 自分カタログ</title>
+<meta name="description" content="minaのアルバム。旅行やコスプレなど、日々の一コマをカテゴリ別に紹介しています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <a href="../index.html" class="logo">mina<span class="logo-dot">.</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="site-nav" id="siteNav">
+    <a href="../index.html#profile">プロフィール</a>
+    <a href="../index.html#hobby">趣味</a>
+    <a href="../index.html#story">人生カタログ</a>
+    <a href="album.html" class="current">アルバム</a>
+    <a href="../index.html#contact">SNS</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ===== ALBUM ===== -->
+  <section class="section" id="albumTop" style="padding-top: 140px;">
+    <div class="section-inner">
+      <p class="section-eyebrow">Album</p>
+      <h1 class="section-title">アルバム</h1>
+      <p class="album-intro">
+        旅行、友だちとの時間、コスプレ撮影など、日々の一コマを集めました。<br>
+        カテゴリを選んで絞り込めます。
+      </p>
+
+      <div class="album-filters" id="albumFilters">
+        <button class="filter-btn active" data-filter="all">すべて</button>
+        <button class="filter-btn" data-filter="travel">旅行</button>
+        <button class="filter-btn" data-filter="friend">友達</button>
+        <button class="filter-btn" data-filter="food">グルメ</button>
+        <button class="filter-btn" data-filter="cosplay">コスプレ</button>
+        <button class="filter-btn" data-filter="view">景色</button>
+      </div>
+
+      <div id="albumSections"></div>
+
+      <p class="album-empty" id="albumEmpty">このカテゴリの写真はまだありません。</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 mina Self Catalog</p>
+</footer>
+
+<div class="album-modal" id="albumModal" aria-hidden="true">
+  <div class="album-modal-backdrop" data-close></div>
+  <div class="album-modal-content">
+    <button type="button" class="album-modal-close" data-close aria-label="閉じる">&times;</button>
+    <div class="album-modal-image-wrap" id="albumModalImageWrap">
+      <button type="button" class="album-modal-nav album-modal-prev" data-nav="prev" aria-label="前の画像">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button type="button" class="album-modal-nav album-modal-next" data-nav="next" aria-label="次の画像">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <img src="" alt="" id="albumModalImage">
+    </div>
+    <div class="album-modal-body">
+      <p class="album-modal-tag" id="albumModalTag"></p>
+      <p class="album-modal-caption" id="albumModalCaption"></p>
+    </div>
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/album.js"></script>
+</body>
+</html>

@@ -1,0 +1,527 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const ALBUM = {
+    travel: {
+      label: "旅行",
+      sections: [
+        {
+          label: "北海道",
+          items: [
+            {
+              src: "../img/album/travel/hokkaido/0.png",
+              alt: "北海道旅行の一枚",
+              caption:
+                "北海道・富良野のラベンダー畑に行ってきました。見渡す限りの紫色と甘い香りに包まれて、時間を忘れて写真を撮りまくっちゃいました。丘の上から見る景色が本当に絶景で、また絶対に<span class=\"nb\">来たい場所になりました。</span>",
+            },
+          ],
+        },
+        {
+          label: "石川",
+          items: [
+            {
+              src: "../img/album/travel/ishikawa/1.png",
+              alt: "石川旅行の一枚",
+              caption:
+                "石川・金沢城を友だちと観光しました。立派な白壁と石垣に圧倒されっぱなしで、歴史を感じるお散歩コースでした。晴天にお城が映えて、写真映え<span class=\"nb\">スポットとしても</span><span class=\"nb\">大満足でした。</span>",
+            },
+            {
+              src: "../img/album/travel/ishikawa/2.png",
+              alt: "石川旅行の一枚",
+              caption:
+                "日本三名園のひとつ、兼六園にも足を延ばしました。池に映る緑と、手入れの行き届いた庭園の美しさにうっとり。友だちとのセルフィーも良い記念になりました。",
+            },
+            {
+              src: "../img/album/travel/ishikawa/3.png",
+              alt: "石川旅行の一枚",
+              caption:
+                "兼六園のシンボル、徽軫灯籠（ことじとうろう）を独り占め。静かな水面に緑が映り込んで、時間がゆっくり流れているような感覚になりました。何度でも<span class=\"nb\">見に来たい景色です。</span>",
+            },
+            {
+              src: "../img/album/travel/ishikawa/4.png",
+              alt: "石川旅行の一枚",
+              caption:
+                "石川旅行の夜は、みんなでお揃いの浴衣に着替えて温泉宿へ。地元の名酒「加賀鳶」で乾杯しながら味わう海鮮づくしに大満足で、旅の思い出がまたひとつ増えました。",
+            },
+          ],
+        },
+        {
+          label: "滋賀",
+          items: [
+            {
+              src: "../img/album/travel/shiga/1.png",
+              alt: "滋賀旅行の一枚",
+              caption:
+                "滋賀・琵琶湖のほとりまでドライブ。まるで海みたいに広い湖に、友だちと思わずはしゃいでしまいました。山々に囲まれた景色がとにかく開放的でした。",
+            },
+            {
+              src: "../img/album/travel/shiga/2.png",
+              alt: "滋賀旅行の一枚",
+              caption:
+                "透き通った琵琶湖の水と山並みの<span class=\"nb\">コントラスト</span>に見とれてしまいました。波の音を聞きながらのんびり過ごせて、リフレッシュできた旅でした。",
+            },
+          ],
+        },
+      ],
+    },
+
+    friend: {
+      label: "友達",
+      sections: [
+        {
+          label: null,
+          items: [
+            {
+              src: "../img/album/friend/0.png",
+              alt: "友だちとの一枚",
+              caption:
+                "仕事終わりに友だちと近所の居酒屋に集合！枝豆とだし巻き玉子をつまみながら、最近の恋バナから将来の話まで気づけば3時間ノンストップ。乾杯の瞬間が一番楽しい、いつものメンバーでの女子会でした。",
+            },
+            {
+              src: "../img/album/friend/1.png",
+              alt: "友だちとの一枚",
+              caption:
+                "友だちとパスタ屋さんでランチ会。写真映えするピザとパスタを注文して、お互いの一皿をシェアしながらワイワイ。次の旅行の計画で盛り上がって、気づけばお店で一番長居している組でした。",
+            },
+            {
+              src: "../img/album/friend/3.png",
+              alt: "友だちとの一枚",
+              caption:
+                "日本酒好きの友だちと、日本酒メニューが豊富なお店を新規開拓。飲み比べしながら「これ好みかも」「私はこっちが好き」なんて言い合って、気づけばグラスが何杯も並んでいました。",
+            },
+            {
+              src: "../img/album/friend/4.png",
+              alt: "友だちとの一枚",
+              caption:
+                "提灯が並ぶ夜の飲み屋街で、友だちと軽く一杯。仕事の愚痴から恋バナまで話題は尽きなくて、気づけば終電ギリギリまで盛り上がっていました。",
+            },
+            {
+              src: "../img/album/friend/5.png",
+              alt: "友だちとの一枚",
+              caption:
+                "いつもの居酒屋での一枚。ハイボール片手に近況報告会、なんでもない話で笑い合える友だちの存在がやっぱり<span class=\"nb\">一番の癒しです。</span>",
+            },
+          ],
+        },
+      ],
+    },
+
+    food: {
+      label: "グルメ",
+      sections: [
+        {
+          label: "カフェ",
+          items: [
+            {
+              src: "../img/album/food/cafe/1.png",
+              alt: "カフェの一枚",
+              caption:
+                "落ち着いたカフェでひと休み。<span class=\"nb\">アイスティー</span>の渋みと香りがすっきりしていて、木の温もりのある店内の雰囲気と合わさって、心までほぐれるひとときでした。",
+            },
+            {
+              src: "../img/album/food/cafe/2.png",
+              alt: "カフェの一枚",
+              caption:
+                "お気に入りのカフェがオープンする時間に合わせて訪問。深煎りのアイスコーヒーはしっかり苦みがあって、目が覚めるような美味しさでした。お花が飾られた店内も可愛くて、また来たくなるお店です。",
+            },
+            {
+              src: "../img/album/food/cafe/3.png",
+              alt: "カフェの一枚",
+              caption:
+                "クレープリーでいちごたっぷりのパフェをオーダー。生クリームの甘さといちごの酸味のバランスが絶妙で、見た目のかわいさに写真を撮る手が止まりませんでした。",
+            },
+            {
+              src: "../img/album/food/cafe/4.png",
+              alt: "カフェの一枚",
+              caption:
+                "暑い日にぴったりの自家製レモネード。爽やかな酸味とミントの香りで一気に<span class=\"nb\">リフレッシュ</span>できました。氷がたっぷりで最後までひんやり楽しめたのも<span class=\"nb\">嬉しいポイントです。</span>",
+            },
+          ],
+        },
+        {
+          label: "ファーストフード",
+          items: [
+            {
+              src: "../img/album/food/firstfood/1.png",
+              alt: "ファーストフード",
+              caption:
+                "気になっていた新作の<span class=\"nb\">プラントベースバーガー</span>に初挑戦。お肉を使っていないとは思えないくらいジューシーで、レタスのシャキシャキ感もたっぷり。ポテトとコーヒーも合わせて大満足の一食でした。",
+            },
+          ],
+        },
+        {
+          label: "おうちごはん",
+          items: [
+            {
+              src: "../img/album/food/house/1.png",
+              alt: "おうちごはんの一枚",
+              caption:
+                "体調がいまいちな日は、卵と長ねぎたっぷりの雑炊でほっとひと息。優しい出汁の味が染みわたって、食べ終わる頃には身体がぽかぽかになりました。",
+            },
+            {
+              src: "../img/album/food/house/2.png",
+              alt: "おうちごはんの一枚",
+              caption:
+                "夏の朝ごはんは冷やしておいたスイカと<span class=\"nb\">ヨーグルト</span>で決まり。甘くてみずみずしいスイカと、ブラックコーヒーの苦みの組み合わせがちょうど良くて、爽やかな一日の<span class=\"nb\">スタートになりました。</span>",
+            },
+            {
+              src: "../img/album/food/house/3.png",
+              alt: "おうちごはんの一枚",
+              caption:
+                "お気に入りのカップでいただく淹れたて<span class=\"nb\">コーヒー</span>と、トースト＆スクランブルエッグの朝ごはん。カーテン越しの光が気持ちよくて、慌ただしい日でも朝だけはゆっくり過ごすようにしています。",
+            },
+            {
+              src: "../img/album/food/house/4.png",
+              alt: "おうちごはんの一枚",
+              caption:
+                "バターがじゅわっと染み込む焼きたて<span class=\"nb\">トースト</span>と、バナナ入り<span class=\"nb\">ヨーグルト</span>、<span class=\"nb\">アイスコーヒー</span>のモーニングセット。シンプルだけど、この組み合わせが<span class=\"nb\">一番好きな朝ごはんです。</span>",
+            },
+            {
+              src: "../img/album/food/house/5.png",
+              alt: "おうちごはんの一枚",
+              caption:
+                "次の日のために気合を入れて作ったお弁当。唐揚げと卵焼き、ポテトサラダの鉄板メンバーに、梅干しごはんでさっぱりと。自分で作ったお弁当を開ける瞬間はいつもちょっと嬉しくなります。",
+            },
+          ],
+        },
+        {
+          label: "レストラン",
+          items: [
+            {
+              src: "../img/album/food/restaurant/1.png",
+              alt: "レストランの一枚",
+              caption:
+                "贅沢に海鮮丼を注文。ウニとイクラがどっさり乗った豪華な一杯に、食べる前から<span class=\"nb\">テンション</span>が上がりました。どれから食べようか迷うくらい、ネタが<span class=\"nb\">どれも新鮮でした。</span>",
+            },
+            {
+              src: "../img/album/food/restaurant/2.png",
+              alt: "レストランの一枚",
+              caption:
+                "市場直送のネタが並ぶお寿司屋さんで<span class=\"nb\">ランチ。</span>大トロから金箔がのったお寿司まで、一貫ごとに違う美味しさで、あっという間に完食してしまいました。",
+            },
+            {
+              src: "../img/album/food/restaurant/3.png",
+              alt: "レストランの一枚",
+              caption:
+                "焼き鳥屋さんでジョッキ生ビールとねぎま串を堪能。炭火の香ばしい匂いと、キンキンに冷えたビールの組み合わせは反則級に美味しいです。",
+            },
+          ],
+        },
+        {
+          label: "屋台",
+          items: [
+            {
+              src: "../img/album/food/stand/1.png",
+              alt: "屋台グルメの一枚",
+              caption:
+                "お祭りの屋台でかき氷をゲット。いちごとメロンの2色がけで、見た目もテンション上がる可愛さでした。暑い中歩き回った後の一杯は、格別の美味しさでした。",
+            },
+          ],
+        },
+      ],
+    },
+
+    cosplay: {
+      label: "コスプレ",
+      sections: [
+        {
+          label: "メイド",
+          items: [
+            {
+              src: "../img/album/cosplay/maid/1.png",
+              alt: "メイドコスプレ",
+              caption:
+                "お帰りなさいませ、ご主人様♡ 今日もお仕事お疲れさまでした。紅茶とお菓子を用意していますので、ゆっくり休んでいってくださいね。",
+            },
+            {
+              src: "../img/album/cosplay/maid/2.png",
+              alt: "メイドコスプレ",
+              caption:
+                "あら、そんなに見つめられると照れちゃいます…♡ ご主人様のために目一杯おもてなしさせていただきますね。今日は何をして遊びましょうか？",
+            },
+            {
+              src: "../img/album/cosplay/maid/3.png",
+              alt: "メイドコスプレ",
+              caption:
+                "ふふっ、気になりますか？ このリボン、ご主人様のために選んだんですよ。今日はずっとおそばにいますから、安心してくださいね。",
+            },
+          ],
+        },
+        {
+          label: "七夕",
+          items: [
+            {
+              src: "../img/album/cosplay/miko/1.png",
+              alt: "七夕衣装コスプレ",
+              caption:
+                "星空の下、短冊にそっと願いを込めました。「webora」で最初のお仕事を任せてもらえますように…。もしよかったら、あなたの夢もひとつ、星に<span class=\"nb\">届けてみませんか？</span>",
+            },
+          ],
+        },
+        {
+          label: "CA",
+          items: [
+            {
+              src: "../img/album/cosplay/ca/1.png",
+              alt: "CAコスプレ",
+              caption:
+                "本日はご搭乗いただき誠にありがとうございます。ただいまお飲み物をお持ちいたしますので、フライトの間どうぞごゆっくりお寛ぎくださいませ。",
+            },
+            {
+              src: "../img/album/cosplay/ca/2.png",
+              alt: "CAコスプレ",
+              caption:
+                "揺れることもございますので、お座席にいる間はシートベルトをお締めください。何かございましたら、いつでもお呼びくださいね。",
+            },
+          ],
+        },
+        {
+          label: "ウェディング",
+          items: [
+            {
+              src: "../img/album/cosplay/weding/1.png",
+              alt: "ウェディングコスプレ",
+              caption:
+                "今日は来てくれてありがとう。ちょっと緊張していたけど、みんなの顔を見たら自然と笑顔になれました。これからも変わらず、よろしくお願いします。",
+            },
+          ],
+        },
+        {
+          label: "アニメ",
+          items: [
+            {
+              src: "../img/album/cosplay/anime/spy_family/1.png",
+              alt: "アニメキャラクターコスプレ",
+              caption:
+                "その視線、意外と鋭いですね。でも安心してください、私は味方ですから。今日はゆっくりしていってください…油断は禁物ですけど。",
+            },
+            {
+              src: "../img/album/cosplay/anime/spy_family/2.png",
+              alt: "アニメキャラクターコスプレ",
+              caption:
+                "隙あり、なんて言わせません。伊達に得物を握っているわけじゃないので。さ、次はあなたの番ですよ？",
+            },
+          ],
+        },
+      ],
+    },
+
+    view: {
+      label: "景色",
+      sections: [
+        {
+          label: null,
+          items: [
+            {
+              src: "../img/album/view/1.png",
+              alt: "景色の一枚",
+              caption:
+                "軒先に吊るした桜柄の風鈴が、風に揺れてチリンと涼しい音を響かせています。夏の暑さの中にも、こういう小さな癒しがあるとほっとします。",
+            },
+            {
+              src: "../img/album/view/2.png",
+              alt: "景色の一枚",
+              caption:
+                "お盆に欠かせない、きゅうりの馬となすの牛。「早く帰ってきてほしい、ゆっくり戻ってほしい」という願いが込められた風習だと知ってから、毎年作るのが楽しみになりました。",
+            },
+            {
+              src: "../img/album/view/3.png",
+              alt: "景色の一枚",
+              caption:
+                "どこまでも透き通った海の色に、しばらく言葉を忘れて見入ってしまいました。波の音だけが聞こえる時間は、日々の忙しさをすっかり忘れさせてくれます。",
+            },
+          ],
+        },
+      ],
+    },
+  };
+
+  const CATEGORY_ORDER = ["travel", "friend", "food", "cosplay", "view"];
+
+  const sectionsContainer = document.getElementById("albumSections");
+  const emptyState = document.getElementById("albumEmpty");
+  const filterButtons = document.querySelectorAll(".filter-btn");
+
+  if (!sectionsContainer) return;
+
+  const createThumb = (item, categoryKey, categoryLabel, sectionLabel) => {
+    const figure = document.createElement("figure");
+    figure.className = "album-item";
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "album-thumb";
+    btn.dataset.full = item.src;
+    btn.dataset.alt = item.alt;
+    btn.dataset.caption = item.caption;
+    btn.dataset.tag = sectionLabel ? `${categoryLabel}・${sectionLabel}` : categoryLabel;
+
+    const img = document.createElement("img");
+    img.src = item.src;
+    img.alt = item.alt;
+    img.loading = "lazy";
+
+    btn.appendChild(img);
+    figure.appendChild(btn);
+    return figure;
+  };
+
+  const render = (filter) => {
+    sectionsContainer.innerHTML = "";
+
+    if (filter === "all") {
+      const grid = document.createElement("div");
+      grid.className = "album-grid";
+      CATEGORY_ORDER.forEach((key) => {
+        const category = ALBUM[key];
+        category.sections.forEach((section) => {
+          section.items.forEach((item) => {
+            grid.appendChild(createThumb(item, key, category.label, section.label));
+          });
+        });
+      });
+      sectionsContainer.appendChild(grid);
+      emptyState.classList.remove("show");
+      return;
+    }
+
+    const category = ALBUM[filter];
+    if (!category) {
+      emptyState.classList.add("show");
+      return;
+    }
+
+    if (filter === "cosplay") {
+      const notice = document.createElement("p");
+      notice.className = "album-notice";
+      notice.textContent = "※コスプレ写真はすべてAIで生成した画像です。";
+      sectionsContainer.appendChild(notice);
+    }
+
+    let itemCount = 0;
+    category.sections.forEach((section) => {
+      if (!section.items.length) return;
+      itemCount += section.items.length;
+
+      const block = document.createElement("div");
+      block.className = "album-section";
+
+      if (section.label) {
+        const heading = document.createElement("h3");
+        heading.className = "album-section-title";
+        heading.textContent = section.label;
+        block.appendChild(heading);
+      }
+
+      const grid = document.createElement("div");
+      grid.className = "album-grid";
+      section.items.forEach((item) => {
+        grid.appendChild(createThumb(item, filter, category.label, section.label));
+      });
+      block.appendChild(grid);
+
+      sectionsContainer.appendChild(block);
+    });
+
+    emptyState.classList.toggle("show", itemCount === 0);
+  };
+
+  const modal = document.getElementById("albumModal");
+  const modalImage = document.getElementById("albumModalImage");
+  const modalCaption = document.getElementById("albumModalCaption");
+  const modalTag = document.getElementById("albumModalTag");
+  const modalImageWrap = document.getElementById("albumModalImageWrap");
+  const modalPrev = modal ? modal.querySelector(".album-modal-prev") : null;
+  const modalNext = modal ? modal.querySelector(".album-modal-next") : null;
+
+  let currentList = [];
+  let currentIndex = -1;
+
+  const showThumb = (thumb) => {
+    modalImage.src = thumb.dataset.full;
+    modalImage.alt = thumb.dataset.alt || "";
+    modalTag.textContent = thumb.dataset.tag || "";
+    modalCaption.innerHTML = thumb.dataset.caption || "";
+  };
+
+  const openModal = (thumb) => {
+    const grid = thumb.closest(".album-grid");
+    currentList = grid ? Array.from(grid.querySelectorAll(".album-thumb")) : [thumb];
+    currentIndex = currentList.indexOf(thumb);
+
+    showThumb(thumb);
+    modal.classList.toggle("has-nav", currentList.length > 1);
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+  };
+
+  const closeModal = () => {
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    modalImage.src = "";
+    currentList = [];
+    currentIndex = -1;
+  };
+
+  const goTo = (direction) => {
+    if (currentList.length <= 1) return;
+    currentIndex = (currentIndex + direction + currentList.length) % currentList.length;
+    showThumb(currentList[currentIndex]);
+  };
+
+  sectionsContainer.addEventListener("click", (e) => {
+    const thumb = e.target.closest(".album-thumb");
+    if (thumb) openModal(thumb);
+  });
+
+  if (modal) {
+    modal.querySelectorAll("[data-close]").forEach((el) => {
+      el.addEventListener("click", closeModal);
+    });
+
+    if (modalPrev) modalPrev.addEventListener("click", () => goTo(-1));
+    if (modalNext) modalNext.addEventListener("click", () => goTo(1));
+
+    document.addEventListener("keydown", (e) => {
+      if (!modal.classList.contains("open")) return;
+      if (e.key === "Escape") closeModal();
+      if (e.key === "ArrowLeft") goTo(-1);
+      if (e.key === "ArrowRight") goTo(1);
+    });
+
+    if (modalImageWrap) {
+      let touchStartX = null;
+
+      modalImageWrap.addEventListener(
+        "touchstart",
+        (e) => {
+          touchStartX = e.touches[0].clientX;
+        },
+        { passive: true }
+      );
+
+      modalImageWrap.addEventListener(
+        "touchend",
+        (e) => {
+          if (touchStartX === null) return;
+          const deltaX = e.changedTouches[0].clientX - touchStartX;
+          touchStartX = null;
+          const SWIPE_THRESHOLD = 40;
+          if (deltaX > SWIPE_THRESHOLD) goTo(-1);
+          else if (deltaX < -SWIPE_THRESHOLD) goTo(1);
+        },
+        { passive: true }
+      );
+    }
+  }
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filterButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      render(btn.dataset.filter);
+    });
+  });
+
+  render("all");
+});

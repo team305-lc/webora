@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mina | 自分カタログ</title>
+<meta name="description" content="minaの自分カタログ。プロフィール、趣味、人生の歩みを紹介しています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <a href="#top" class="logo">mina<span class="logo-dot">.</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="site-nav" id="siteNav">
+    <a href="#profile">プロフィール</a>
+    <a href="#hobby">趣味</a>
+    <a href="#story">人生カタログ</a>
+    <a href="html/album.html">アルバム</a>
+    <a href="#contact">SNS</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Self Catalog</p>
+      <h1 class="hero-title">mina<span class="hero-title-sub">の自分カタログ</span></h1>
+      <p class="hero-lead">
+        大阪で働く<span class="nb"><span class="age-num">25</span>歳</span>。本業は<span class="nb">商品販売</span>の営業、<span class="nb">副業</span>は<span class="nb">Web制作チーム</span><span class="nb"><a href="https://team305-lc.github.io/webora/" target="_blank" rel="noopener noreferrer" class="text-link">「webora」</a></span>の営業をしています。<br>
+        旅とおしゃべりとお酒が好き。等身大の<span class="nb">「わたし」</span>を、このページに<span class="nb">詰め込みました</span>。
+      </p>
+      <div class="hero-photo-wrap">
+        <img src="img/profile.png" alt="minaのプロフィール写真" class="hero-photo">
+      </div>
+      <a class="hero-sns" href="https://x.com/MinaWebora001" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" class="icon-x" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <span>@MinaWebora001</span>
+      </a>
+      <a href="#profile" class="scroll-cue" aria-label="下にスクロール">
+        <span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== PROFILE ===== -->
+  <section class="section" id="profile">
+    <div class="section-inner">
+      <p class="section-eyebrow">Profile</p>
+      <h2 class="section-title">プロフィール</h2>
+
+      <div class="glass-card profile-card">
+        <dl class="profile-list">
+          <div class="profile-row">
+            <dt>Name</dt>
+            <dd>mina（みな）</dd>
+          </div>
+          <div class="profile-row">
+            <dt>本名</dt>
+            <dd>中村 美奈</dd>
+          </div>
+          <div class="profile-row">
+            <dt>Age</dt>
+            <dd><span class="age-num">25</span>歳</dd>
+          </div>
+          <div class="profile-row">
+            <dt>Birthday</dt>
+            <dd>2000年11月13日</dd>
+          </div>
+          <div class="profile-row">
+            <dt>Address</dt>
+            <dd>大阪府</dd>
+          </div>
+          <div class="profile-row">
+            <dt>本業</dt>
+            <dd>商品販売の営業</dd>
+          </div>
+          <div class="profile-row">
+            <dt>副業</dt>
+            <dd>Web制作チーム<a href="https://team305-lc.github.io/webora/" target="_blank" rel="noopener noreferrer" class="text-link">「webora」</a>の営業</dd>
+          </div>
+          <div class="profile-row">
+            <dt>趣味</dt>
+            <dd>国内旅行 / 友だちとしゃべること</dd>
+          </div>
+          <div class="profile-row">
+            <dt>好きなもの</dt>
+            <dd>お酒</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="glass-card webora-card">
+        <p class="webora-eyebrow">Side Work</p>
+        <h3 class="webora-title">Web制作チーム「webora」</h3>
+        <p class="webora-desc">
+          本業の営業とは別に、<span class="nb">Web制作チーム</span><span class="nb">「webora」</span>で営業として活動しています。<br>
+          <span class="nb">「ドメインって何？」</span>というところからのスタートでしたが、日々勉強しながら、お客様の<span class="nb">ホームページ作り</span>をお手伝いしています。
+        </p>
+        <a class="contact-button" href="https://team305-lc.github.io/webora/" target="_blank" rel="noopener noreferrer">
+          <span>weboraのサイトを見る</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOBBY ===== -->
+  <section class="section" id="hobby">
+    <div class="section-inner">
+      <p class="section-eyebrow">Hobby</p>
+      <h2 class="section-title">好きなこと</h2>
+
+      <div class="hobby-grid">
+        <article class="hobby-card">
+          <div class="hobby-img-wrap">
+            <img src="img/album/travel/hokkaido/0.png" alt="国内旅行のイメージ" loading="lazy">
+          </div>
+          <h3>国内旅行</h3>
+          <p>気になった場所にふらっと出かけるのが好き。旅先での何気ない景色や、その土地の空気を感じる時間が<span class="nb">お気に入りです。</span></p>
+        </article>
+
+        <article class="hobby-card">
+          <div class="hobby-img-wrap">
+            <img src="img/album/friend/0.png" alt="友だちとおしゃべりするイメージ" loading="lazy">
+          </div>
+          <h3>友だちとしゃべること</h3>
+          <p>くだらない話で盛り上がる時間が大好き。学生の頃から変わらず、誰かと過ごす時間が一番のリフレッシュになっています。</p>
+        </article>
+
+        <article class="hobby-card">
+          <div class="hobby-img-wrap">
+            <img src="img/drink.png" alt="お酒を楽しむイメージ" loading="lazy">
+          </div>
+          <h3>お酒</h3>
+          <p>美味しいお酒を飲みながら、大切な人たちと乾杯する時間が幸せ。いつか行きたい場所で、行きたいお店でお酒を楽しむのが<span class="nb">夢です。</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIFE CATALOG ===== -->
+  <section class="section" id="story">
+    <div class="section-inner">
+      <p class="section-eyebrow">My Life Catalog</p>
+      <h2 class="section-title">私の人生カタログ</h2>
+      <p class="story-intro">
+        まだ人生の完成形には全然たどり着<span class="nb">いていません。</span>むしろ、ここからが本番。<br>
+        これまでの歩みを、6つの時代に分けてまとめてみました。
+      </p>
+
+      <ol class="timeline">
+
+        <li class="timeline-item">
+          <div class="timeline-marker">①</div>
+          <div class="timeline-content glass-card">
+            <p class="timeline-age">0〜6歳｜幼少期</p>
+            <p>小さい頃は、好奇心旺盛で、気になったことはとりあえずやってみる<span class="nb">タイプ。</span></p>
+            <p>家ではのんびり過ごすことも多かったけれど、外に出ると元気に遊ぶ<span class="nb">子どもでした。</span></p>
+            <p>人の話を聞くのも好きで、家族や周りの大人と話すことも好きだった<span class="nb">記憶があります。</span></p>
+            <p>この頃から、好きなことには夢中になる一方で、興味がないことにはあまり集中できないという、今につながる性格が少しずつ出ていました。</p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-marker">②</div>
+          <div class="timeline-content glass-card">
+            <p class="timeline-age">小学生｜友達と過ごすのが楽しかった時代</p>
+            <p>小学生になると、学校で友達と遊ぶ時間がどんどん楽しくなりました。</p>
+            <p>休み時間に友達と話したり、放課後に遊んだり、とにかく「誰かと一緒に過ごす」ことが好きな子でした。</p>
+            <p>勉強は得意な教科もあれば、ちょっと苦手な教科もあり、何でも完璧にできる<span class="nb">タイプでは</span><span class="nb">ありませんでした。</span></p>
+            <p>でも、分からないことをそのままにするより、誰かに聞いたり、自分なりにやってみたりすることは好きだったと思います。</p>
+            <p>今でも「一人で全部やる」より、人と相談しながら進めるほうが好きなのは、この頃から変わっていないのかもしれません。</p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-marker">③</div>
+          <div class="timeline-content glass-card">
+            <p class="timeline-age">中学生｜少しずつ自分の世界が<span class="nb">広がった時代</span></p>
+            <p>中学生になると、小学生の頃よりも友達との関係が少しずつ深くなっていきました。</p>
+            <p>部活はバスケ部に入りましたが、「絶対にバスケがしたい！」という強い理由があったわけではなく、なんとなく入ったというのが正直な<span class="nb">ところ。</span></p>
+            <p>もちろん練習は大変でしたが、<span class="nb">バスケ</span>そのものよりも、友達と一緒に部活をしたり、帰り道に話したり、学校で過ごす時間のほうが印象に残っています。</p>
+            <p>勉強や部活に一直線というタイプでもなく、友達とくだらない話をしたり、学校生活を普通に楽しんだり。</p>
+            <p>今振り返ると、特別大きな出来事があったというより、何気ない毎日を過ごしていた時期だったと<span class="nb">思います。</span></p>
+            <p>この頃から少しずつ、「自分はどんなことが好きなのか」「どんな人といると楽しいのか」を知っていった時期だったのかもしれません。</p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-marker">④</div>
+          <div class="timeline-content glass-card">
+            <p class="timeline-age">高校生｜友達との時間を楽しんだ<span class="nb">青春時代</span></p>
+            <p>高校生になると、行動範囲も広がって、友達と過ごす時間がさらに増えました。</p>
+            <p>学校生活だけではなく、遊びに行ったり、くだらない話で盛り上がったり、今振り返ると何気ない時間が一番楽しかった時期だった<span class="nb">かもしれません。</span></p>
+            <p>友達と一緒に高校バスケの<span class="nb">インターハイ</span>を見に行ったこともあり、<span class="nb">スポーツ</span>を「自分がする」だけではなく「観る」楽しさも知りました。</p>
+            <p>将来については、まだ明確な目標があったわけではありません。</p>
+            <p>「将来何になりたいんだろう？」と考えながらも、とりあえず目の前の学校生活を楽しんでいた、そんな<span class="nb">高校時代でした。</span></p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-marker">⑤</div>
+          <div class="timeline-content glass-card">
+            <p class="timeline-age">18〜22歳頃｜大学生活を楽しんだ4年間</p>
+            <p>高校を卒業して、大学へ進学。</p>
+            <p>大学では勉強だけでなく、友達と過ごしたり、遊びに行ったり、その時にしかできない経験を<span class="nb">楽しんでいました。</span></p>
+            <p>高校までとは違って、自分で時間の使い方を決めることも増えて、「自由ってこういうことなんだ」と感じた時期でもあります。</p>
+            <p>将来については、まだ「絶対にこの仕事がしたい」という明確な目標があったわけではありません。</p>
+            <p>大学生活を送りながら、少しずつ「卒業したらどんな仕事を<span class="nb">しよう？」</span>と考えるようになりました。</p>
+            <p>振り返ってみると、勉強や就職だけではなく、友達と過ごした時間や<span class="nb">何気ない</span>日常も含めて、楽しい思い出がたくさんある4年間でした。</p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-marker">⑥</div>
+          <div class="timeline-content glass-card">
+            <p class="timeline-age">22歳〜｜営業として働き始める</p>
+            <p>大学を卒業して、社会人として営業の仕事を始めました。</p>
+            <p>最初は学生の頃とは環境が大きく変わり、「仕事ってこんなに大変なんだ」と感じることもありました。</p>
+            <p>思うように話せなかったり、失敗したり、落ち込んだりすることもありましたが、経験を積むにつれて少しずつ仕事にも慣れていきました。</p>
+            <p>営業をする中で、人と話すことだけではなく、相手の話を聞いて、「この人は何を求めているんだろう？」と考えることの大切さを学びました。</p>
+            <p>そして、ただ商品やサービスを紹介するだけではなく、相手の悩みを聞いて、一緒に解決方法を考えて提案することにやりがいを感じるようになりました。</p>
+            <p>社会人になってからは、仕事を通して少しずつ自分の得意なことや苦手なことも<span class="nb">分かるように</span><span class="nb">なってきました。</span></p>
+            <p>今では本業の営業に加えて、Web開発チーム<a href="https://team305-lc.github.io/webora/" target="_blank" rel="noopener noreferrer" class="text-link">「webora」</a>の営業にも<span class="nb">挑戦中。</span></p>
+            <p>まだまだ勉強することはたくさんありますが、「分からないからやらない」ではなく、分からないことを一つずつ覚えながら、新しいことにも挑戦しています。</p>
+          </div>
+        </li>
+
+      </ol>
+
+      <div class="story-outro glass-card">
+        <p>まだ人生の完成形には全然たどり着<span class="nb">いていません。</span>むしろ、ここからが本番。</p>
+        <p>いつか好きな仕事をしながら、行きたい場所へ旅行して、美味しいお酒を楽しんで、大切な人たちと笑って過ごす。</p>
+        <p class="story-outro-emph">そんな人生を目指して、<br>現在進行形で成長中です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT / SNS ===== -->
+  <section class="section section-contact" id="contact">
+    <div class="section-inner">
+      <p class="section-eyebrow">Contact</p>
+      <h2 class="section-title">つながる</h2>
+      <p class="contact-lead">日々のことは主にXでつぶやいています。<span class="nb">よければ</span>のぞいてみてください。</p>
+      <a class="contact-button" href="https://x.com/MinaWebora001" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" class="icon-x" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <span>X（@MinaWebora001）を<span class="nb">フォローする</span></span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 mina Self Catalog</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
