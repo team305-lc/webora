@@ -202,7 +202,6 @@ p {
   font-size: 1.02rem;
   color: var(--ink-soft);
   margin: 0 0 36px;
-  word-break: keep-all;
   overflow-wrap: break-word;
 }
 
@@ -395,7 +394,6 @@ p {
   font-size: 0.92rem;
   max-width: 480px;
   margin: 0 auto 26px;
-  word-break: keep-all;
   overflow-wrap: break-word;
 }
 
