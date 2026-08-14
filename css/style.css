@@ -240,6 +240,13 @@ ul, ol { list-style: none; }
   will-change: transform;
 }
 
+/* Pause the aurora drift and star twinkle while off-screen so they don't
+   keep costing GPU time for the whole time the page is open. */
+.aurora-bg.is-paused .aurora-layer,
+.aurora-bg.is-paused .star {
+  animation-play-state: paused;
+}
+
 .aurora-1 {
   background: radial-gradient(ellipse at 30% 30%, var(--c-green), transparent 60%);
   animation: auroraDrift1 22s ease-in-out infinite;
@@ -1024,13 +1031,22 @@ section { position: relative; }
 @media (max-width: 860px) {
   .sp-only { display: inline; }
 
+  /* Lighter GPU load on mobile: smaller blur radius on the aurora glow and
+     dropped backdrop-filter blur (both are expensive on mobile GPUs). */
+  .aurora-layer {
+    filter: blur(36px);
+  }
+  .site-header.scrolled {
+    backdrop-filter: none;
+  }
+
   .nav {
     position: fixed;
     top: 0; right: 0;
     height: 100vh;
     width: min(78vw, 320px);
     background: rgba(8, 10, 32, 0.97);
-    backdrop-filter: blur(16px);
+    backdrop-filter: none;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;

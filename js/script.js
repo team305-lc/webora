@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---- generate twinkling stars ---- */
   document.querySelectorAll(".stars").forEach((container) => {
-    const count = 60;
+    const count = window.matchMedia("(max-width: 860px)").matches ? 24 : 60;
     const fragment = document.createDocumentFragment();
     for (let i = 0; i < count; i++) {
       const star = document.createElement("span");
@@ -42,6 +42,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     container.appendChild(fragment);
   });
+
+  /* ---- pause aurora drift / star twinkle while off-screen (perf) ---- */
+  const auroraSections = document.querySelectorAll(".aurora-bg");
+  if ("IntersectionObserver" in window && auroraSections.length) {
+    const auroraObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle("is-paused", !entry.isIntersecting);
+        });
+      },
+      { threshold: 0 }
+    );
+    auroraSections.forEach((el) => auroraObserver.observe(el));
+  }
 
   /* ---- scroll reveal ---- */
   const animatedEls = document.querySelectorAll("[data-animate]");
