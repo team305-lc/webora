@@ -27,6 +27,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -882,6 +883,12 @@ body.modal-open {
 }
 
 @media (max-width: 720px) {
+  /* background-attachment: fixed is a known source of rendering glitches
+     (mispositioned/shifted content) on mobile browsers. */
+  body {
+    background-attachment: scroll;
+  }
+
   .site-nav {
     position: fixed;
     top: 66px;
