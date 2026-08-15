@@ -12,6 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
               caption:
                 "北海道・富良野のラベンダー畑に行ってきました。見渡す限りの紫色と甘い香りに包まれて、時間を忘れて写真を撮りまくっちゃいました。丘の上から見る景色が本当に絶景で、また絶対に<span class=\"nb\">来たい場所になりました。</span>",
             },
+            {
+              src: "../img/album/travel/hokkaido/1.jpg",
+              alt: "北海道旅行の一枚",
+              caption:
+                "札幌の街中にある時計台にも立ち寄りました。ビルに囲まれた中にひっそり佇む姿がなんだか可愛くて、友だちと並んで記念撮影。北海道開拓の歴史を感じるスポットでした。",
+            },
+            {
+              src: "../img/album/travel/hokkaido/2.jpg",
+              alt: "北海道旅行の一枚",
+              caption:
+                "羊ヶ丘展望台で「Boys, be ambitious」のクラーク像を発見。青空に向かって腕を伸ばすポーズを真似して、友だちと一緒に大きくガッツポーズ。広大な牧草地の景色も気持ちよかったです。",
+            },
           ],
         },
         {
@@ -40,6 +52,18 @@ document.addEventListener("DOMContentLoaded", () => {
               alt: "石川旅行の一枚",
               caption:
                 "石川旅行の夜は、みんなでお揃いの浴衣に着替えて温泉宿へ。地元の名酒「加賀鳶」で乾杯しながら味わう海鮮づくしに大満足で、旅の思い出がまたひとつ増えました。",
+            },
+            {
+              src: "../img/album/travel/ishikawa/5.jpg",
+              alt: "石川旅行の一枚",
+              caption:
+                "近江町市場で新鮮な魚介類にテンションが上がりました。ずわいがにや甘えび、のどぐろがずらりと並ぶ光景は圧巻で、金沢に来たら絶対に外せないスポットだと実感しました。",
+            },
+            {
+              src: "../img/album/travel/ishikawa/6.jpg",
+              alt: "石川旅行の一枚",
+              caption:
+                "金沢城の石垣と白壁の<span class=\"nb\">コントラスト</span>が美しくて、しばらく見とれてしまいました。夕方の柔らかい光に照らされたお城は、昼間とはまた違った表情を見せてくれました。",
             },
           ],
         },
@@ -253,6 +277,23 @@ document.addEventListener("DOMContentLoaded", () => {
               alt: "七夕衣装コスプレ",
               caption:
                 "星空の下、短冊にそっと願いを込めました。「webora」で最初のお仕事を任せてもらえますように…。もしよかったら、あなたの夢もひとつ、星に<span class=\"nb\">届けてみませんか？</span>",
+            },
+          ],
+        },
+        {
+          label: "看護師",
+          items: [
+            {
+              src: "../img/album/cosplay/nurse/1.jpg",
+              alt: "看護師コスプレ",
+              caption:
+                "具合はいかがですか？ちょっとチクッとしますけど、我慢してくださいね。注射が終わったら、頑張った<span class=\"nb\">ご褒美に飴をあげます♡</span>",
+            },
+            {
+              src: "../img/album/cosplay/nurse/2.jpg",
+              alt: "看護師コスプレ",
+              caption:
+                "深呼吸してくださいね、胸の音を聞かせてもらいます。緊張しなくて大丈夫ですよ、私がちゃんとそばに<span class=\"nb\">ついていますから。</span>",
             },
           ],
         },
