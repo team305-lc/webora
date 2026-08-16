@@ -82,6 +82,23 @@ document.addEventListener("DOMContentLoaded", () => {
               caption:
                 "透き通った琵琶湖の水と山並みの<span class=\"nb\">コントラスト</span>に見とれてしまいました。波の音を聞きながらのんびり過ごせて、リフレッシュできた旅でした。",
             },
+            {
+              src: "../img/album/travel/shiga/3.png",
+              alt: "滋賀旅行の一枚",
+              caption:
+                "琵琶湖畔で友だちと両手を広げて記念撮影。空も湖も真っ青で、思いっきり深呼吸したくなるような開放感でした。この一枚は3人のお気に入りです。",
+            },
+          ],
+        },
+        {
+          label: "三重",
+          items: [
+            {
+              src: "../img/album/travel/mie/1.png",
+              alt: "三重旅行の一枚",
+              caption:
+                "山あいを流れる透明度抜群の渓流を見つけて、思わずしゃがみ込んで水に触れてみました。ひんやりとした水と緑の匂いに包まれて、<span class=\"nb\">日頃の疲れが</span>すっと<span class=\"nb\">抜けていくようでした。</span>",
+            },
           ],
         },
       ],
@@ -122,6 +139,12 @@ document.addEventListener("DOMContentLoaded", () => {
               alt: "友だちとの一枚",
               caption:
                 "いつもの居酒屋での一枚。ハイボール片手に近況報告会、なんでもない話で笑い合える友だちの存在がやっぱり<span class=\"nb\">一番の癒しです。</span>",
+            },
+            {
+              src: "../img/album/friend/6.png",
+              alt: "友だちとの一枚",
+              caption:
+                "ファミレスでハンバーグとパスタを分け合いながらのランチ会。何を頼むか迷っている時間も含めて楽しくて、気づけばまた<span class=\"nb\">長居してしまいました。</span>",
             },
           ],
         },
@@ -294,6 +317,12 @@ document.addEventListener("DOMContentLoaded", () => {
               alt: "看護師コスプレ",
               caption:
                 "深呼吸してくださいね、胸の音を聞かせてもらいます。緊張しなくて大丈夫ですよ、私がちゃんとそばに<span class=\"nb\">ついていますから。</span>",
+            },
+            {
+              src: "../img/album/cosplay/nurse/3.png",
+              alt: "看護師コスプレ",
+              caption:
+                "はい、お布団しっかりかけますね。今夜はゆっくり眠れるように、私がそばで<span class=\"nb\">見ていますから。</span>何かあったら、いつでも呼んでくださいね。",
             },
           ],
         },
