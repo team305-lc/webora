@@ -37,7 +37,6 @@ body {
   color: var(--color-text);
   background: linear-gradient(180deg, #ffffff 0%, #f4f9ff 20%, #eaf2ff 45%, #eef5ff 70%, #ffffff 100%);
   line-height: 1.8;
-  word-break: keep-all;
   overflow-wrap: break-word;
   line-break: strict;
   -webkit-font-smoothing: antialiased;
