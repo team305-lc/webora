@@ -211,29 +211,37 @@ document.addEventListener('DOMContentLoaded', function () {
       return nearestPos;
     };
 
-    var voiceScrollSettleTimer = null;
-    voiceTrack.addEventListener(
-      'scroll',
-      function () {
-        if (voiceIsScrolling) return;
-        if (voiceScrollSettleTimer) window.clearTimeout(voiceScrollSettleTimer);
-        voiceScrollSettleTimer = window.setTimeout(function () {
+    var voiceHandleSettledScroll = function () {
+      if (voiceIsScrolling) return;
+      var pos = voiceGetNearestPos();
+      if (pos === 0) {
+        voiceCurrentPos = voiceLastPos - 1;
+        voiceScrollToPos(voiceCurrentPos, false);
+      } else if (pos === voiceLastPos) {
+        voiceCurrentPos = 1;
+        voiceScrollToPos(voiceCurrentPos, false);
+      } else {
+        voiceCurrentPos = pos;
+      }
+      voiceUpdateDots();
+    };
+
+    if ('onscrollend' in window) {
+      // scrollendはネイティブの慣性スクロールが完全に止まった瞬間に発火するため、
+      // 固定時間のデバウンスと違い、補正が慣性スクロールと衝突して暴れることがない。
+      voiceTrack.addEventListener('scrollend', voiceHandleSettledScroll, { passive: true });
+    } else {
+      var voiceScrollSettleTimer = null;
+      voiceTrack.addEventListener(
+        'scroll',
+        function () {
           if (voiceIsScrolling) return;
-          var pos = voiceGetNearestPos();
-          if (pos === 0) {
-            voiceCurrentPos = voiceLastPos - 1;
-            voiceScrollToPos(voiceCurrentPos, false);
-          } else if (pos === voiceLastPos) {
-            voiceCurrentPos = 1;
-            voiceScrollToPos(voiceCurrentPos, false);
-          } else {
-            voiceCurrentPos = pos;
-          }
-          voiceUpdateDots();
-        }, 120);
-      },
-      { passive: true }
-    );
+          if (voiceScrollSettleTimer) window.clearTimeout(voiceScrollSettleTimer);
+          voiceScrollSettleTimer = window.setTimeout(voiceHandleSettledScroll, 200);
+        },
+        { passive: true }
+      );
+    }
 
     voiceTrack.addEventListener('pointerdown', voiceStopAuto);
 
