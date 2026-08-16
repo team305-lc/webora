@@ -103,7 +103,13 @@ document.addEventListener("DOMContentLoaded", () => {
               src: "../img/album/travel/mie/2.jpg",
               alt: "伊勢神宮参拝の一枚",
               caption:
-                "五十鈴川で身を清めたあとは、友だちと一緒に本殿へお参り。凛とした空気の中、大きな鳥居をくぐる瞬間は<span class=\"nb\">身が引き締まる思いでした。</span>今年一年の感謝と、これからのことをそっと祈りました。",
+                "五十鈴川で身を清めたあとは、友だちと一緒に大きな鳥居をくぐって参道の奥へ。凛とした空気の中で手を合わせる瞬間は<span class=\"nb\">身が引き締まる思いでした。</span>今年一年の感謝と、これからのことをそっと祈りました。",
+            },
+            {
+              src: "../img/album/travel/mie/3.jpg",
+              alt: "おはらい町の一枚",
+              caption:
+                "参拝のあとは、おはらい町をぶらぶら食べ歩き。名物の串グルメを頬張りながら、昔ながらの街並みを友だちとのんびり散策しました。伊勢うどんの<span class=\"nb\">のぼりを見つけると</span>、つい足が<span class=\"nb\">止まってしまいます。</span>",
             },
           ],
         },
@@ -346,6 +352,12 @@ document.addEventListener("DOMContentLoaded", () => {
               alt: "CAコスプレ",
               caption:
                 "揺れることもございますので、お座席にいる間はシートベルトをお締めください。何かございましたら、いつでもお呼びくださいね。",
+            },
+            {
+              src: "../img/album/cosplay/ca/3.jpg",
+              alt: "CAコスプレ",
+              caption:
+                "お飲み物はいかがですか？コーヒー、紅茶、お茶をご用意しております。<span class=\"nb\">ごゆっくり</span>フライトをお楽しみいただけるよう、私が責任を持って<span class=\"nb\">お世話させていただきますね。</span>",
             },
           ],
         },
