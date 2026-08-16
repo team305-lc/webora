@@ -192,6 +192,49 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
+    // 矢印/ドットのクリックはvoiceStepBy側でループ境界の複製→本物への切り替えを行うが、
+    // 指でのスワイプ(ネイティブスクロール)はそれを経由しないため、ここで別途検知して
+    // 複製スライドに着地した場合に見た目が同一の本物の位置へ切り替える。
+    var voiceGetNearestPos = function () {
+      var trackRect = voiceTrack.getBoundingClientRect();
+      var trackCenter = trackRect.left + trackRect.width / 2;
+      var nearestPos = voiceCurrentPos;
+      var nearestDist = Infinity;
+      voiceSlides.forEach(function (slide, i) {
+        var r = slide.getBoundingClientRect();
+        var dist = Math.abs((r.left + r.width / 2) - trackCenter);
+        if (dist < nearestDist) {
+          nearestDist = dist;
+          nearestPos = i;
+        }
+      });
+      return nearestPos;
+    };
+
+    var voiceScrollSettleTimer = null;
+    voiceTrack.addEventListener(
+      'scroll',
+      function () {
+        if (voiceIsScrolling) return;
+        if (voiceScrollSettleTimer) window.clearTimeout(voiceScrollSettleTimer);
+        voiceScrollSettleTimer = window.setTimeout(function () {
+          if (voiceIsScrolling) return;
+          var pos = voiceGetNearestPos();
+          if (pos === 0) {
+            voiceCurrentPos = voiceLastPos - 1;
+            voiceScrollToPos(voiceCurrentPos, false);
+          } else if (pos === voiceLastPos) {
+            voiceCurrentPos = 1;
+            voiceScrollToPos(voiceCurrentPos, false);
+          } else {
+            voiceCurrentPos = pos;
+          }
+          voiceUpdateDots();
+        }, 120);
+      },
+      { passive: true }
+    );
+
     voiceTrack.addEventListener('pointerdown', voiceStopAuto);
 
     // 画面内にあるときだけ自動再生する(意図しないページスクロールを避ける)
