@@ -94,10 +94,16 @@ document.addEventListener("DOMContentLoaded", () => {
           label: "三重",
           items: [
             {
-              src: "../img/album/travel/mie/1.png",
-              alt: "三重旅行の一枚",
+              src: "../img/album/travel/mie/1.jpg",
+              alt: "伊勢神宮・五十鈴川の一枚",
               caption:
-                "山あいを流れる透明度抜群の渓流を見つけて、思わずしゃがみ込んで水に触れてみました。ひんやりとした水と緑の匂いに包まれて、<span class=\"nb\">日頃の疲れが</span>すっと<span class=\"nb\">抜けていくようでした。</span>",
+                "伊勢神宮の五十鈴川でひと休み。参拝前に手を清める御手洗場としても知られる場所で、透明度抜群の清らかな流れに思わずしゃがみ込んで水に触れてみました。<span class=\"nb\">日頃の疲れが</span>すっと<span class=\"nb\">抜けていくようでした。</span>",
+            },
+            {
+              src: "../img/album/travel/mie/2.jpg",
+              alt: "伊勢神宮参拝の一枚",
+              caption:
+                "五十鈴川で身を清めたあとは、友だちと一緒に本殿へお参り。凛とした空気の中、大きな鳥居をくぐる瞬間は<span class=\"nb\">身が引き締まる思いでした。</span>今年一年の感謝と、これからのことをそっと祈りました。",
             },
           ],
         },
