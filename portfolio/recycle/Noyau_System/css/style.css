@@ -974,11 +974,17 @@ button {
   opacity: 0;
   transform: rotateY(0deg);
   backface-visibility: hidden;
+  /* Set from the start (not only once .is-visible lands) so the browser has
+     a moment to promote this to its own compositing layer ahead of time.
+     Adding will-change at the same instant the animation starts can be too
+     late -- the layer promotion itself competes with the first frames of
+     the animation, which can drop enough of them that a full rotation reads
+     as a single flash/pop instead of a smooth spin. */
+  will-change: transform, opacity;
 }
 
 .commitment-item.is-visible .commitment-media {
-  animation: commitmentSpin 1.3s cubic-bezier(0.22, 1, 0.36, 1) both;
-  will-change: transform, opacity;
+  animation: commitmentSpin 1.7s cubic-bezier(0.22, 0.85, 0.32, 1) both;
 }
 
 @keyframes commitmentSpin {
@@ -991,7 +997,7 @@ button {
   }
   100% {
     opacity: 1;
-    transform: rotateY(1080deg) scale(1);
+    transform: rotateY(720deg) scale(1);
   }
 }
 
