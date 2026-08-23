@@ -78,6 +78,14 @@
       function (entries, observer) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
+            // Force a reflow before adding the class so mobile Safari
+            // reliably commits the pre-animation state (opacity: 0,
+            // rotateY(0deg)) as a rendered frame first. Without this, the
+            // animation can get skipped on some WebKit builds -- the element
+            // just jumps straight to its post-animation state once the class
+            // lands, which looks like the image appearing late with no
+            // rotation at all. Aimatch's card reveal uses the same trick.
+            void entry.target.offsetWidth;
             entry.target.classList.add("is-visible");
             observer.unobserve(entry.target);
           }
