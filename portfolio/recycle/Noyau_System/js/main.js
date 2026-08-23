@@ -37,13 +37,18 @@
 
   var scrollDarkSections = document.querySelectorAll(".section--scrolldark");
   if (scrollDarkSections.length && "IntersectionObserver" in window) {
+    // A percentage threshold (e.g. 0.35) is unreliable here: on mobile these
+    // sections stack tall and can exceed the viewport height, so that share
+    // of the section is never simultaneously visible and the class never
+    // toggles. Instead watch a thin band across the vertical center of the
+    // viewport (via rootMargin) — independent of the section's own height.
     var scrollDarkObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           entry.target.classList.toggle("is-active", entry.isIntersecting);
         });
       },
-      { threshold: 0.35 }
+      { threshold: 0, rootMargin: "-45% 0px -45% 0px" }
     );
     scrollDarkSections.forEach(function (section) {
       scrollDarkObserver.observe(section);
@@ -65,13 +70,20 @@
 
   var commitmentItems = document.querySelectorAll(".commitment-item");
   if (commitmentItems.length && "IntersectionObserver" in window) {
+    // Fire once per item and stop observing. Toggling the class on every
+    // enter/exit let the ratio flicker back and forth around the threshold
+    // (especially with a tall, stacked mobile layout), which kept restarting
+    // the spin animation mid-rotation and made it look choppy.
     var commitmentObserver = new IntersectionObserver(
-      function (entries) {
+      function (entries, observer) {
         entries.forEach(function (entry) {
-          entry.target.classList.toggle("is-visible", entry.isIntersecting);
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
         });
       },
-      { threshold: 0.4 }
+      { threshold: 0, rootMargin: "-20% 0px -20% 0px" }
     );
     commitmentItems.forEach(function (item) {
       commitmentObserver.observe(item);
