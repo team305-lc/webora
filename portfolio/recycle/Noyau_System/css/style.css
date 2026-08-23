@@ -955,17 +955,28 @@ button {
   object-position: center 15%;
 }
 
-.commitment-media {
+.commitments-list {
+  /* perspective belongs on an ancestor of the rotating element, not on the
+     element being both clipped and rotated (see .commitment-media below) --
+     this is what Aimatch's smooth-on-mobile card animation does too. */
   perspective: 1200px;
 }
 
-.commitment-media img {
+/* The rotation (and the rounded-corner overflow:hidden clip inherited from
+   .reason-media) both live on this same element, matching the Aimatch
+   .highlight__card pattern. Previously the clip stayed on this element while
+   the rotateY transform was applied to the <img> child instead -- clipping a
+   static rounded rect against a continuously-changing 3D-projected child is
+   far more expensive to composite than an element clipping itself, and was
+   the actual cause of the dropped frames/choppiness on mobile GPUs (not the
+   rotation amount, which Aimatch shows is fine at a similar 720deg). */
+.commitment-media {
   opacity: 0;
   transform: rotateY(0deg);
   backface-visibility: hidden;
 }
 
-.commitment-item.is-visible .commitment-media img {
+.commitment-item.is-visible .commitment-media {
   animation: commitmentSpin 1.3s cubic-bezier(0.22, 1, 0.36, 1) both;
   will-change: transform, opacity;
 }
@@ -984,27 +995,8 @@ button {
   }
 }
 
-@media (max-width: 860px) {
-  /* Three full 3D rotations of a full-size image is too much compositing
-     work for mobile GPUs and drops frames. One rotation reads the same as
-     "spinning in" but is roughly a third of the work per frame. */
-  @keyframes commitmentSpin {
-    0% {
-      opacity: 0;
-      transform: rotateY(0deg) scale(0.88);
-    }
-    10% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 1;
-      transform: rotateY(360deg) scale(1);
-    }
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .commitment-media img {
+  .commitment-media {
     opacity: 1;
     transform: none;
     animation: none;
@@ -2153,6 +2145,14 @@ button {
   font-size: 0.9rem;
   color: var(--gray-700);
   line-height: 1.75;
+}
+
+.contact-info-list li > span {
+  /* Flex items default to min-width: auto, which keeps them from shrinking
+     below their unbroken text width -- that pushed long lines (the address,
+     the privacy notice) past the container instead of wrapping. */
+  min-width: 0;
+  flex: 1;
 }
 
 .contact-info-list .icon {
