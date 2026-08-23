@@ -962,10 +962,12 @@ button {
 .commitment-media img {
   opacity: 0;
   transform: rotateY(0deg);
+  backface-visibility: hidden;
 }
 
 .commitment-item.is-visible .commitment-media img {
   animation: commitmentSpin 1.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity;
 }
 
 @keyframes commitmentSpin {
@@ -979,6 +981,25 @@ button {
   100% {
     opacity: 1;
     transform: rotateY(1080deg) scale(1);
+  }
+}
+
+@media (max-width: 860px) {
+  /* Three full 3D rotations of a full-size image is too much compositing
+     work for mobile GPUs and drops frames. One rotation reads the same as
+     "spinning in" but is roughly a third of the work per frame. */
+  @keyframes commitmentSpin {
+    0% {
+      opacity: 0;
+      transform: rotateY(0deg) scale(0.88);
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: rotateY(360deg) scale(1);
+    }
   }
 }
 
