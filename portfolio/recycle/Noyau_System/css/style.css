@@ -962,6 +962,19 @@ button {
   perspective: 1200px;
 }
 
+.commitment-item {
+  /* transform-style defaults to flat, which tells the browser to flatten
+     any 3D transform in this element's descendants into a 2D plane before
+     rendering it -- collapsing the rotateY spin down into what just looks
+     like a horizontal squash-and-grow (small image, then large image) with
+     no visible depth or turning. Safari applies this default more strictly
+     than Chromium does here, which is why the rotation looked fine in
+     testing but not on a real device. preserve-3d keeps the 3D context
+     intact through this element so .commitment-media actually renders as a
+     rotation. */
+  transform-style: preserve-3d;
+}
+
 /* The rotation (and the rounded-corner overflow:hidden clip inherited from
    .reason-media) both live on this same element, matching the Aimatch
    .highlight__card pattern. Previously the clip stayed on this element while
@@ -984,7 +997,7 @@ button {
 }
 
 .commitment-item.is-visible .commitment-media {
-  animation: commitmentSpin 1.7s cubic-bezier(0.22, 0.85, 0.32, 1) both;
+  animation: commitmentSpin 2.4s cubic-bezier(0.22, 0.85, 0.32, 1) both;
 }
 
 @keyframes commitmentSpin {
