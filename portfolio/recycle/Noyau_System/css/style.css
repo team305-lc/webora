@@ -1037,12 +1037,19 @@ button {
 @media (prefers-reduced-motion: reduce), (max-width: 860px) {
   /* The 3D spin reveal has been consistently unreliable on real mobile
      hardware/WebKit (flat rendering, flashing, dropped frames) across
-     several rounds of fixes. Simplest and most robust: don't run it on
-     mobile at all -- the image is just shown normally. */
-  .commitment-media {
+     several rounds of fixes. Simplest and most robust: no animation on
+     mobile at all -- the image is just shown normally.
+     Both selectors are listed here (not just .commitment-media) because
+     .commitment-item.is-visible .commitment-media has higher specificity
+     (three classes vs. one) and was winning the animation property back
+     from this rule the moment a card scrolled into view, regardless of
+     this media query -- which is exactly what was still happening. */
+  .commitment-media,
+  .commitment-item.is-visible .commitment-media {
     opacity: 1;
     transform: none;
     animation: none;
+    will-change: auto;
   }
 }
 
