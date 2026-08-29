@@ -1196,13 +1196,20 @@ button {
    ========================================================================== */
 
 .examples-marquee {
+  /* This sits directly in <section class="section">, which has no side
+     padding or max-width of its own -- it's already edge-to-edge without
+     any help. The previous width: 100vw + negative margin was a "break out
+     of a centered container" trick this element never needed, and 100vw
+     can legitimately compute wider than the real visible viewport on some
+     mobile browsers (it's defined against the layout viewport, which isn't
+     always identical to what's on screen), which pushed the whole page
+     wider than the screen and read as the page shifting sideways on touch. */
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  width: 100%;
   padding: 6px 20px;
   overflow: hidden;
   mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
