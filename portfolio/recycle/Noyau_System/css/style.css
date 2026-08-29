@@ -35,10 +35,16 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-h);
-  /* Without this, mobile browsers can elastically rubber-band the whole
-     page sideways on any touch drag, which reads as "the screen moves" --
-     independent of and in addition to any real content overflow. */
   overflow-x: hidden;
+  /* overflow-x: hidden alone isn't enough on iOS Safari: its page scrolling
+     is backed by a native scroll view that can still elastically bounce the
+     whole page sideways on a touch drag -- and its pinch-zoom-to-fit bounds
+     can be calculated from that native scroll extent too, showing blank
+     space past the real content when zoomed out. overscroll-behavior-x is
+     the property that actually reaches that native behavior; this is the
+     same fix already confirmed working for the identical symptom on the
+     healthbeauty site earlier this session. */
+  overscroll-behavior-x: none;
 }
 
 body {
@@ -48,6 +54,8 @@ body {
   background: var(--white);
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
   /* word-break: keep-all previously here can make browsers treat much
      larger stretches of text as unbreakable than intended (the same bug
      confirmed on two other sites this session), letting a long line push
@@ -1212,6 +1220,13 @@ button {
   width: 100%;
   padding: 6px 20px;
   overflow: hidden;
+  /* The animated track inside is thousands of pixels wide (all the cards
+     laid end to end). overflow: hidden clips it visually, but this adds a
+     stronger guarantee that its size can never affect layout or perceived
+     page bounds outside this box -- belt and suspenders against exactly
+     the kind of "wide off-screen content affecting the page" issue this
+     symptom points at. */
+  contain: paint;
   mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
   -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
 }
