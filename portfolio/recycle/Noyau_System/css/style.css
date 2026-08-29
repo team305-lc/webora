@@ -368,6 +368,7 @@ button {
 .main-nav ul {
   display: flex;
   gap: 32px;
+  flex-shrink: 0;
 }
 
 .main-nav a {
@@ -376,6 +377,10 @@ button {
   font-weight: 500;
   position: relative;
   padding: 6px 2px;
+  /* Without this, body's overflow-wrap: break-word lets even a 1px flex
+     shrink force a break -- which was wrapping just the last character of
+     every single nav label onto its own second line. */
+  white-space: nowrap;
 }
 
 .main-nav a:hover {
@@ -1029,7 +1034,11 @@ button {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce), (max-width: 860px) {
+  /* The 3D spin reveal has been consistently unreliable on real mobile
+     hardware/WebKit (flat rendering, flashing, dropped frames) across
+     several rounds of fixes. Simplest and most robust: don't run it on
+     mobile at all -- the image is just shown normally. */
   .commitment-media {
     opacity: 1;
     transform: none;
