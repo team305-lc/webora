@@ -35,6 +35,10 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-h);
+  /* Without this, mobile browsers can elastically rubber-band the whole
+     page sideways on any touch drag, which reads as "the screen moves" --
+     independent of and in addition to any real content overflow. */
+  overflow-x: hidden;
 }
 
 body {
@@ -44,7 +48,10 @@ body {
   background: var(--white);
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
-  word-break: keep-all;
+  /* word-break: keep-all previously here can make browsers treat much
+     larger stretches of text as unbreakable than intended (the same bug
+     confirmed on two other sites this session), letting a long line push
+     the whole page wider than the viewport instead of wrapping. */
   overflow-wrap: break-word;
   line-break: strict;
 }
