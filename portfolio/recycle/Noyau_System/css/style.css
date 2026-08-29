@@ -2134,7 +2134,11 @@ button {
 
 .contact-layout {
   display: grid;
-  grid-template-columns: 0.9fr 1.3fr;
+  /* minmax(0, ...) instead of a bare fr unit: grid tracks also default to a
+     minimum size of their content's unbroken width, same trap as flex items.
+     Without this, a long word anywhere inside either column could widen the
+     whole grid past the viewport instead of wrapping inside its column. */
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
   gap: 48px;
   align-items: start;
 }
@@ -2143,6 +2147,7 @@ button {
   background: var(--gray-50);
   border-radius: var(--radius-lg);
   padding: 32px;
+  min-width: 0;
 }
 
 .contact-info-title {
@@ -2159,24 +2164,26 @@ button {
 }
 
 .contact-info-list li {
-  display: flex;
+  /* Grid, not flex: an explicit auto/minmax(0, 1fr) column pair is a
+     structural guarantee that the text column can never be forced wider
+     than the space actually available, at any content length or viewport
+     width -- rather than a fix bolted on after overflow was noticed. */
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
   gap: 12px;
+  align-items: start;
   font-size: 0.9rem;
   color: var(--gray-700);
   line-height: 1.75;
 }
 
 .contact-info-list li > span {
-  /* Flex items default to min-width: auto, which keeps them from shrinking
-     below their unbroken text width -- that pushed long lines (the address,
-     the privacy notice) past the container instead of wrapping. */
   min-width: 0;
-  flex: 1;
+  overflow-wrap: break-word;
 }
 
 .contact-info-list .icon {
   color: var(--blue-500);
-  flex-shrink: 0;
   margin-top: 3px;
   font-size: 1.05rem;
 }
@@ -2206,7 +2213,10 @@ button {
 
 .form-row.two-col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* minmax(0, 1fr): a bare 1fr track still won't shrink an <input> below
+     its UA-default intrinsic width, which is often wider than half this
+     column on a narrow screen. */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 20px;
 }
 
@@ -2268,9 +2278,14 @@ button {
 }
 
 .form-checkbox-row {
-  display: flex;
-  align-items: flex-start;
+  /* Same grid pattern as .contact-info-list li: this text was never
+     reported broken, but it had the identical unguarded flex-item text
+     column and would have overflowed the same way on a narrow enough
+     screen or long enough translation. */
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
   gap: 10px;
+  align-items: start;
   font-size: 0.86rem;
   color: var(--gray-700);
   line-height: 1.7;
@@ -2278,10 +2293,14 @@ button {
 
 .form-checkbox-row input {
   margin-top: 4px;
-  flex-shrink: 0;
   width: 16px;
   height: 16px;
   accent-color: var(--blue-600);
+}
+
+.form-checkbox-row span {
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .form-checkbox-row a {
