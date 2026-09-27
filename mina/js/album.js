@@ -113,6 +113,17 @@ document.addEventListener("DOMContentLoaded", () => {
             },
           ],
         },
+        {
+          label: "岡山",
+          items: [
+            {
+              src: "../img/album/travel/okayama/1.jpg",
+              alt: "岡山旅行の一枚",
+              caption:
+                "岡山の鬼ノ城まで足を延ばしました。山頂から見渡す景色は圧巻で、古代の城壁と山並みのコントラストに友だち<span class=\"nb\">3人で</span>感動しっぱなしでした。",
+            },
+          ],
+        },
       ],
     },
 
@@ -170,6 +181,24 @@ document.addEventListener("DOMContentLoaded", () => {
               caption:
                 "夕暮れ時のカフェで友だちとまったり。モンブランとショートケーキ、2種類のケーキを分け合って、贅沢な時間を過ごしました。窓の外が茜色に染まっていくのを眺めながらのおしゃべりは格別です。",
             },
+            {
+              src: "../img/album/friend/9.jpg",
+              alt: "友だちとの一枚",
+              caption:
+                "友だち5人で集まってカフェタイム。誰かが話し始めるとみんなが引き込まれて、気づけば何時間も<span class=\"nb\">話し込んでしまう、</span>いつものメンバーです。",
+            },
+            {
+              src: "../img/album/friend/10.jpg",
+              alt: "友だちとの一枚",
+              caption:
+                "夜景の見えるお店で友だちと乾杯。レモンサワー片手に街の灯りを眺めながら、特別な夜を過ごしました。",
+            },
+            {
+              src: "../img/album/friend/11.jpg",
+              alt: "友だちとの一枚",
+              caption:
+                "友だちとのドライブ中、お菓子をつまみながらワイワイ。窓の外に広がる景色を眺めつつ、たわいもない話で盛り上がりました。",
+            },
           ],
         },
       ],
@@ -216,6 +245,24 @@ document.addEventListener("DOMContentLoaded", () => {
               alt: "カフェの一枚",
               caption:
                 "素敵な外観に惹かれて入ってみたカフェ。本日のおすすめは特製スパイスカレーとのことで、次回は絶対に食べに来ようと心に決めました。",
+            },
+            {
+              src: "../img/album/food/cafe/7.jpg",
+              alt: "カフェの一枚",
+              caption:
+                "ショッピング中にひと休み。抹茶がたっぷり効いた<span class=\"nb\">フラペチーノ風の</span>ドリンクで、歩き疲れた足も一気に元気になりました。",
+            },
+            {
+              src: "../img/album/food/cafe/8.jpg",
+              alt: "カフェの一枚",
+              caption:
+                "仕事帰りに見つけたオレンジ色の爽やかな<span class=\"nb\">フラペチーノ。</span>ビル街の夜景を眺めながら飲む一杯は、一日の終わりの<span class=\"nb\">ご褒美みたいな時間でした。</span>",
+            },
+            {
+              src: "../img/album/food/cafe/9.jpg",
+              alt: "カフェの一枚",
+              caption:
+                "窓際の席でゆったりアイスラテタイム。緑がよく見える特等席で、何も予定のない午後をのんびり過ごしました。",
             },
           ],
         },
@@ -269,6 +316,42 @@ document.addEventListener("DOMContentLoaded", () => {
               caption:
                 "今日のお弁当はふりかけごはんに卵焼き、ウインナー、豚肉の炒め物、ポテトサラダを詰め込みました。彩りも良くできて、開けた瞬間にちょっと自分を褒めたくなる出来栄えです。",
             },
+            {
+              src: "../img/album/food/house/7.jpg",
+              alt: "おうちごはんの一枚",
+              caption:
+                "おうち飲みの定番、唐揚げとビールの組み合わせ。揚げたての<span class=\"nb\">サクサク感が</span>たまらなくて、気づけば一気に食べきってしまいました。",
+            },
+            {
+              src: "../img/album/food/house/8.jpg",
+              alt: "おうちごはんの一枚",
+              caption:
+                "お花を飾ったテーブルで、朝からちょっと丁寧な朝食タイム。フルーツとサンドイッチ、温かい紅茶で気持ちの良い一日の<span class=\"nb\">スタートになりました。</span>",
+            },
+            {
+              src: "../img/album/food/house/9.jpg",
+              alt: "おうちごはんの一枚",
+              caption:
+                "おうちで晩酌セットを用意。お刺身と煮物、焼きなすを肴に日本酒をゆっくり味わう、贅沢なひとり時間でした。",
+            },
+            {
+              src: "../img/album/food/house/10.jpg",
+              alt: "おうちごはんの一枚",
+              caption:
+                "お気に入りの日本酒を見つけて、キャンドルを灯しながらまったり晩酌。枝豆をつまみながら飲むお酒は、一日の疲れを<span class=\"nb\">忘れさせてくれます。</span>",
+            },
+            {
+              src: "../img/album/food/house/11.jpg",
+              alt: "おうちごはんの一枚",
+              caption:
+                "休日の朝は気合を入れてフレンチトースト作り。メープルシロップとフルーツをたっぷりのせて、カフェ気分のブランチが完成しました。",
+            },
+            {
+              src: "../img/album/food/house/12.jpg",
+              alt: "おうちごはんの一枚",
+              caption:
+                "またまた唐揚げとビールの組み合わせ。何度食べても飽きないこの黄金コンビ、今日も美味しくいただきました。",
+            },
           ],
         },
         {
@@ -291,6 +374,42 @@ document.addEventListener("DOMContentLoaded", () => {
               alt: "レストランの一枚",
               caption:
                 "市場直送のネタが並ぶお寿司屋さんで<span class=\"nb\">ランチ。</span>大トロから金箔がのったお寿司まで、一貫ごとに違う美味しさで、あっという間に完食してしまいました。",
+            },
+            {
+              src: "../img/album/food/restaurant/4.jpg",
+              alt: "レストランの一枚",
+              caption:
+                "友だちとオムライスランチ。とろとろ卵とデミグラスソースの組み合わせが最高で、2人でシェアするサラダも良い<span class=\"nb\">アクセントになりました。</span>",
+            },
+            {
+              src: "../img/album/food/restaurant/5.jpg",
+              alt: "レストランの一枚",
+              caption:
+                "友だちとビストロランチ。海老とほうれん草のパスタに焼きたてパン、ハンバーグプレートまで注文して、お腹も気持ちも<span class=\"nb\">大満足でした。</span>",
+            },
+            {
+              src: "../img/album/food/restaurant/6.jpg",
+              alt: "レストランの一枚",
+              caption:
+                "友だちとワインを片手にイタリアンディナー。もちもちの窯焼きピザと生ハムサラダを、赤ワインと一緒にゆっくり味わいました。",
+            },
+            {
+              src: "../img/album/food/restaurant/7.jpg",
+              alt: "レストランの一枚",
+              caption:
+                "友だちとうどんランチ。コシのある麺とかき揚げの組み合わせが最高で、「うどんでほっとする」の看板通り、心まで<span class=\"nb\">ほっとする時間でした。</span>",
+            },
+            {
+              src: "../img/album/food/restaurant/8.jpg",
+              alt: "レストランの一枚",
+              caption:
+                "見た目もインパクト抜群のナポリタンに目玉焼きをオン。ケチャップの酸味と黄身のまろやかさが混ざり合って、やみつきになる美味しさでした。",
+            },
+            {
+              src: "../img/album/food/restaurant/9.jpg",
+              alt: "レストランの一枚",
+              caption:
+                "ハンバーグ定食で贅沢ランチ。とろける半熟卵とポテトサラダを絡めて食べると、いつもより一段と<span class=\"nb\">美味しく感じました。</span>",
             },
           ],
         },
@@ -460,6 +579,29 @@ document.addEventListener("DOMContentLoaded", () => {
             },
           ],
         },
+        {
+          label: "アイドル",
+          items: [
+            {
+              src: "../img/album/cosplay/aidle/01.jpg",
+              alt: "アイドルコスプレ",
+              caption:
+                "こっちに手を伸ばして、あなたに届くように精一杯パフォーマンスしています。今日は最前列まで来てくれてありがとう。ずっと目、<span class=\"nb\">逸らさないでくださいね？</span>",
+            },
+            {
+              src: "../img/album/cosplay/aidle/02.jpg",
+              alt: "アイドルコスプレ",
+              caption:
+                "せーの、ハート！今日のステージ、楽しんでもらえていますか？あなたに向けてめいっぱいハートを送ります♡",
+            },
+            {
+              src: "../img/album/cosplay/aidle/03.jpg",
+              alt: "アイドルコスプレ",
+              caption:
+                "見つけてくれてありがとう。今日のこの一瞬のために、たくさん練習してきたんです。もう少しだけ、私のこと<span class=\"nb\">見ていてくださいね。</span>",
+            },
+          ],
+        },
       ],
     },
 
@@ -516,6 +658,18 @@ document.addEventListener("DOMContentLoaded", () => {
               alt: "景色の一枚",
               caption:
                 "木々の隙間から見上げた花火。葉っぱのシルエットと打ち上げ花火のコントラストが綺麗で、いつもと違う角度から見る花火も新鮮でした。",
+            },
+            {
+              src: "../img/album/view/9.jpg",
+              alt: "景色の一枚",
+              caption:
+                "近所の塀からこぼれるように咲いていたブーゲンビリア。ピンクと白の<span class=\"nb\">コントラスト</span>が綺麗で、夕方の散歩道がぱっと華やかになりました。",
+            },
+            {
+              src: "../img/album/view/10.jpg",
+              alt: "景色の一枚",
+              caption:
+                "雲の隙間から差し込む光のカーテンに思わず足を止めました。川沿いを染める夕焼けが幻想的で、しばらくその場から動けませんでした。",
             },
           ],
         },
