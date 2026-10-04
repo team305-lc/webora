@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>予約・お問い合わせ｜サンプル整体院</title>
+<meta name="description" content="サンプル整体院へのご予約・お問い合わせはこちら。お電話またはフォームから承ります。◯◯駅より徒歩5分。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://example.com/html/contact.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="../index.html" class="header__logo">
+      <span class="logo-main" data-cfg="company.name">サンプル整体院</span>
+      <span class="logo-sub" data-cfg="company.nameEn">SAMPLE SEITAI</span>
+    </a>
+    <nav class="nav" id="global-nav" aria-label="メインメニュー">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="../index.html">トップ</a></li>
+        <li><a class="nav__link" href="about.html">整体院について</a></li>
+        <li><a class="nav__link" href="first.html">初めての方へ</a></li>
+        <li><a class="nav__link" href="menu.html">メニュー・料金</a></li>
+        <li><a class="nav__link" href="voice.html">お客様の声</a></li>
+        <li><a class="nav__link" href="news.html">お知らせ</a></li>
+        <li><a class="nav__link" href="access.html">アクセス</a></li>
+        <li class="nav__cta"><a class="btn btn--primary" href="contact.html" aria-current="page">予約・お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" type="button" aria-label="メニューを開閉する" aria-expanded="false" aria-controls="global-nav"><span></span></button>
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="page-hero__en">Contact</span>
+    <h1 class="page-hero__title">予約・お問い合わせ</h1>
+    <p class="page-hero__lead">ご予約・ご相談はお電話またはフォームから承ります。フォームは24時間受け付けています。</p>
+  </div>
+</section>
+
+<nav class="breadcrumb container" aria-label="現在位置">
+  <ol>
+    <li><a href="../index.html">トップ</a></li>
+    <li>予約・お問い合わせ</li>
+  </ol>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-wrap">
+
+      <div>
+        <h2 style="margin-top:0;">お問い合わせフォーム</h2>
+        <p>下記の項目をご入力のうえ、送信してください。2営業日以内にご連絡いたします。お急ぎの場合はお電話をご利用ください。</p>
+
+        <!--
+          ▼ フォームの送信先について
+          このフォームは初期状態では送信されません。
+          Formspree や Google フォームなどの無料サービスで作成した
+          送信先URLを、下の <form action="..."> に貼り付けてください。
+          例）<form action="https://formspree.io/f/xxxxxxxx" method="POST" ...>
+        -->
+        <form action="#" method="POST" data-contact-form novalidate>
+          <div class="form-field">
+            <label for="f-name">お名前<span class="req">必須</span></label>
+            <input type="text" id="f-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="form-field">
+            <label for="f-kana">フリガナ</label>
+            <input type="text" id="f-kana" name="kana">
+          </div>
+          <div class="form-field">
+            <label for="f-tel">電話番号<span class="req">必須</span></label>
+            <input type="tel" id="f-tel" name="tel" autocomplete="tel" required>
+          </div>
+          <div class="form-field">
+            <label for="f-email">メールアドレス</label>
+            <input type="email" id="f-email" name="email" autocomplete="email">
+          </div>
+          <div class="form-field">
+            <label for="f-menu">ご希望のメニュー</label>
+            <select id="f-menu" name="menu">
+              <option value="">選択してください</option>
+              <option>お試し整体（初回限定）</option>
+              <option>全身整体</option>
+              <option>骨盤矯正コース</option>
+              <option>頭・首・肩の集中ケア</option>
+              <option>メンテナンス整体</option>
+              <option>相談してから決めたい</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="f-date">ご希望の日時</label>
+            <input type="text" id="f-date" name="date" placeholder="例）9月10日 午前 / 平日の夜">
+          </div>
+          <div class="form-field">
+            <label for="f-body">ご相談内容<span class="req">必須</span></label>
+            <textarea id="f-body" name="body" required placeholder="気になっている症状や、ご質問をご記入ください。"></textarea>
+          </div>
+          <p class="form-privacy">
+            ご入力いただいた個人情報は、ご予約・お問い合わせへの対応のみに使用し、第三者へ提供することはありません。
+          </p>
+          <button type="submit" class="btn btn--primary btn--block btn--lg">この内容で送信する</button>
+
+          <div class="form-note" data-form-message hidden>
+            <strong>フォームの送信先が未設定です。</strong><br>
+            お手数ですが、お電話（<a data-cfg-tel href="tel:">000-000-0000</a>）でご連絡いただくか、
+            サイト管理者にてフォームの送信先設定をお願いします。設定方法は <code>html/contact.html</code> のコメントに記載しています。
+          </div>
+        </form>
+      </div>
+
+      <div>
+        <div class="contact-info">
+          <h3>お電話でのご予約</h3>
+          <dl>
+            <dt>電話番号</dt>
+            <dd><a class="tel-big" data-cfg-tel href="tel:">000-000-0000</a></dd>
+            <dt>受付時間</dt>
+            <dd data-cfg="company.telNote">電話受付 9:00〜20:00（施術中はつながりにくい場合があります）</dd>
+            <dt>営業時間</dt>
+            <dd data-cfg="company.hours">9:00〜20:00（最終受付 19:00）</dd>
+            <dt>定休日</dt>
+            <dd data-cfg="company.holiday">水曜・日曜・祝日</dd>
+            <dt>所在地</dt>
+            <dd>
+              <span data-cfg="company.postalCode">000-0000</span><br>
+              <span data-cfg="company.address">◯◯県◯◯市◯◯町1-2-3 ◯◯ビル 2F</span>
+            </dd>
+            <dt>アクセス</dt>
+            <dd data-cfg="company.access">◯◯線「◯◯駅」東口より徒歩5分</dd>
+          </dl>
+          <div class="center-btn center-btn--start">
+            <a class="btn btn--outline" href="access.html">アクセス・地図を見る</a>
+          </div>
+        </div>
+
+        <div class="form-note">
+          はじめての方は「<a href="first.html">初めての方へ</a>」もあわせてご覧ください。ご来院の流れや持ち物をご案内しています。
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="logo-main" data-cfg="company.name">サンプル整体院</span>
+        <span class="logo-sub" data-cfg="company.nameEn">SAMPLE SEITAI</span>
+        <p data-cfg="company.catchcopy">つらい肩こり・腰痛に、根本からアプローチする整体院です。</p>
+      </div>
+      <div class="footer__col">
+        <h3>ページ一覧</h3>
+        <ul>
+          <li><a href="about.html">整体院について</a></li>
+          <li><a href="first.html">初めての方へ</a></li>
+          <li><a href="menu.html">メニュー・料金</a></li>
+          <li><a href="voice.html">お客様の声</a></li>
+          <li><a href="news.html">お知らせ</a></li>
+          <li><a href="access.html">アクセス</a></li>
+          <li><a href="contact.html">予約・お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3>ご案内</h3>
+        <ul>
+          <li>TEL：<a data-cfg-tel href="tel:">000-000-0000</a></li>
+          <li>営業時間：<span data-cfg="company.hours">9:00〜20:00</span></li>
+          <li>定休日：<span data-cfg="company.holiday">水曜・日曜・祝日</span></li>
+          <li><span data-cfg="company.address">◯◯県◯◯市◯◯町1-2-3 ◯◯ビル 2F</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__bottom">&copy; <span class="js-year">2026</span> <span data-cfg="company.name">サンプル整体院</span>. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../js/config.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

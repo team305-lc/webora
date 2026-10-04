@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ▼ 企業名・キャッチコピーを変更するときは、下の <title> と description も書き換えてください -->
+<title>サンプル整体院｜◯◯駅徒歩5分、肩こり・腰痛の根本改善なら</title>
+<meta name="description" content="サンプル整体院は◯◯駅から徒歩5分の整体院です。丁寧なカウンセリングと体に負担の少ない施術で、慢性的な肩こり・腰痛・骨盤のゆがみの根本改善をめざします。初回お試し整体を実施中。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://example.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="サンプル整体院">
+<meta property="og:title" content="サンプル整体院｜肩こり・腰痛の根本改善なら">
+<meta property="og:description" content="丁寧なカウンセリングと体に負担の少ない施術で、慢性的な不調の根本改善をめざす整体院です。">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:image" content="https://example.com/img/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "サンプル整体院",
+  "description": "丁寧なカウンセリングと体に負担の少ない施術で、慢性的な肩こり・腰痛の根本改善をめざす整体院です。",
+  "url": "https://example.com/",
+  "telephone": "000-000-0000",
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "000-0000",
+    "addressRegion": "◯◯県",
+    "addressLocality": "◯◯市",
+    "streetAddress": "◯◯町1-2-3 ◯◯ビル 2F"
+  },
+  "openingHours": "Mo,Tu,Th,Fr,Sa 09:00-20:00",
+  "priceRange": "¥¥"
+}
+</script>
+</head>
+<body>
+
+<!-- ============ ヘッダー ============ -->
+<header class="header">
+  <div class="container header__inner">
+    <a href="index.html" class="header__logo">
+      <span class="logo-main" data-cfg="company.name">サンプル整体院</span>
+      <span class="logo-sub" data-cfg="company.nameEn">SAMPLE SEITAI</span>
+    </a>
+    <nav class="nav" id="global-nav" aria-label="メインメニュー">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="index.html" aria-current="page">トップ</a></li>
+        <li><a class="nav__link" href="html/about.html">整体院について</a></li>
+        <li><a class="nav__link" href="html/first.html">初めての方へ</a></li>
+        <li><a class="nav__link" href="html/menu.html">メニュー・料金</a></li>
+        <li><a class="nav__link" href="html/voice.html">お客様の声</a></li>
+        <li><a class="nav__link" href="html/news.html">お知らせ</a></li>
+        <li><a class="nav__link" href="html/access.html">アクセス</a></li>
+        <li class="nav__cta"><a class="btn btn--primary" href="html/contact.html">予約・お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" type="button" aria-label="メニューを開閉する" aria-expanded="false" aria-controls="global-nav"><span></span></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ ファーストビュー（ヒーロー＋情報バーで画面いっぱい） ============ -->
+<div class="firstview">
+
+<section class="hero">
+  <!-- 背景画像は js/config.js の heroSlides で入れ替え（5枚が自動で切り替わります） -->
+  <div class="hero__slides" data-hero-slides>
+    <img class="hero__slide is-active" src="img/hero/01.jpg" alt="施術を受けているお客様の背中に手を当てる整体師">
+  </div>
+  <div class="container hero__inner">
+    <p class="hero__name reveal" style="--reveal-delay:.05s"><span class="hero__name-ja" data-cfg="company.name">サンプル整体院</span><span class="hero__name-en" data-cfg="company.nameEn">SAMPLE SEITAI</span></p>
+    <h1 class="hero__copy reveal" style="--reveal-delay:.25s" data-cfg="company.tagline">その不調、あきらめないでください。</h1>
+    <p class="hero__lead reveal" style="--reveal-delay:.45s" data-cfg="company.catchcopy">つらい肩こり・腰痛に、根本からアプローチする整体院です。</p>
+    <div class="hero__actions reveal" style="--reveal-delay:.65s">
+      <a class="btn btn--accent btn--lg" href="html/contact.html">予約・お問い合わせ</a>
+      <a class="btn btn--outline btn--lg" href="html/first.html" style="border-color:#fff;color:#fff;">初めての方へ</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 情報バー ============ -->
+<div class="infobar">
+  <div class="container infobar__inner">
+    <span>営業時間　<strong data-cfg="company.hours">9:00〜20:00（最終受付 19:00）</strong></span>
+    <span>定休日　<strong data-cfg="company.holiday">水曜・日曜・祝日</strong></span>
+    <span>ご予約　<strong><a class="infobar__tel" data-cfg-tel href="tel:">000-000-0000</a></strong></span>
+  </div>
+</div>
+
+</div><!-- /.firstview -->
+
+<!-- ============ お悩み ============ -->
+<section class="section section--plain-deco">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-head__en">Trouble</span>
+      <h2 class="section-head__title">こんなお悩みはありませんか？</h2>
+      <p class="section-head__lead">ひとつでも当てはまる方は、一度ご相談<span class="nowrap">ください。</span><br class="pc-only">原因を一緒に整理し、あなたに合ったケアをご提案します。</p>
+    </div>
+    <div class="grid grid--3 fade-in">
+      <div class="card">
+        <div class="card__icon" aria-hidden="true">◆</div>
+        <h3 class="card__title">慢性的な肩こり・首こり</h3>
+        <p class="card__text">マッサージに行ってもすぐ戻ってしまう、朝起きた時から肩が重い。</p>
+      </div>
+      <div class="card">
+        <div class="card__icon" aria-hidden="true">◆</div>
+        <h3 class="card__title">長引く腰の痛み</h3>
+        <p class="card__text">デスクワークや立ち仕事がつらい、前かがみになると痛む。</p>
+      </div>
+      <div class="card">
+        <div class="card__icon" aria-hidden="true">◆</div>
+        <h3 class="card__title">姿勢・骨盤のゆがみ</h3>
+        <p class="card__text">猫背や反り腰が気になる、産後に体型やバランスが崩れた気がする。</p>
+      </div>
+      <div class="card">
+        <div class="card__icon" aria-hidden="true">◆</div>
+        <h3 class="card__title">頭痛・眼精疲労</h3>
+        <p class="card__text">夕方になると頭が重い、パソコン作業で目の奥が疲れる。</p>
+      </div>
+      <div class="card">
+        <div class="card__icon" aria-hidden="true">◆</div>
+        <h3 class="card__title">体のだるさ・寝つきの悪さ</h3>
+        <p class="card__text">しっかり寝ても疲れが取れない、休日も体が重く感じる。</p>
+      </div>
+      <div class="card">
+        <div class="card__icon" aria-hidden="true">◆</div>
+        <h3 class="card__title">スポーツ後のケア</h3>
+        <p class="card__text">運動後の張りや違和感を早く回復させたい、ケガを予防したい。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 当院の特徴 ============ -->
+<section class="section section--tint">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-head__en">Features</span>
+      <h2 class="section-head__title">サンプル整体院が選ばれる理由</h2>
+    </div>
+    <div class="grid grid--3 fade-in">
+      <div class="card card--photo">
+        <div class="card__media"><img src="img/features/01.jpg" alt="カウンセリングを行う整体師"></div>
+        <div class="card__body">
+          <div class="card__icon" aria-hidden="true">1</div>
+          <h3 class="card__title">じっくり聞くカウンセリング</h3>
+          <p class="card__text">初回は時間をかけてお話をうかがい、痛みの背景にある生活習慣や体の使い方まで確認します。</p>
+        </div>
+      </div>
+      <div class="card card--photo">
+        <div class="card__media"><img src="img/features/02.jpg" alt="全身のバランスを整える施術"></div>
+        <div class="card__body">
+          <div class="card__icon" aria-hidden="true">2</div>
+          <h3 class="card__title">その場しのぎにしない施術</h3>
+          <p class="card__text">気になる部分だけでなく全身のバランスを整え、痛みが出にくい状態づくりをめざします。</p>
+        </div>
+      </div>
+      <div class="card card--photo">
+        <div class="card__media"><img src="img/features/03.jpg" alt="通いやすい立地のサンプル整体院の外観"></div>
+        <div class="card__body">
+          <div class="card__icon" aria-hidden="true">3</div>
+          <h3 class="card__title">通いやすい環境</h3>
+          <p class="card__text">駅から徒歩5分、夜20時まで受付。予約優先制で待ち時間が少なく、無理な勧誘もいたしません。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ こだわり（画像ブロック） ============ -->
+<section class="section section--plain-deco">
+  <div class="container">
+    <div class="feature fade-in">
+      <div class="feature__media">
+        <img src="img/features/04.jpg" alt="模型を使って丁寧に説明する整体師と、施術の様子">
+      </div>
+      <div class="feature__body">
+        <h2 class="feature__title">お一人おひとりの体に合わせて</h2>
+        <p>同じ「腰痛」でも、原因や体の状態は人によって違います。当院では検査で今の状態をていねいに確認し、力加減や施術方法を調整しながら進めます。ボキボキと強く鳴らす施術は行いませんので、はじめての方や力の弱い方でも安心して受けていただけます。</p>
+        <a class="btn btn--outline" href="html/about.html">整体院について詳しく</a>
+      </div>
+    </div>
+    <div class="feature feature--reverse fade-in">
+      <div class="feature__media">
+        <img src="img/features/05.jpg" alt="清潔で落ち着いた施術ルームと待合、キッズスペース">
+      </div>
+      <div class="feature__body">
+        <h2 class="feature__title">来院しやすさも大切にしています</h2>
+        <p>清潔で落ち着いた院内で、リラックスして過ごしていただける空間を用意しています。ご予約はお電話またはお問い合わせフォームから。お子さま連れのご来院もご相談いただけます。</p>
+        <a class="btn btn--outline" href="html/first.html">初めての方へ</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 院内ギャラリー：見出しなしで、画像だけが右から左へ流れる -->
+  <div class="gallery-marquee">
+    <div class="marquee" data-gallery-marquee>
+      <noscript>
+        <div class="container"><p>院内の写真を表示するには JavaScript を有効にしてください。</p></div>
+      </noscript>
+    </div>
+  </div>
+</section>
+
+<!-- ============ メニュー・料金 抜粋 ============ -->
+<section class="section section--green">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-head__en">Menu &amp; Price</span>
+      <h2 class="section-head__title">メニュー・料金</h2>
+      <p class="section-head__lead">初回の方は、カウンセリングから施術まで含めた「お試し整体」をご用意しています。<span class="nowrap">表示価格</span>はすべて税込みです。</p>
+    </div>
+    <div class="menu-list fade-in" data-menu-top="3">
+      <div class="menu-item">
+        <p class="menu-item__name">お試し整体（初回限定）</p>
+        <p class="menu-item__price">2,980円 <span class="tax">(税込)</span></p>
+        <p class="menu-item__meta"><span class="menu-item__duration">約40分</span>はじめての方向けのコースです。</p>
+      </div>
+    </div>
+    <div class="center-btn">
+      <a class="btn btn--primary" href="html/menu.html">すべてのメニュー・料金を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ お知らせ 抜粋 ============ -->
+<section class="section section--tint">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-head__en">News</span>
+      <h2 class="section-head__title">お知らせ</h2>
+    </div>
+    <div class="news-compact fade-in" data-news-top>
+      <div class="news-row">
+        <span class="news-row__date">2026.09.01</span>
+        <span class="news-row__cat">お知らせ</span>
+        <div class="news-row__title">ホームページを公開しました。</div>
+      </div>
+    </div>
+    <div class="center-btn">
+      <a class="btn btn--outline" href="html/news.html">お知らせ一覧へ</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ アクセス 抜粋 ============ -->
+<section class="section section--plain-deco">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="section-head__en">Access</span>
+      <h2 class="section-head__title">アクセス</h2>
+    </div>
+    <div class="access-grid fade-in">
+      <div data-map-embed>
+        <noscript><p>地図を表示するには JavaScript を有効にしてください。</p></noscript>
+      </div>
+      <div>
+        <table class="access-table">
+          <tr><th>院名</th><td data-cfg="company.name">サンプル整体院</td></tr>
+          <tr><th>住所</th><td><span data-cfg="company.postalCode">000-0000</span><br><span data-cfg="company.address">◯◯県◯◯市◯◯町1-2-3 ◯◯ビル 2F</span></td></tr>
+          <tr><th>アクセス</th><td data-cfg="company.access">◯◯線「◯◯駅」東口より徒歩5分</td></tr>
+          <tr><th>駐車場</th><td data-cfg="company.parking">提携駐車場あり（2台まで無料）</td></tr>
+          <tr><th>営業時間</th><td data-cfg="company.hours">9:00〜20:00（最終受付 19:00）</td></tr>
+          <tr><th>定休日</th><td data-cfg="company.holiday">水曜・日曜・祝日</td></tr>
+        </table>
+        <div class="center-btn center-btn--start">
+          <a class="btn btn--outline" data-cfg-map href="#" target="_blank" rel="noopener">Googleマップで見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+  <div class="container">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>ご予約・ご質問はお電話または<span class="nowrap">お問い合わせフォーム</span>から<span class="nowrap">承ります。</span></p>
+    <div class="cta__actions">
+      <a class="btn btn--accent btn--lg" data-cfg-tel href="tel:">000-000-0000</a>
+      <a class="btn btn--outline btn--lg" href="html/contact.html">お問い合わせフォーム</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ フッター ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="logo-main" data-cfg="company.name">サンプル整体院</span>
+        <span class="logo-sub" data-cfg="company.nameEn">SAMPLE SEITAI</span>
+        <p data-cfg="company.catchcopy">つらい肩こり・腰痛に、根本からアプローチする整体院です。</p>
+      </div>
+      <div class="footer__col">
+        <h3>ページ一覧</h3>
+        <ul>
+          <li><a href="html/about.html">整体院について</a></li>
+          <li><a href="html/first.html">初めての方へ</a></li>
+          <li><a href="html/menu.html">メニュー・料金</a></li>
+          <li><a href="html/voice.html">お客様の声</a></li>
+          <li><a href="html/news.html">お知らせ</a></li>
+          <li><a href="html/access.html">アクセス</a></li>
+          <li><a href="html/contact.html">予約・お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3>ご案内</h3>
+        <ul>
+          <li>TEL：<a data-cfg-tel href="tel:">000-000-0000</a></li>
+          <li>営業時間：<span data-cfg="company.hours">9:00〜20:00</span></li>
+          <li>定休日：<span data-cfg="company.holiday">水曜・日曜・祝日</span></li>
+          <li><span data-cfg="company.address">◯◯県◯◯市◯◯町1-2-3 ◯◯ビル 2F</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__bottom">&copy; <span class="js-year">2026</span> <span data-cfg="company.name">サンプル整体院</span>. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
