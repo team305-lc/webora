@@ -989,7 +989,12 @@ html { font-size: 62.5%; } /* 1rem = 10px base for the values above */
     align-items: center;
     justify-content: center;
     gap: 40px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
+  /* メニューを開いている間は背面をスクロールさせない */
+  html.is-menu-open,
+  html.is-menu-open body { overflow: hidden; }
   .gnav.is-open .gnav__list {
     flex-direction: column;
     align-items: center;

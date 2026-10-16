@@ -5,16 +5,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const gnav = document.getElementById('gnav');
 
   if (hamburger && gnav) {
+    /* メニュー開閉（開いている間は背面のスクロールを止める） */
+    const setMenu = (open) => {
+      hamburger.classList.toggle('is-active', open);
+      gnav.classList.toggle('is-open', open);
+      document.documentElement.classList.toggle('is-menu-open', open);
+    };
+
     hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('is-active');
-      gnav.classList.toggle('is-open');
+      setMenu(!gnav.classList.contains('is-open'));
     });
 
     gnav.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('is-active');
-        gnav.classList.remove('is-open');
-      });
+      link.addEventListener('click', () => setMenu(false));
+    });
+
+    /* PC幅に広げたときにロックが残らないようにする */
+    window.matchMedia('(min-width: 901px)').addEventListener('change', (e) => {
+      if (e.matches) setMenu(false);
     });
   }
 
