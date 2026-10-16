@@ -108,9 +108,18 @@ button { font-family: inherit; background: none; border: none; cursor: pointer; 
   top: 0; left: 0; right: 0;
   z-index: 500;
   background: rgba(10, 10, 11, 0.72);
-  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
   transition: background 0.3s var(--ease);
+}
+/* backdrop-filter を .header 本体に付けると position:fixed の子（開いたSPメニュー）の基準が
+   ヘッダーになりメニューが潰れるため、擬似要素に分離している */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .header__inner {
