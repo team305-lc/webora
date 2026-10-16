@@ -6,10 +6,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (hamburger && gnav) {
     /* メニュー開閉（開いている間は背面のスクロールを止める） */
+    /* iOS Safari は overflow:hidden だけでは背面が動くため、body を fixed にして位置を保持する */
+    let lockedScrollY = 0;
+    const lockScroll = () => {
+      lockedScrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${lockedScrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+    };
+    const unlockScroll = () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      window.scrollTo({ top: lockedScrollY, behavior: 'instant' });
+    };
+
     const setMenu = (open) => {
+      const wasOpen = gnav.classList.contains('is-open');
+      if (open === wasOpen) return;
+
       hamburger.classList.toggle('is-active', open);
       gnav.classList.toggle('is-open', open);
       document.documentElement.classList.toggle('is-menu-open', open);
+      if (open) lockScroll();
+      else unlockScroll();
     };
 
     hamburger.addEventListener('click', () => {
